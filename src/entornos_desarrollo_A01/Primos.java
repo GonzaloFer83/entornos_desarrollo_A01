@@ -2,7 +2,7 @@ package entornos_desarrollo_A01;
 /**
  * esta clase sirve para realizar numeros primos
  * 
- *@author Sergio
+ *@author Sergio Blázquez Fernandez
  *@since 19/01/2021
  *@version 1.0
  */
