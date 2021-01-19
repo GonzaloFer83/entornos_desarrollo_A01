@@ -57,14 +57,14 @@ public class Suma {
 	/**
 	 * 
 	 * @param sumando valor que le damos
-	 * @return devuelve un valor, acumulador mï¿½s un parametro
+	 * @return devuelve un valor, acumulador mas un parametro
 	 */
 	public double sumaAcumulada(double sumando) {
 		return acumulador;
 	}
 
 	/**
-	 * Este método es privado dado que solo se usa dentro de esta clase
+	 * Este metodo es privado dado que solo se usa dentro de esta clase
 	 * 
 	 * @param i recibe cualquier numero entero
 	 * @return convierte el numero entero recibido en un double o numero real
