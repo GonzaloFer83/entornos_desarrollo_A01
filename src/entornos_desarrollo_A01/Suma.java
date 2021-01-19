@@ -1,13 +1,13 @@
 package entornos_desarrollo_A01;
 
-import java.util.Scanner;
+
 /**
  * Esta clase es para realizar sumas.
  * @since 19/01/2021
  * @author Alvaro
  * @version 1.0
  */
-public class Suma_Alvaro {
+public class Suma {
 		/**
 		 * @param acumulador es el valor que se acumula en todas las operaciones.
 		 */
