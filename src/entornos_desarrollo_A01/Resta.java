@@ -13,7 +13,7 @@ public class Resta {
 	
 	
 	/** 
-	 * Aqu� acumulamos el valor de las operaciones
+	 * Aqui acumulamos el valor de las operaciones
 	 */
 	private double acumulador;
 	
@@ -21,13 +21,13 @@ public class Resta {
 	
 	/**
 	 * 
-	 * @param minuendo recibe un n�mero real
-	 * @param substraendo recibe un n�mero real 
-	 * @return devuelve la resta de los par�metros x e y
+	 * @param minuendo recibe un numero real
+	 * @param substraendo recibe un numero real 
+	 * @return devuelve la resta de los parametros minuendo y sustraendo
 	 * @see errorNumerosNegativos()
 	 * @see errorCero() 
-	 * Dentro de este m�todo, comprobaremos que los par�metros introducidos no son negativos o igual a 0
-	 * llamando a estos m�todos privados 
+	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos o igual a 0
+	 * llamando a estos metodos privados 
 	 */
 	public double restaNumerosReales (double minuendo, double substraendo) {	
 		return acumulador;
@@ -37,17 +37,17 @@ public class Resta {
 	
 	/**
 	 * 
-	 * @param minuendo recibe un n�mero entero
-	 * @param substraendo recibe un n�mero entero
-	 * @return devuelve un n�mero real, resultado de la resta de los par�metros x e y
+	 * @param minuendo recibe un numero entero
+	 * @param substraendo recibe un numero entero
+	 * @return devuelve un numero real, resultado de la resta de los parametros minuendo y substraendo
 	 * 
 	 * @see convertirEnteros()
-	 * Dentro de este m�todo, se llama a este m�todo para convertir los n�meros enteros en reales
+	 * Dentro de este metodo, se llama a este metodo para convertir los numeros enteros en reales
 	 * 
 	 * @see errorNumerosNegativos()
 	 * @see errorCero() 
-	 * Dentro de este m�todo, comprobaremos que los par�metros introducidos no son negativos o igual a 0
-	 * llamando a estos m�todos privados 
+	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos o igual a 0
+	 * llamando a estos metodos privados 
 	 */
 	public double restaNumerosEnteros (int minuendo, int substraendo) { 
 		return acumulador;
@@ -57,15 +57,15 @@ public class Resta {
 	
 	/**
 	 * 
-	 * @param minuendo recibe un n�mero real	
-	 * @param substraendo1 recibe un n�mero real
-	 * @param substraendo2 recibe un n�mero real
-	 * @return devuelve la resta del primer par�metro (x), menos el segundo (y), menos el tercero (z)
+	 * @param minuendo recibe un numero real	
+	 * @param substraendo1 recibe un numero real
+	 * @param substraendo2 recibe un numero real
+	 * @return devuelve la resta del primer parametro minuendo, substraendo1 y substraendo2
 	 * 
 	 * @see errorNumerosNegativos()
 	 * @see errorCero() 
-	 * Dentro de este m�todo, comprobaremos que los par�metros introducidos no son negativos o igual a 0
-	 * llamando a estos m�todos privados 
+	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos o igual a 0
+	 * llamando a estos metodos privados 
 	 */
 	public double resta3NumerosReales (double minuendo, double substraendo1, double substraendo2) {
 		return acumulador;
@@ -76,12 +76,12 @@ public class Resta {
 	
 	/**
 	 * 
-	 * @param substraendo recibe n�mero real 
-	 * @return devolver� el resultado de la resta de un valor un valor acumulado w y el par�metro z
+	 * @param substraendo recibe numero real 
+	 * @return devolver el resultado de la resta de un valor un valor acumulado  y el parametro substraendo
 	 * 
 	 * @see errorNumerosNegativos()
 	 * @see errorCero()  
-	 * Dentro de este m�todo, comprobaremos que los par�metros introducidos no son negativos o igual a 0
+	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos o igual a 0
 	 * llamando a estos m�todos privados 
 	 */
 	public double restaValorAcumulado (double substraendo) {
@@ -91,9 +91,9 @@ public class Resta {
 	
 	
 	/**
-	 * Este m�todo es privado dado que s�lo se usa dentro de esta clase
-	 * @param i recibe cualquier n�mero entero 
-	 * @return convierte el n�mero entero recibido en un double o n�mero real
+	 * Este metodo es privado dado que solo se usa dentro de esta clase
+	 * @param i recibe cualquier numero entero 
+	 * @return convierte el numero entero recibido en un double o numero real
 	 */
 	
 	private double convertirEnteros (int i) {
@@ -102,12 +102,12 @@ public class Resta {
 	
 	
 	/**
-	 * Este m�todo es privado, dado que s�lo se usa dentro de esta clase
-	 * Devuelve "Error" por pantalla cuando se introduce un n�mero negativo
-	 * dado el caso de que la calculadora no operase con n�meros negativos
-	 * @param i recibe cualquier n�mero, se comprueba si es negativo
-	 * @return devuelve "Error" si el n�mero es negativo"
-	 * @deprecated Este m�todo podr� dejar de ser utilizado con excepciones
+	 * Este metodo es privado, dado que solo se usa dentro de esta clase
+	 * Devuelve "Error" por pantalla cuando se introduce un numero negativo
+	 * dado el caso de que la calculadora no operase con numeros negativos
+	 * @param i recibe cualquier numero, se comprueba si es negativo
+	 * @return devuelve "Error" si el numero es negativo"
+	 * @deprecated Este metodo podre dejar de ser utilizado con excepciones
 	 */
 	private String errorNumerosNegativos (int i) {
 		return "Error";
@@ -116,7 +116,7 @@ public class Resta {
 	
 	
 	/**
-	 * Este m�todo es privado, dado que s�lo se usa dentro de esta clase
+	 * Este m�todo es privado, dado que solo se usa dentro de esta clase
 	 * Devuelve "Error" por pantalla cuando el n�mero introducido es igual a O
 	 * dado el caso de que la calculadora no operase con ceros
 	 * @param i recibe cualquier n�mero, se comprueba si es igual a 0
