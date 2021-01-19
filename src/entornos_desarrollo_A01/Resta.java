@@ -23,7 +23,7 @@ public class Resta {
 	 * 
 	 * @param x recibe un número real
 	 * @param y recibe un número real 
-	 * @return devuelve la resta del parámetros x e y
+	 * @return devuelve la resta de los parámetros x e y
 	 */
 	public double restaNumerosReales (double x, double y) {	
 		return acumulador;
@@ -38,7 +38,7 @@ public class Resta {
 	 * @return devuelve un número real, resultado de la resta de los parámetros x e y
 	 * 
 	 * @see convertirEnteros()
-	 * En este método se llama a este otro método para convertir los números enteros en reales
+	 * Dentro de este método, se llama a este método para convertir los números enteros en reales
 	 * 
 	 * @see errorNumerosNegativos()
 	 * @see errorCero() 
@@ -56,7 +56,7 @@ public class Resta {
 	 * @param x recibe un número real	
 	 * @param y recibe un número real
 	 * @param z recibe un número real
-	 * @return devuelve la resta del primer parámetro x, menos el segundo y, menos el tercero z
+	 * @return devuelve la resta del primer parámetro (x), menos el segundo (y), menos el tercero (z)
 	 */
 	public double resta3NumerosReales (double x, double y, double z) {
 		return acumulador;
