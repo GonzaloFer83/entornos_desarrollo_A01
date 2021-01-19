@@ -4,7 +4,7 @@ package entornos_desarrollo_A01;
  * Esta clase es para realizar sumas.
  * 
  * @since 19/01/2021
- * @author Alvaro
+ * @author Alvaro Moreno Chihcarro
  * @version 1.0
  */
 public class Suma {
@@ -15,11 +15,11 @@ public class Suma {
 
 	/**
 	 * 
-	 * @param sumando1 recibe un nï¿½mero real
-	 * @param sumando2 recibe un nï¿½mero real
+	 * @param sumando1 recibe un numero real
+	 * @param sumando2 recibe un numero real
 	 * @see errorNumerosNegativos()
 	 * @see errorCero()
-	 * @return Devuelve una suma de dos nï¿½meros reales que guarda el valor
+	 * @return Devuelve una suma de dos numeros reales que guarda el valor
 	 *         acumulado.
 	 */
 	double suma2NumeroReales(double sumando1, double sumando2) {
@@ -43,9 +43,9 @@ public class Suma {
 
 	/**
 	 * 
-	 * @param sumando1 recibe un nï¿½mero real
-	 * @param sumando2 recibe un nï¿½mero real
-	 * @param sumando3 recibe un nï¿½mero real
+	 * @param sumando1 recibe un numero real
+	 * @param sumando2 recibe un numero real
+	 * @param sumando3 recibe un numero real
 	 * @see errorNumerosNegativos()
 	 * @see errorCero()
 	 * @return devuelve la suma de los otros parametros.
@@ -57,17 +57,17 @@ public class Suma {
 	/**
 	 * 
 	 * @param sumando valor que le damos
-	 * @return devuelve un valor, acumulador mï¿½s un parï¿½metro
+	 * @return devuelve un valor, acumulador mï¿½s un parametro
 	 */
 	public double sumaAcumulada(double sumando) {
 		return acumulador;
 	}
 
 	/**
-	 * Este mï¿½todo es privado dado que sï¿½lo se usa dentro de esta clase
+	 * Este método es privado dado que solo se usa dentro de esta clase
 	 * 
-	 * @param i recibe cualquier nï¿½mero entero
-	 * @return convierte el nï¿½mero entero recibido en un double o nï¿½mero real
+	 * @param i recibe cualquier numero entero
+	 * @return convierte el numero entero recibido en un double o numero real
 	 */
 
 	private double convertirEnteros(int i) {
@@ -75,13 +75,13 @@ public class Suma {
 	}
 
 	/**
-	 * Este mï¿½todo es privado, dado que sï¿½lo se usa dentro de esta clase Devuelve
-	 * "Error" por pantalla cuando se introduce un nï¿½mero negativo dado el caso de
-	 * que la calculadora no operase con nï¿½meros negativos
+	 * Este metodo es privado, dado que solo se usa dentro de esta clase Devuelve
+	 * "Error" por pantalla cuando se introduce un numero negativo dado el caso de
+	 * que la calculadora no operase con numeros negativos
 	 * 
-	 * @param i recibe cualquier nï¿½mero, se comprueba si es negativo
-	 * @return devuelve "Error" si el nï¿½mero es negativo"
-	 * @deprecated Este mï¿½todo podrï¿½ dejar de ser utilizado con excepciones
+	 * @param i recibe cualquier numero, se comprueba si es negativo
+	 * @return devuelve "Error" si el numero es negativo"
+	 * @deprecated Este metodo podria dejar de ser utilizado con excepciones
 	 */
 
 	private String errorNumerosNegativos(int i) {
@@ -89,13 +89,13 @@ public class Suma {
 	}
 
 	/**
-	 * Este mï¿½todo es privado, dado que sï¿½lo se usa dentro de esta clase Devuelve
-	 * "Error" por pantalla cuando el nï¿½mero introducido es igual a O dado el caso
+	 * Este metodo es privado, dado que solo se usa dentro de esta clase Devuelve
+	 * "Error" por pantalla cuando el numero introducido es igual a O dado el caso
 	 * de que la calculadora no operase con ceros
 	 * 
-	 * @param i recibe cualquier nï¿½mero, se comprueba si es igual a 0
+	 * @param i recibe cualquier numero, se comprueba si es igual a 0
 	 * @return devuelve "Error"
-	 * @deprecated Este mï¿½todo podrï¿½ dejar de ser utilizado con excepciones
+	 * @deprecated Este metodo podria dejar de ser utilizado con excepciones
 	 */
 	private String errorCero(int i) {
 		return "Error";
