@@ -1,8 +1,21 @@
 package entornos_desarrollo_A01;
 
+/**
+ * 
+ * Esta clase es para realizar diverso tipo de restas 
+ * 
+ * @author Frida
+ * @version 1.0
+ * @since 19/01/2021
+ * 
+ */
 public class Resta_Frida {
-
-	double w;
+	
+	
+	/** 
+	 * Aquí acumulamos
+	 */
+	double acumulador;
 	
 	
 	
@@ -10,19 +23,19 @@ public class Resta_Frida {
 	 * 
 	 * @param x recibe un número real
 	 * @param y recibe un número real 
-	 * @return devuelve un número real 
+	 * @return devuelve la resta del parámetros x e y
 	 */
-	
 	public double restaNumerosReales (double x, double y) {	
-		return w;
+		return acumulador;
 	}
+	
 	
 	
 	/**
 	 * 
 	 * @param x recibe un número entero
 	 * @param y recibe un número entero
-	 * @return devuelve un número real
+	 * @return devuelve un número real, resultado de la resta de los parámetros x e y
 	 * 
 	 * @see convertirEnteros()
 	 * En este método se llama a este otro método para convertir los números enteros en reales
@@ -33,31 +46,35 @@ public class Resta_Frida {
 	 * llamando a estos métodos privados 
 	 */
 	public double restaNumerosEnteros (int x, int y) { 
-		return w;
+		return acumulador;
 	}
+	
+	
 	
 	/**
 	 * 
-	 * @param x
-	 * @param y
-	 * @param z
-	 * @return
+	 * @param x recibe un número real	
+	 * @param y recibe un número real
+	 * @param z recibe un número real
+	 * @return devuelve la resta del primer parámetro x, menos el segundo y, menos el tercero z
 	 */
 	public double resta3NumerosReales (double x, double y, double z) {
-		return w;
+		return acumulador;
 		
 	}
 	
+	
+	
 	/**
 	 * 
-	 * @param z
-	 * @return Devolverá el resultado de un valor que se va acumulando al que se resta 
+	 * @param z recibe número real 
+	 * @return devolverá el resultado de la resta de un valor un valor acumulado w y el parámetro z
 	 */
-	
-	
 	public double restaValorAcumulado (double z) {
-		return w;
+		return acumulador;
 	}
+	
+	
 	
 	/**
 	 * Este método es privado dado que sólo se usa dentro de esta clase
@@ -78,10 +95,10 @@ public class Resta_Frida {
 	 * @return devuelve "Error" si el número es negativo"
 	 * @deprecated Este método podrá dejar de ser utilizado con excepciones
 	 */
-	
 	private String errorNumerosNegativos (int i) {
 		return "Error";
 	}
+	
 	
 	
 	/**
