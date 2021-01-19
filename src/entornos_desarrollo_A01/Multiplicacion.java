@@ -1,16 +1,16 @@
 package entornos_desarrollo_A01;
 
 /**
- * Documentando Multiplicaci�n con JavaDoc
+ * Documentando Multiplicacion con JavaDoc
  * 
- * @autor Adri�n Fern�ndez
+ * @autor Adrian Fernandez Herrero
  * @version 1.0
  * @since 19/01/2020
  * 
  */
 public class Multiplicacion {
 	/** 
-	 * Aqu� acumulamos el valor de las operaciones
+	 * Aqui acumulamos el valor de las operaciones
 	 */
 	private double acumulador;
 
@@ -23,7 +23,7 @@ public class Multiplicacion {
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double sumNumReales(double multiplicando, double multiplicador) {
+	public double multiNumReales(double multiplicando, double multiplicador) {
 
 		return acumulador;
 	}
@@ -37,7 +37,7 @@ public class Multiplicacion {
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double sumNumEnteros(int multiplicando, int multiplicador) {
+	public double multiNumEnteros(int multiplicando, int multiplicador) {
 
 		return acumulador;
 	}
@@ -52,7 +52,7 @@ public class Multiplicacion {
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double sumTresReales(double multiplicando, double multiplicador1, double multiplicador2) {
+	public double multiTresReales(double multiplicando, double multiplicador1, double multiplicador2) {
 
 		return acumulador;
 	}
@@ -73,13 +73,13 @@ public class Multiplicacion {
 	}
 
 	/**
-	 * Este m�todo es privado, dado que s�lo se usa dentro de esta clase Devuelve
-	 * "Error" por pantalla cuando se introduce un n�mero negativo dado el caso de
-	 * que la calculadora no operase con n�meros negativos
+	 * Este metodo es privado, dado que si lo se usa dentro de esta clase Devuelve
+	 * "Error" por pantalla cuando se introduce un numero negativo dado el caso de
+	 * que la calculadora no operase con numeros negativos
 	 * 
-	 * @param i recibe cualquier n�mero, se comprueba si es negativo
-	 * @return devuelve "Error" si el n�mero es negativo"
-	 * @deprecated Este m�todo podr� dejar de ser utilizado con excepciones
+	 * @param i recibe cualquier numero, se comprueba si es negativo
+	 * @return devuelve "Error" si el numero es negativo"
+	 * @deprecated Este metodo podria dejar de ser utilizado con excepciones
 	 */
 
 	private String errorNumerosNegativos(int i) {
@@ -87,20 +87,20 @@ public class Multiplicacion {
 	}
 
 	/**
-	 * Este m�todo es privado, dado que s�lo se usa dentro de esta clase Devuelve
-	 * "Error" por pantalla cuando el n�mero introducido es igual a O dado el caso
+	 * Este metodo es privado, dado que si lo se usa dentro de esta clase Devuelve
+	 * "Error" por pantalla cuando el numero introducido es igual a O dado el caso
 	 * de que la calculadora no operase con ceros
 	 * 
-	 * @param i recibe cualquier n�mero, se comprueba si es igual a 0
+	 * @param i recibe cualquier numero, se comprueba si es igual a 0
 	 * @return devuelve "Error"
-	 * @deprecated Este m�todo podr� dejar de ser utilizado con excepciones
+	 * @deprecated Este metodo podria dejar de ser utilizado con excepciones
 	 */
 	private String errorCero(int i) {
 		return "Error";
 	}
 
 	/**
-	 * *Este m�todo es privado, dado que s�lo se usa dentro de esta clase Devuelve
+	 * *Este metodo es privado, dado que si lo se usa dentro de esta clase Devuelve
 	 * "Error" por pantalla cuando el exponente introducido excede del maximo
 	 * permitido para ese tipo de dato primitivo
 	 * 
