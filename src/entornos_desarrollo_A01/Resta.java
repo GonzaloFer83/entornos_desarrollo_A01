@@ -4,7 +4,7 @@ package entornos_desarrollo_A01;
  * 
  * Esta clase es para realizar diverso tipo de restas 
  * 
- * @author Frida
+ * @author Frida Abella Fernández
  * @version 1.0
  * @since 19/01/2021
  * 
