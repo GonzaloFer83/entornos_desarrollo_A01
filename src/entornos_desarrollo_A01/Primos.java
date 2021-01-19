@@ -7,7 +7,7 @@ package entornos_desarrollo_A01;
  *@version 1.0
  */
 
-public class Primos_Sergio {
+public class Primos {
 	/**
 	 * creamos las variables esPrimo, c, m, t.
 	 */
@@ -19,6 +19,8 @@ public class Primos_Sergio {
 		 * 
 		 * @param boolean w
 		 * @return esPrimo el cual te dice si el numero es primo o no. 
+		 * @see errorNumerosNegativos()
+	     * @see errorCero()
 		 */
 		public boolean primo(int x) {
 			return esPrimo;
@@ -27,6 +29,8 @@ public class Primos_Sergio {
 		/**
 		 * @param x 
 		 * @return c devuelve la cantidad de numeros primos que hay.
+		 * @see errorNumerosNegativos()
+	     * @see errorCero()
 		 */
 		public int iesimo(int x) {
 			return c;
@@ -36,6 +40,8 @@ public class Primos_Sergio {
 		 * @param x
 		 * @param y
 		 * @return c devuelve el porcentaje de las dos variables x,y.
+		 * @see errorNumerosNegativos()
+	     * @see errorCero()
 		 */
 		
 		public double porcentaje (double x,double y) {
