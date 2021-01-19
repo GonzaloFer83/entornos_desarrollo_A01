@@ -30,7 +30,7 @@ double suma2NumeroReales(double x, double y){
 	 * @see errorCero() 
 	 * @param x recibe un numero entero
 	 * @param yrecibe un numero entero
-	 * @return 
+	 * @return devuelve el valor de la suma en un numero real.
 	 */
 	public double sumaNumerosEnteros (int x, int y) {
 			return acumulador;
