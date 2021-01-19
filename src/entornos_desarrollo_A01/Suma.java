@@ -1,104 +1,104 @@
 package entornos_desarrollo_A01;
 
-
 /**
  * Esta clase es para realizar sumas.
+ * 
  * @since 19/01/2021
  * @author Alvaro
  * @version 1.0
  */
 public class Suma {
-		/**
-		 * @param acumulador es el valor que se acumula en todas las operaciones.
-		 */
-	double acumulador;
 	/**
-	 *	
-	 * @param x recibe un número real
-	 * @param y recibe un número real
-	 * @see errorNumerosNegativos()
-	 * @see errorCero() 
-	 * @return Devuelve una suma de dos números reales que guarda el valor acumulado.
+	 * @param acumulador es el valor que se acumula en todas las operaciones.
 	 */
-double suma2NumeroReales(double x, double y){
-			return acumulador;
-	}
-	/**
-	 * Realiza la suma de dos numeros enteros,y lo transforma a double llamando a un metodo privado.
-	 * @see convertirEnteros()
-	 * @see errorNumerosNegativos()
-	 * @see errorCero() 
-	 * @param x recibe un numero entero
-	 * @param yrecibe un numero entero
-	 * @return devuelve el valor de la suma en un numero real.
-	 */
-	public double sumaNumerosEnteros (int x, int y) {
-			return acumulador;
-	}
-	
-	
+	private double acumulador;
+
 	/**
 	 * 
-	 * @param x recibe un número real
-	 * @param y recibe un número real
-	 * @param w recibe un número real
+	 * @param sumando1 recibe un nï¿½mero real
+	 * @param sumando2 recibe un nï¿½mero real
 	 * @see errorNumerosNegativos()
-	 * @see errorCero() 
-	 * @return devuelve la suma de los otros parametros.
+	 * @see errorCero()
+	 * @return Devuelve una suma de dos nï¿½meros reales que guarda el valor
+	 *         acumulado.
 	 */
-	public double suma3NumeroReales(double x,double y,double w){
-			return acumulador;
-	}
-	
-	/**
-	 * 
-	 * @param z valor que le damos
-	 * @return devuelve un valor, acumulador más un parámetro
-	 */
-	public double sumaAcumulada (double z) {
+	double suma2NumeroReales(double sumando1, double sumando2) {
 		return acumulador;
 	}
-	
-	
-	
 
 	/**
-	 * Este método es privado dado que sólo se usa dentro de esta clase
-	 * @param i recibe cualquier número entero 
-	 * @return convierte el número entero recibido en un double o número real
+	 * Realiza la suma de dos numeros enteros,y lo transforma a double llamando a un
+	 * metodo privado.
+	 * 
+	 * @see convertirEnteros()
+	 * @see errorNumerosNegativos()
+	 * @see errorCero()
+	 * @param sumando1 recibe un numero entero
+	 * @param sumando2 recibe un numero entero
+	 * @return devuelve el valor de la suma en un numero real.
 	 */
-	
-	private double convertirEnteros (int i) {
+	public double sumaNumerosEnteros(int sumando1, int sumando2) {
+		return acumulador;
+	}
+
+	/**
+	 * 
+	 * @param sumando1 recibe un nï¿½mero real
+	 * @param sumando2 recibe un nï¿½mero real
+	 * @param sumando3 recibe un nï¿½mero real
+	 * @see errorNumerosNegativos()
+	 * @see errorCero()
+	 * @return devuelve la suma de los otros parametros.
+	 */
+	public double suma3NumeroReales(double sumando1, double sumando2, double sumando3) {
+		return acumulador;
+	}
+
+	/**
+	 * 
+	 * @param sumando valor que le damos
+	 * @return devuelve un valor, acumulador mï¿½s un parï¿½metro
+	 */
+	public double sumaAcumulada(double sumando) {
+		return acumulador;
+	}
+
+	/**
+	 * Este mï¿½todo es privado dado que sï¿½lo se usa dentro de esta clase
+	 * 
+	 * @param i recibe cualquier nï¿½mero entero
+	 * @return convierte el nï¿½mero entero recibido en un double o nï¿½mero real
+	 */
+
+	private double convertirEnteros(int i) {
 		return (double) i;
 	}
-	
+
 	/**
-	 * Este método es privado, dado que sólo se usa dentro de esta clase
-	 * Devuelve "Error" por pantalla cuando se introduce un número negativo
-	 * dado el caso de que la calculadora no operase con números negativos
-	 * @param i recibe cualquier número, se comprueba si es negativo
-	 * @return devuelve "Error" si el número es negativo"
-	 * @deprecated Este método podrá dejar de ser utilizado con excepciones
+	 * Este mï¿½todo es privado, dado que sï¿½lo se usa dentro de esta clase Devuelve
+	 * "Error" por pantalla cuando se introduce un nï¿½mero negativo dado el caso de
+	 * que la calculadora no operase con nï¿½meros negativos
+	 * 
+	 * @param i recibe cualquier nï¿½mero, se comprueba si es negativo
+	 * @return devuelve "Error" si el nï¿½mero es negativo"
+	 * @deprecated Este mï¿½todo podrï¿½ dejar de ser utilizado con excepciones
 	 */
-	
-	private String errorNumerosNegativos (int i) {
+
+	private String errorNumerosNegativos(int i) {
 		return "Error";
 	}
-	
-	
+
 	/**
-	 * Este método es privado, dado que sólo se usa dentro de esta clase
-	 * Devuelve "Error" por pantalla cuando el número introducido es igual a O
-	 * dado el caso de que la calculadora no operase con ceros
-	 * @param i recibe cualquier número, se comprueba si es igual a 0
+	 * Este mï¿½todo es privado, dado que sï¿½lo se usa dentro de esta clase Devuelve
+	 * "Error" por pantalla cuando el nï¿½mero introducido es igual a O dado el caso
+	 * de que la calculadora no operase con ceros
+	 * 
+	 * @param i recibe cualquier nï¿½mero, se comprueba si es igual a 0
 	 * @return devuelve "Error"
-	 * @deprecated Este método podrá dejar de ser utilizado con excepciones
+	 * @deprecated Este mï¿½todo podrï¿½ dejar de ser utilizado con excepciones
 	 */
-	private String errorCero (int i) {
+	private String errorCero(int i) {
 		return "Error";
 	}
-	
+
 }
-
-
-

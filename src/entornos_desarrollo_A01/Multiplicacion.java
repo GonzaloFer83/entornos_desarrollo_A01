@@ -1,57 +1,60 @@
 package entornos_desarrollo_A01;
 
 /**
- * Documentando Multiplicación con JavaDoc
+ * Documentando Multiplicaciï¿½n con JavaDoc
  * 
- * @autor Adrián Fernández
+ * @autor Adriï¿½n Fernï¿½ndez
  * @version 1.0
  * @since 19/01/2020
  * 
  */
 public class Multiplicacion {
-	int w;
-	double x;
+	/** 
+	 * Aquï¿½ acumulamos el valor de las operaciones
+	 */
+	private double acumulador;
 
 	/**
 	 * Metodo para realizar el producto con dos numeros reales
 	 * 
 	 * @return devuelve el resultado del producto con dos numeros reales
-	 * @param num1 numero real para realizar el producto
-	 * @param num2 numero real para realizar el producto
+	 * @param multiplicando numero real para realizar el producto
+	 * @param multiplicador numero real para realizar el producto
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double sumNumReales(double num1, double num2) {
+	public double sumNumReales(double multiplicando, double multiplicador) {
 
-		return x;
+		return acumulador;
 	}
 
 	/**
 	 * Metodo para realizar el producto con dos numeros enteros
 	 * 
 	 * @return devuelve el resultado del producto con dos numeros enteros
-	 * @param num1 numero entero para realizar el producto
-	 * @param num2 numero entero para realizar el producto
+	 * @param multiplicando numero entero para realizar el producto
+	 * @param multiplicador numero entero para realizar el producto
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public int sumNumEnteros(int num1, int num2) {
+	public double sumNumEnteros(int multiplicando, int multiplicador) {
 
-		return w;
+		return acumulador;
 	}
 
 	/**
 	 * Metodo para realizar el producto con dos numeros enteros
 	 * 
 	 * @return devuelve el resultado del producto con dos numeros enteros
-	 * @param num1 numero entero para realizar el producto
-	 * @param num2 numero entero para realizar el producto
+	 * @param multiplicando numero entero para realizar el producto
+	 * @param multiplicador1 numero entero para realizar el producto
+	 * @param multiplicador2 numero entero para realizar el producto
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double sumTresReales(double num1, double num2, double num3) {
+	public double sumTresReales(double multiplicando, double multiplicador1, double multiplicador2) {
 
-		return x;
+		return acumulador;
 	}
 
 	/**
@@ -66,17 +69,17 @@ public class Multiplicacion {
 	 * @see comprobarExponente()
 	 */
 	public double potencia(int base, double expontente) {
-		return w;
+		return acumulador;
 	}
 
 	/**
-	 * Este método es privado, dado que sólo se usa dentro de esta clase Devuelve
-	 * "Error" por pantalla cuando se introduce un número negativo dado el caso de
-	 * que la calculadora no operase con números negativos
+	 * Este mï¿½todo es privado, dado que sï¿½lo se usa dentro de esta clase Devuelve
+	 * "Error" por pantalla cuando se introduce un nï¿½mero negativo dado el caso de
+	 * que la calculadora no operase con nï¿½meros negativos
 	 * 
-	 * @param i recibe cualquier número, se comprueba si es negativo
-	 * @return devuelve "Error" si el número es negativo"
-	 * @deprecated Este método podrá dejar de ser utilizado con excepciones
+	 * @param i recibe cualquier nï¿½mero, se comprueba si es negativo
+	 * @return devuelve "Error" si el nï¿½mero es negativo"
+	 * @deprecated Este mï¿½todo podrï¿½ dejar de ser utilizado con excepciones
 	 */
 
 	private String errorNumerosNegativos(int i) {
@@ -84,20 +87,20 @@ public class Multiplicacion {
 	}
 
 	/**
-	 * Este método es privado, dado que sólo se usa dentro de esta clase Devuelve
-	 * "Error" por pantalla cuando el número introducido es igual a O dado el caso
+	 * Este mï¿½todo es privado, dado que sï¿½lo se usa dentro de esta clase Devuelve
+	 * "Error" por pantalla cuando el nï¿½mero introducido es igual a O dado el caso
 	 * de que la calculadora no operase con ceros
 	 * 
-	 * @param i recibe cualquier número, se comprueba si es igual a 0
+	 * @param i recibe cualquier nï¿½mero, se comprueba si es igual a 0
 	 * @return devuelve "Error"
-	 * @deprecated Este método podrá dejar de ser utilizado con excepciones
+	 * @deprecated Este mï¿½todo podrï¿½ dejar de ser utilizado con excepciones
 	 */
 	private String errorCero(int i) {
 		return "Error";
 	}
 
 	/**
-	 * *Este método es privado, dado que sólo se usa dentro de esta clase Devuelve
+	 * *Este mï¿½todo es privado, dado que sï¿½lo se usa dentro de esta clase Devuelve
 	 * "Error" por pantalla cuando el exponente introducido excede del maximo
 	 * permitido para ese tipo de dato primitivo
 	 * 
