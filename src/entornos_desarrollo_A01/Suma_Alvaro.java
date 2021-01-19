@@ -9,33 +9,42 @@ import java.util.Scanner;
  */
 public class Suma_Alvaro {
 		/**
-		 * @param acumulador 
+		 * @param acumulador es el valor que se acumula en todas las operaciones.
 		 */
 	double acumulador;
 	/**
 	 *	
-	 * @param x
-	 * @param y
+	 * @param x recibe un número real
+	 * @param y recibe un número real
+	 * @see errorNumerosNegativos()
+	 * @see errorCero() 
 	 * @return Devuelve una suma de dos números reales que guarda el valor acumulado.
 	 */
 double suma2NumeroReales(double x, double y){
 			return acumulador;
 	}
 	/**
-	 * 
-	 * @param x
-	 * @param y
-	 * @return De
+	 * Realiza la suma de dos numeros enteros,y lo transforma a double llamando a un metodo privado.
+	 * @see convertirEnteros()
+	 * @see errorNumerosNegativos()
+	 * @see errorCero() 
+	 * @param x recibe un numero entero
+	 * @param yrecibe un numero entero
+	 * @return 
 	 */
 	public double sumaNumerosEnteros (int x, int y) {
 			return acumulador;
 	}
+	
+	
 	/**
 	 * 
-	 * @param x
-	 * @param y
-	 * @param w
-	 * @return
+	 * @param x recibe un número real
+	 * @param y recibe un número real
+	 * @param w recibe un número real
+	 * @see errorNumerosNegativos()
+	 * @see errorCero() 
+	 * @return devuelve la suma de los otros parametros.
 	 */
 	public double suma3NumeroReales(double x,double y,double w){
 			return acumulador;
@@ -44,21 +53,15 @@ double suma2NumeroReales(double x, double y){
 	/**
 	 * 
 	 * @param z valor que le damos
-	 * @return devuelve un valor que se acumula.
+	 * @return devuelve un valor, acumulador más un parámetro
 	 */
 	public double sumaAcumulada (double z) {
 		return acumulador;
 	}
 	
 	
-	/**
-	 * Este método es privado porque solo se usa dentro de otro metodo.
-	 *@return pasa el número de entero a double.
-	 *@see sumaNumerosEnteros()
-	 */
-	private double pasarNumerosDouble (int s) {
-		return (double) s;
-}
+	
+
 	/**
 	 * Este método es privado dado que sólo se usa dentro de esta clase
 	 * @param i recibe cualquier número entero 
