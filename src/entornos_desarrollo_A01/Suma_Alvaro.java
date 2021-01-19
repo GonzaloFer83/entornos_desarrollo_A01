@@ -33,17 +33,24 @@ double Suma2NumeroReales(double x, double y){
 	public double Suma3NumeroReales(double x,double y,double w){
 			return a;
 	}
+	
 	/**
-	 * Este metodo solo se usa para pasar el valor de entero a double
-	 *
+	 * 
+	 * @param z valor que le damos
+	 * @return devuelve un valor que se acumula.
 	 */
-	private double PasarNumerosDouble (int s) {
-			return (double) s;
+	public double SumaAcumulada (double z) {
+		return a;
 	}
 	
-	public double 
 	
-	
+	/**
+	 * Este método es privado porque solo se usa dentro de otro metodo.
+	 *@return pasa el número de entero a double.
+	 */
+	private double PasarNumerosDouble (int s) {
+		return (double) s;
+}
 	
 }
 
