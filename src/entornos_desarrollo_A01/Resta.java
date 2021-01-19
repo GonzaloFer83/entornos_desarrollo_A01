@@ -9,11 +9,11 @@ package entornos_desarrollo_A01;
  * @since 19/01/2021
  * 
  */
-public class Resta_Frida {
+public class Resta {
 	
 	
 	/** 
-	 * Aquí acumulamos
+	 * Aquí acumulamos el valor de las operaciones
 	 */
 	double acumulador;
 	
