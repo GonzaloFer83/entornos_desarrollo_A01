@@ -4,7 +4,7 @@ package entornos_desarrollo_A01;
  * 
  *@author Sergio Blázquez Fernandez
  *@since 19/01/2021
- *@version 1.0
+ *@version 1.1
  */
 
 public class Primos {
@@ -53,6 +53,7 @@ public class Primos {
 		 * @return t devuelve un factorial de un numero entero.
 		 * @see errorNumerosNegativos()
 	     * @see errorCero() 
+	     * @link     -- llamar a la clase Division --
 	     * Dentro de este método, comprobaremos que los parámetros introducidos no son negativos o iguales a 0
 	     * llamando a estos métodos privados. 
 		 */
