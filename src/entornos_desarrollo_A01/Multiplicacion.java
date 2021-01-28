@@ -65,7 +65,7 @@ public class Multiplicacion {
 	 * @param expontente numero de veces que se repite el factor
 	 * @see errorCero() si el exponente es 0 devolvera 1 , y si es otro valor
 	 * 
-	 * @link     -- llamar a la clase Division --
+	 * {@link Division #raizDeNumero()},
 	 * @see comprobarExponente()
 	 */
 	public double potencia(int base, double expontente) {

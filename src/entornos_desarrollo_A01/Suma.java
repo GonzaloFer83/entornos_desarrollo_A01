@@ -1,7 +1,7 @@
 package entornos_desarrollo_A01;
 
 /**
- * Esta clase es para realizar sumas.prueba
+ * Esta clase es para realizar sumas.
  * 
  * @since 19/01/2021
  * @author Alvaro Moreno Chihcarro
