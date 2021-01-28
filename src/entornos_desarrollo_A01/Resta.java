@@ -5,7 +5,7 @@ package entornos_desarrollo_A01;
  * Esta clase es para realizar diverso tipo de restas 
  * 
  * @author Frida Abella Fernandez
- * @version 1.0
+ * @version 1.1
  * @since 19/01/2021
  * 
  */
@@ -30,6 +30,7 @@ public class Resta {
 	 * llamando a estos metodos privados 
 	 */
 	public double restaNumerosReales (double minuendo, double substraendo) {	
+		acumulador = minuendo - substraendo;
 		return acumulador;
 	}
 	
@@ -50,6 +51,7 @@ public class Resta {
 	 * llamando a estos metodos privados 
 	 */
 	public double restaNumerosEnteros (int minuendo, int substraendo) { 
+		acumulador = minuendo - substraendo;
 		return acumulador;
 	}
 	
@@ -68,6 +70,7 @@ public class Resta {
 	 * llamando a estos metodos privados 
 	 */
 	public double resta3NumerosReales (double minuendo, double substraendo1, double substraendo2) {
+		acumulador = minuendo - substraendo1 - substraendo2;
 		return acumulador;
 		
 	}
@@ -85,6 +88,7 @@ public class Resta {
 	 * llamando a estos metodos privados 
 	 */
 	public double restaValorAcumulado (double substraendo) {
+		acumulador = acumulador - substraendo;
 		return acumulador;
 	}
 	
