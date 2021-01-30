@@ -1,11 +1,9 @@
 package exceptions;
 
-import java.lang.Exception;
-
-public class ExcepcionNumeroNegativo extends Exception {
+public class ExcepcionNumeroNegativo extends ExcepcionParametroNoValido {
 
 	public ExcepcionNumeroNegativo() {
-		super("No se permiten numeros negativos.");
+		super("No se permite numeros negativos.");
 	}
 
 }

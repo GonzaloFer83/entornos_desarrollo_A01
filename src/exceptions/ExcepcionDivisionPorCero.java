@@ -1,11 +1,9 @@
 package exceptions;
 
-import java.lang.Exception;
-
-public class ExcepcionDivisionPorCero extends Exception {
+public class ExcepcionDivisionPorCero extends ExcepcionParametroNoValido {
 
 	public ExcepcionDivisionPorCero() {
-		super("No se permiten Dividir por cero.");
+		super("No se permite dividir por cero.");
 	}
 
 }
