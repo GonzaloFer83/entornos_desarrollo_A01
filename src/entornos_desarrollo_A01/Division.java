@@ -4,7 +4,7 @@ package entornos_desarrollo_A01;
  * Documentando Division con JavaDoc
  * 
  * @autor Gonzalo Fernandez Ruiz
- * @version 1.0
+ * @version 1.2
  * @since 19/01/2020
  * 
  */
