@@ -4,7 +4,7 @@ package entornos_desarrollo_A01;
  * Documentando Multiplicacion con JavaDoc
  * 
  * @autor Adrian Fernandez Herrero
- * @version 1.0
+ * @version 1.1
  * @since 19/01/2020
  * 
  */
