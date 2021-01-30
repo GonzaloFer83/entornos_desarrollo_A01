@@ -13,10 +13,6 @@ public class Multiplicacion {
 	 * Aqui acumulamos el valor de las operaciones
 	 */
 	private double acumulador;
-	public Multiplicacion() {
-		super();
-		this.acumulador = 1;
-	}
 
 	/**
 	 * Metodo para realizar el producto con dos numeros reales
