@@ -1,5 +1,8 @@
 package entornos_desarrollo_A01;
 
+import exceptions.ExcepcionDivisionPorCero;
+import exceptions.ExcepcionNumeroNegativo;
+
 /**
  * Documentando Division con JavaDoc
  * 
@@ -9,33 +12,34 @@ package entornos_desarrollo_A01;
  * 
  */
 public class Division {
-	/** 
+	/**
 	 * Aqu� acumulamos el valor de las operaciones
 	 */
 	private double acumulador;
-	public Division () {
-		
+
+	public Division() {
+
 	}
 
 	/**
-	 * Metodo para realizar la division de  dos numeros reales
+	 * Metodo para realizar la division de dos numeros reales
+	 * 
 	 * @param dividendo numero real para realizar la division
-	 * @param divisor numero real para realizar la division
+	 * @param divisor   numero real para realizar la division
 	 * @return devuelve el resultado de la division dos numeros reales
-	 * @throws ExcepcionDivisionPorCero 
-	 * @throws ExcepcionNumeroNegativo 
-	 * @see errorNumerosNegativos();
-	 * @see errorCero();
+	 * @throws ExcepcionDivisionPorCero
+	 * @throws ExcepcionNumeroNegativo
 	 */
-	public double divisionNumReales(double dividendo, double divisor) throws ExcepcionDivisionPorCero, ExcepcionNumeroNegativo {
-		
-		if(divisor==0) {
+	public double divisionNumReales(double dividendo, double divisor)
+			throws ExcepcionDivisionPorCero, ExcepcionNumeroNegativo {
+
+		if (divisor == 0) {
 			throw new ExcepcionDivisionPorCero();
-		}else if (dividendo<0 || divisor<0) {
+		} else if (dividendo < 0 || divisor < 0) {
 			throw new ExcepcionNumeroNegativo();
 		}
-		acumulador = dividendo/divisor;
-		//eliminacion de los periodos, dedondeo
+		acumulador = dividendo / divisor;
+		// eliminacion de los periodos, dedondeo
 		acumulador = eliminacionPeriodos(acumulador);
 
 		return acumulador;
@@ -43,35 +47,36 @@ public class Division {
 
 	/**
 	 * Metodo para realizar la division de dos numeros enteros
+	 * 
 	 * @param dividendo numero entero para realizar la division
-	 * @param divisor numero entero para realizar la division
+	 * @param divisor   numero entero para realizar la division
 	 * @return devuelve el resultado de la division de dos numeros enteros
-	 * @see errorNumerosNegativos();
-	 * @see errorCero();
+	 * @throws ExcepcionDivisionPorCero
+	 * @throws ExcepcionNumeroNegativo
 	 */
-	public double sumNumEnteros(int dividendo, int divisor) throws ExcepcionDivisionPorCero, ExcepcionNumeroNegativo{
-		if(divisor==0) {
+	public double sumNumEnteros(int dividendo, int divisor) throws ExcepcionDivisionPorCero, ExcepcionNumeroNegativo {
+		if (divisor == 0) {
 			throw new ExcepcionDivisionPorCero();
-		}else if (dividendo<0 || divisor<0) {
+		} else if (dividendo < 0 || divisor < 0) {
 			throw new ExcepcionNumeroNegativo();
 		}
-		acumulador = dividendo/divisor;
+		acumulador = dividendo / divisor;
 
 		return acumulador;
 	}
 
 	/**
 	 * Metodo para realizar el inverso de un valor real
+	 * 
 	 * @param numeroInversor numero entero al que averiguaremos su inverso
 	 * @return devuelve el resultado de dividir uno entre el valor dado
-	 * @see errorNumerosNegativos();
-	 * @see errorCero();
+	 * @throws ExcepcionNumeroNegativo
 	 */
-	public double inversoValor(int numeroInversor) throws ExcepcionNumeroNegativo{
-		if (numeroInversor<0) {
-		throw new ExcepcionNumeroNegativo();
-	}
-	acumulador = 1/numeroInversor;
+	public double inversoValor(int numeroInversor) throws ExcepcionNumeroNegativo {
+		if (numeroInversor < 0) {
+			throw new ExcepcionNumeroNegativo();
+		}
+		acumulador = 1 / numeroInversor;
 
 		return acumulador;
 	}
@@ -81,24 +86,24 @@ public class Division {
 	 * 
 	 * @param numeroRaiz es el valor para calcular su raiz
 	 * @return devuelve el resultado de la raiz de un valor dado
-	 * @see errorCero() si el exponente es 0 devolvera 1 , y si es otro valor
-	 * @see comprobarExponente()
-	 * {@link Multiplicacion #potencia()}
+	 * @throws ExcepcionDivisionPorCero
+	 * @throws ExcepcionNumeroNegativo  {@link Multiplicacion #potencia()}
 	 */
-	public double raizDeNumero(int numeroRaiz) throws ExcepcionDivisionPorCero, ExcepcionNumeroNegativo{
-		if(numeroRaiz==0) {
+	public double raizDeNumero(int numeroRaiz) throws ExcepcionDivisionPorCero, ExcepcionNumeroNegativo {
+		if (numeroRaiz == 0) {
 			throw new ExcepcionDivisionPorCero();
-		}else if (numeroRaiz<0) {
+		} else if (numeroRaiz < 0) {
 			throw new ExcepcionNumeroNegativo();
 		}
-		Multiplicacion mul=new Multiplicacion();
-		
-		acumulador = mul.potencia(numeroRaiz,0.5);
-		//eliminacion de los periodos, dedondeo
+		Multiplicacion mul = new Multiplicacion();
+
+		acumulador = mul.potencia(numeroRaiz, 0.5);
+		// eliminacion de los periodos, dedondeo
 		acumulador = eliminacionPeriodos(acumulador);
 
 		return acumulador;
 	}
+
 	/**
 	 * Este metodo es privado, lo utilizaremos para analizar los resultados y evitar
 	 * el exceso de periodos repetidos y redondear los valores
@@ -107,11 +112,10 @@ public class Division {
 	 * @return devuelve un valor redondeado
 	 */
 	private double eliminacionPeriodos(double valorAnalizar) {
-		acumulador = valorAnalizar*Math.pow(10,2);
+		acumulador = valorAnalizar * Math.pow(10, 2);
 		acumulador = Math.round(acumulador);
-		acumulador = acumulador/Math.pow(10, 2);
+		acumulador = acumulador / Math.pow(10, 2);
 		return acumulador;
 	}
 
-	
 }

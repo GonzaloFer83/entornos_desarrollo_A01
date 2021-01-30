@@ -1,5 +1,8 @@
 package entornos_desarrollo_A01;
 
+import exceptions.ExcepcionDivisionPorCero;
+import exceptions.ExcepcionNumeroNegativo;
+
 public class Main_test {
 	public static void main (String args[]) {
 

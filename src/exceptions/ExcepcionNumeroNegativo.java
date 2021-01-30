@@ -1,4 +1,4 @@
-package entornos_desarrollo_A01;
+package exceptions;
 
 import java.lang.Exception;
 
