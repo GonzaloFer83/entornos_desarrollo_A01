@@ -13,8 +13,8 @@ public class Multiplicacion {
 	 * Aqui acumulamos el valor de las operaciones
 	 */
 	private double acumulador;
-
-	/**
+	
+	/** +
 	 * Metodo para realizar el producto con dos numeros reales
 	 * 
 	 * @return devuelve el resultado del producto con dos numeros reales
