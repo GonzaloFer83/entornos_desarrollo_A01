@@ -13,16 +13,25 @@ public class Division {
 	 * Aqu� acumulamos el valor de las operaciones
 	 */
 	private double acumulador;
+	public Division () {
+		
+	}
 
 	/**
 	 * Metodo para realizar la division de  dos numeros reales
 	 * @param dividendo numero real para realizar la division
 	 * @param divisor numero real para realizar la division
 	 * @return devuelve el resultado de la division dos numeros reales
+	 * @throws ExcepcionDivisionPorCero 
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double divisionNumReales(double dividendo, double divisor) {
+	public double divisionNumReales(double dividendo, double divisor) throws ExcepcionDivisionPorCero {
+		
+		if(divisor==0) {
+			throw new ExcepcionDivisionPorCero();
+		}
+		acumulador = dividendo/divisor;
 
 		return acumulador;
 	}
