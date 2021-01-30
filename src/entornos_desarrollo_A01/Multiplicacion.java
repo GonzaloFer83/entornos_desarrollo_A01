@@ -5,7 +5,7 @@ package entornos_desarrollo_A01;
  * 
  * @autor Adrian Fernandez Herrero
  * @version 1.1
- * @since 19/01/2020
+ * @since 30/01/2020
  * 
  */
 public class Multiplicacion {
