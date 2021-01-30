@@ -35,6 +35,8 @@ public class Division {
 			throw new ExcepcionNumeroNegativo();
 		}
 		acumulador = dividendo/divisor;
+		//eliminacion de los periodos, dedondeo
+		acumulador = eliminacionPeriodos(acumulador);
 
 		return acumulador;
 	}
@@ -47,7 +49,13 @@ public class Division {
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double sumNumEnteros(int dividendo, int divisor) {
+	public double sumNumEnteros(int dividendo, int divisor) throws ExcepcionDivisionPorCero, ExcepcionNumeroNegativo{
+		if(divisor==0) {
+			throw new ExcepcionDivisionPorCero();
+		}else if (dividendo<0 || divisor<0) {
+			throw new ExcepcionNumeroNegativo();
+		}
+		acumulador = dividendo/divisor;
 
 		return acumulador;
 	}
@@ -59,7 +67,11 @@ public class Division {
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double inversoValor(int numeroInversor) {
+	public double inversoValor(int numeroInversor) throws ExcepcionNumeroNegativo{
+		if (numeroInversor<0) {
+		throw new ExcepcionNumeroNegativo();
+	}
+	acumulador = 1/numeroInversor;
 
 		return acumulador;
 	}
@@ -71,8 +83,20 @@ public class Division {
 	 * @return devuelve el resultado de la raiz de un valor dado
 	 * @see errorCero() si el exponente es 0 devolvera 1 , y si es otro valor
 	 * @see comprobarExponente()
+	 * {@link Multiplicacion #potencia()}
 	 */
-	public double raizDeNumero(int numeroRaiz) {
+	public double raizDeNumero(int numeroRaiz) throws ExcepcionDivisionPorCero, ExcepcionNumeroNegativo{
+		if(numeroRaiz==0) {
+			throw new ExcepcionDivisionPorCero();
+		}else if (numeroRaiz<0) {
+			throw new ExcepcionNumeroNegativo();
+		}
+		Multiplicacion mul=new Multiplicacion();
+		
+		acumulador = mul.potencia(numeroRaiz,0.5);
+		//eliminacion de los periodos, dedondeo
+		acumulador = eliminacionPeriodos(acumulador);
+
 		return acumulador;
 	}
 	/**
@@ -83,34 +107,11 @@ public class Division {
 	 * @return devuelve un valor redondeado
 	 */
 	private double eliminacionPeriodos(double valorAnalizar) {
+		acumulador = valorAnalizar*Math.pow(10,2);
+		acumulador = Math.round(acumulador);
+		acumulador = acumulador/Math.pow(10, 2);
 		return acumulador;
 	}
 
-	/**
-	 * Este m�todo es privado, dado que s�lo se usa dentro de esta clase Devuelve
-	 * "Error" por pantalla cuando se introduce un n�mero negativo dado el caso de
-	 * que la calculadora no operase con n�meros negativos
-	 * 
-	 * @param i recibe cualquier n�mero, se comprueba si es negativo
-	 * @return devuelve "Error" si el n�mero es negativo"
-	 * @deprecated Este m�todo podr� dejar de ser utilizado con excepciones
-	 */
-
-	private String errorNumerosNegativos(int comprobarNegativo) {
-		return "Error";
-	}
-
-	/**
-	 * Este m�todo es privado, dado que s�lo se usa dentro de esta clase Devuelve
-	 * "Error" por pantalla cuando el n�mero introducido es igual a O dado el caso
-	 * de que la calculadora no operase con ceros
-	 * 
-	 * @param i recibe cualquier n�mero, se comprueba si es igual a 0
-	 * @return devuelve "Error"
-	 * @deprecated Este m�todo podr� dejar de ser utilizado con excepciones
-	 */
-	private String errorCero(int comprobarCero) {
-		return "Error";
-	}
 	
 }
