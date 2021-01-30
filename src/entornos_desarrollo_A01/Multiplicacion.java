@@ -4,8 +4,13 @@ package entornos_desarrollo_A01;
  * Documentando Multiplicacion con JavaDoc
  * 
  * @autor Adrian Fernandez Herrero
+<<<<<<< Updated upstream
  * @version 1.0
  * @since 19/01/2020
+=======
+ * @version 1.1
+ * @since 30/01/2020
+>>>>>>> Stashed changes
  * 
  */
 public class Multiplicacion {
