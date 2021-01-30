@@ -76,9 +76,12 @@ public class Primos {
 		 */
 		
 		public int factorial (int x) {
-			for(int i =1; i<x+1;i++) {
-				multiplicacion1.multiNumReales(x, -x);
+			 int acumulador= x;
+			for(int i =1; i<x;i++) {
+				acumulador=(int) multiplicacion1.multiNumEnteros(x, i)*a;
 			}
+			return acumulador;
 			}
+		
 		}
 
