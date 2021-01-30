@@ -5,9 +5,11 @@ public class Main_test {
 
 		Division div = new Division();
 		try {
-		System.out.println("Valor: " + div.divisionNumReales(6, 0));
+		System.out.println("Valor: " + div.divisionNumReales(6, -2));
 		} catch(ExcepcionDivisionPorCero excepcionDivisionPorCero) {
 			System.out.println(excepcionDivisionPorCero.getMessage());
+		}catch(ExcepcionNumeroNegativo excepcionNumeroNegativo) {
+			System.out.println(excepcionNumeroNegativo.getMessage());
 		}
 	}
 }

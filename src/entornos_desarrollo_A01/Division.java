@@ -23,13 +23,16 @@ public class Division {
 	 * @param divisor numero real para realizar la division
 	 * @return devuelve el resultado de la division dos numeros reales
 	 * @throws ExcepcionDivisionPorCero 
+	 * @throws ExcepcionNumeroNegativo 
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double divisionNumReales(double dividendo, double divisor) throws ExcepcionDivisionPorCero {
+	public double divisionNumReales(double dividendo, double divisor) throws ExcepcionDivisionPorCero, ExcepcionNumeroNegativo {
 		
 		if(divisor==0) {
 			throw new ExcepcionDivisionPorCero();
+		}else if (dividendo<0 || divisor<0) {
+			throw new ExcepcionNumeroNegativo();
 		}
 		acumulador = dividendo/divisor;
 
