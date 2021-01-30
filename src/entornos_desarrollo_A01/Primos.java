@@ -53,7 +53,7 @@ public class Primos {
 		 * @return t devuelve un factorial de un numero entero.
 		 * @see errorNumerosNegativos()
 	     * @see errorCero() 
-	     * @link     -- llamar a la clase Division --
+	     * @link     -- llamar a la clase Multiplicacion --
 	     * Dentro de este método, comprobaremos que los parámetros introducidos no son negativos o iguales a 0
 	     * llamando a estos métodos privados. 
 		 */
