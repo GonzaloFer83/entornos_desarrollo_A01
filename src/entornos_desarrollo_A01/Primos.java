@@ -16,6 +16,7 @@ public class Primos {
 	int c;
 	double m;
 	int t;
+	Multiplicacion multiplicacion1 = new Multiplicacion();
 		/**
 		 * 
 		 * @param boolean x
@@ -23,20 +24,22 @@ public class Primos {
 		 * @see errorNumerosNegativos()
 	     * @see errorCero()
 		 */
-	     public boolean esPrimo(int x) {
-					if(x==1 || x%2==0) {
+	 public boolean esPrimo(int x) {
+			if(x==1 || x%2==0) {
 						return false;
-					}
-					else {
-						for(int i=3; i<Math.sqrt(x);i++) {
-							if(x%i==0) {
-								return true;
-							}
-						}
-					}
+			}
+			else {
+				for(int i=3; i<Math.sqrt(x);i++) {
+					if(x%i==0) {
+						return true;
+				    }
+				}
+			}
 
-					return true;
-		  }		
+			return true;
+     }
+			
+				
 		
 		/**
 		 * @param x 
@@ -73,18 +76,9 @@ public class Primos {
 		 */
 		
 		public int factorial (int x) {
-			if(x==0 || x==1) {
-				return 1;
+			for(int i =1; i<x+1;i++) {
+				multiplicacion1.multiNumReales(x, -x);
 			}
-			else {
-				return x*factorial(x-1);
 			}
-
 		}
-			
-		
-		
-
-	}
-
 
