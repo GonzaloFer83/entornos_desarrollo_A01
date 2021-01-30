@@ -13,6 +13,12 @@ public class Multiplicacion {
 	 * Aqui acumulamos el valor de las operaciones
 	 */
 	private double acumulador;
+	/** 
+	 * Inicializando campo acumulador
+	 */
+	public Multiplicacion() {
+		this.acumulador = 1;
+	}
 
 	/**
 	 * Metodo para realizar el producto con dos numeros reales
@@ -24,8 +30,7 @@ public class Multiplicacion {
 	 * @see errorCero();
 	 */
 	public double multiNumReales(double multiplicando, double multiplicador) {
-
-		return acumulador;
+		return acumulador *= (multiplicando * multiplicador);
 	}
 
 	/**
@@ -38,8 +43,7 @@ public class Multiplicacion {
 	 * @see errorCero();
 	 */
 	public double multiNumEnteros(int multiplicando, int multiplicador) {
-
-		return acumulador;
+		return acumulador *= (multiplicando * multiplicador);
 	}
 
 	/**
@@ -52,9 +56,8 @@ public class Multiplicacion {
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double multiTresReales(double multiplicando, double multiplicador1, double multiplicador2) {
-
-		return acumulador;
+	public double multiNumReales(double multiplicando, double multiplicador1, double multiplicador2) {
+		return acumulador *= (multiplicando * multiplicador1*multiplicador2);
 	}
 
 	/**
@@ -65,7 +68,7 @@ public class Multiplicacion {
 	 * @param expontente numero de veces que se repite el factor
 	 * @see errorCero() si el exponente es 0 devolvera 1 , y si es otro valor
 	 * 
-	 * {@link Division #raizDeNumero()},
+	 * 
 	 * @see comprobarExponente()
 	 */
 	public double potencia(int base, double expontente) {
