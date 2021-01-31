@@ -5,14 +5,15 @@ package entornos_desarrollo_A01;
  * 
  * @autor Adrian Fernandez Herrero
  * @version 1.1
- * @since 30/01/2020
+ * @since 31/01/2020
  * 
  */
 public class Multiplicacion {
-	/** 
+	/**
 	 * Aqui acumulamos el valor de las operaciones
 	 */
 	private double acumulador;
+
 	/**
 	 * En el constructor por defecto se incializa el campo acumulador
 	 */
@@ -20,8 +21,9 @@ public class Multiplicacion {
 		super();
 		this.acumulador = 1;
 	}
-	/** +
-	 * Metodo para realizar el producto con dos numeros reales
+
+	/**
+	 *Metodo para realizar el producto con dos numeros reales
 	 * 
 	 * @return devuelve el resultado del producto con dos numeros reales
 	 * @param multiplicando numero real para realizar el producto
@@ -50,7 +52,7 @@ public class Multiplicacion {
 	 * Metodo para realizar el producto con dos numeros enteros
 	 * 
 	 * @return devuelve el resultado del producto con dos numeros enteros
-	 * @param multiplicando numero entero para realizar el producto
+	 * @param multiplicando  numero entero para realizar el producto
 	 * @param multiplicador1 numero entero para realizar el producto
 	 * @param multiplicador2 numero entero para realizar el producto
 	 * @see errorNumerosNegativos();
@@ -58,7 +60,7 @@ public class Multiplicacion {
 	 */
 	public double multiReales(double multiplicando, double multiplicador1, double multiplicador2) {
 
-		return acumulador *= (multiplicando * multiplicador1*multiplicador2);
+		return acumulador *= (multiplicando * multiplicador1 * multiplicador2);
 	}
 
 	/**
@@ -73,37 +75,10 @@ public class Multiplicacion {
 	 * @see comprobarExponente()
 	 */
 	public double potencia(int base, double expontente) {
-		if (comprobarExponente(expontente)!=true) {
-			return acumulador*=1;	
+		if (comprobarExponente(expontente) != true) {
+			return acumulador *= 1;
 		}
 		return acumulador *= Math.pow(base, expontente);
-	}
-
-	/**
-	 * Este metodo es privado, dado que si lo se usa dentro de esta clase Devuelve
-	 * "Error" por pantalla cuando se introduce un numero negativo dado el caso de
-	 * que la calculadora no operase con numeros negativos
-	 * 
-	 * @param i recibe cualquier numero, se comprueba si es negativo
-	 * @return devuelve "Error" si el numero es negativo"
-	 * @deprecated Este metodo podria dejar de ser utilizado con excepciones
-	 */
-
-	private String errorNumerosNegativos(int i) {
-		return "Error";
-	}
-
-	/**
-	 * Este metodo es privado, dado que si lo se usa dentro de esta clase Devuelve
-	 * "Error" por pantalla cuando el numero introducido es igual a O dado el caso
-	 * de que la calculadora no operase con ceros
-	 * 
-	 * @param i recibe cualquier numero, se comprueba si es igual a 0
-	 * @return devuelve "Error"
-	 * @deprecated Este metodo podria dejar de ser utilizado con excepciones
-	 */
-	private String errorCero(int i) {
-		return "Error";
 	}
 
 	/**
