@@ -24,12 +24,15 @@ public class Suma {
 	 * 
 	 * @param sumando1 recibe un numero real
 	 * @param sumando2 recibe un numero real
-	 * @see errorNumerosNegativos()
+	 * @see ExcepcionNumerosNegativos()
 	 * @see errorCero()
 	 * @return Devuelve una suma de dos numeros reales que guarda el valor
 	 *         acumulado.
 	 */
 	double suma2NumeroReales(double sumando1, double sumando2)throws ExcepcionNumeroNegativo {
+		if (sumando1==0||sumando2==0) {
+			errorCero();
+		}
 		if (sumando1<0 || sumando2<0) {
 			throw new ExcepcionNumeroNegativo();
 		}
@@ -43,7 +46,7 @@ public class Suma {
 	 * metodo privado.
 	 * 
 	 * @see convertirEnteros()
-	 * @see errorNumerosNegativos()
+	 * @see ExcepcionNumerosNegativos()
 	 * @see errorCero()
 	 * @param sumando1 recibe un numero entero
 	 * @param sumando2 recibe un numero entero
@@ -52,7 +55,9 @@ public class Suma {
 	public  double sumaNumerosEnteros(int sumando1, int sumando2)
 			throws ExcepcionNumeroNegativo{
 		int a;
-	
+		if (sumando1==0||sumando2==0) {
+			errorCero();
+		}
 		if (sumando1<0 || sumando2<0) {
 			throw new ExcepcionNumeroNegativo();
 		}
@@ -66,12 +71,14 @@ public class Suma {
 	 * @param sumando1 recibe un numero real
 	 * @param sumando2 recibe un numero real
 	 * @param sumando3 recibe un numero real
-	 * @see errorNumerosNegativos()
+	 * @see ExcepcionNumerosNegativos()
 	 * @see errorCero()
 	 * @return devuelve la suma de los otros parametros.
 	 */
 	public double suma3NumeroReales(double sumando1, double sumando2, double sumando3) throws ExcepcionNumeroNegativo {
-		
+		if (sumando1==0||sumando2==0) {
+			errorCero();
+		}
 		if (sumando1<0 || sumando2<0|| sumando3<0 ) {
 			throw new ExcepcionNumeroNegativo();
 		}
@@ -81,7 +88,7 @@ public class Suma {
 	}
 
 	/**
-	 * 
+	 * @see ExcepcionNumerosNegativos()
 	 * @param sumando valor que le damos
 	 * @return devuelve un valor, acumulador mas un parametro
 	 */
@@ -104,19 +111,6 @@ public class Suma {
 		return (double) i;
 	}
 
-	/**
-	 * Este metodo es privado, dado que solo se usa dentro de esta clase Devuelve
-	 * "Error" por pantalla cuando se introduce un numero negativo dado el caso de
-	 * que la calculadora no operase con numeros negativos
-	 * 
-	 * @param i recibe cualquier numero, se comprueba si es negativo
-	 * @return devuelve "Error" si el numero es negativo"
-	 * @deprecated Este metodo podria dejar de ser utilizado con excepciones
-	 */
-
-	private String errorNumerosNegativos(int i) {
-		return "Error";
-	}
 
 	/**
 	 * Este metodo es privado, dado que solo se usa dentro de esta clase Devuelve
@@ -125,9 +119,8 @@ public class Suma {
 	 * 
 	 * @param i recibe cualquier numero, se comprueba si es igual a 0
 	 * @return devuelve "Error"
-	 * @deprecated Este metodo podria dejar de ser utilizado con excepciones
 	 */
-	private String errorCero(int i) {
+	private String errorCero() {
 		return "Error";
 	}
 
