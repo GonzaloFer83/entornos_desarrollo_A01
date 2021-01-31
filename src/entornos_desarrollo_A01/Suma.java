@@ -1,17 +1,24 @@
 package entornos_desarrollo_A01;
 
+import exceptions.ExcepcionNumeroNegativo;
+
 /**
  * Esta clase es para realizar sumas.
  * 
  * @since 19/01/2021
  * @author Alvaro Moreno Chihcarro
- * @version 1.0
+ * @version 1.1
  */
 public class Suma {
 	/**
 	 * @param acumulador es el valor que se acumula en todas las operaciones.
 	 */
 	private double acumulador;
+	
+	public Suma() {
+		
+	}
+
 
 	/**
 	 * 
@@ -22,8 +29,13 @@ public class Suma {
 	 * @return Devuelve una suma de dos numeros reales que guarda el valor
 	 *         acumulado.
 	 */
-	double suma2NumeroReales(double sumando1, double sumando2) {
-		return acumulador;
+	double suma2NumeroReales(double sumando1, double sumando2)throws ExcepcionNumeroNegativo {
+		if (sumando1<0 || sumando2<0) {
+			throw new ExcepcionNumeroNegativo();
+		}
+		acumulador = sumando1 + sumando2;
+			return acumulador;	
+		
 	}
 
 	/**
@@ -37,8 +49,16 @@ public class Suma {
 	 * @param sumando2 recibe un numero entero
 	 * @return devuelve el valor de la suma en un numero real.
 	 */
-	public double sumaNumerosEnteros(int sumando1, int sumando2) {
-		return acumulador;
+	public  double sumaNumerosEnteros(int sumando1, int sumando2)
+			throws ExcepcionNumeroNegativo{
+		int a;
+	
+		if (sumando1<0 || sumando2<0) {
+			throw new ExcepcionNumeroNegativo();
+		}
+		a= sumando1+sumando2;
+		acumulador= convertirEnteros(a);
+			return acumulador;	
 	}
 
 	/**
@@ -50,8 +70,14 @@ public class Suma {
 	 * @see errorCero()
 	 * @return devuelve la suma de los otros parametros.
 	 */
-	public double suma3NumeroReales(double sumando1, double sumando2, double sumando3) {
-		return acumulador;
+	public double suma3NumeroReales(double sumando1, double sumando2, double sumando3) throws ExcepcionNumeroNegativo {
+		
+		if (sumando1<0 || sumando2<0|| sumando3<0 ) {
+			throw new ExcepcionNumeroNegativo();
+		}
+		acumulador= sumando1+sumando2+sumando3;
+		
+			return acumulador;	
 	}
 
 	/**
@@ -59,7 +85,11 @@ public class Suma {
 	 * @param sumando valor que le damos
 	 * @return devuelve un valor, acumulador mas un parametro
 	 */
-	public double sumaAcumulada(double sumando) {
+	public double sumaAcumulada(double sumando)throws ExcepcionNumeroNegativo {
+			if (sumando<0) {
+				throw new ExcepcionNumeroNegativo();
+			}
+		acumulador = acumulador +sumando;
 		return acumulador;
 	}
 
@@ -70,7 +100,7 @@ public class Suma {
 	 * @return convierte el numero entero recibido en un double o numero real
 	 */
 
-	private double convertirEnteros(int i) {
+	private double convertirEnteros(int  i) {
 		return (double) i;
 	}
 
