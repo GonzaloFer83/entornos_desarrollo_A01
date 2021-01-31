@@ -13,7 +13,13 @@ public class Multiplicacion {
 	 * Aqui acumulamos el valor de las operaciones
 	 */
 	private double acumulador;
-	
+	/**
+	 * En el constructor por defecto se incializa el campo acumulador
+	 */
+	public Multiplicacion() {
+		super();
+		this.acumulador = 1;
+	}
 	/** +
 	 * Metodo para realizar el producto con dos numeros reales
 	 * 
@@ -24,8 +30,7 @@ public class Multiplicacion {
 	 * @see errorCero();
 	 */
 	public double multiNumReales(double multiplicando, double multiplicador) {
-
-		return acumulador;
+		return acumulador *= (multiplicando * multiplicador);
 	}
 
 	/**
@@ -38,8 +43,7 @@ public class Multiplicacion {
 	 * @see errorCero();
 	 */
 	public double multiNumEnteros(int multiplicando, int multiplicador) {
-
-		return acumulador;
+		return acumulador *= (multiplicando * multiplicador);
 	}
 
 	/**
@@ -52,9 +56,9 @@ public class Multiplicacion {
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double multiTresReales(double multiplicando, double multiplicador1, double multiplicador2) {
+	public double multiReales(double multiplicando, double multiplicador1, double multiplicador2) {
 
-		return acumulador;
+		return acumulador *= (multiplicando * multiplicador1*multiplicador2);
 	}
 
 	/**
@@ -69,7 +73,10 @@ public class Multiplicacion {
 	 * @see comprobarExponente()
 	 */
 	public double potencia(int base, double expontente) {
-		return acumulador;
+		if (comprobarExponente(expontente)!=true) {
+			return acumulador*=1;	
+		}
+		return acumulador *= Math.pow(base, expontente);
 	}
 
 	/**
@@ -109,7 +116,10 @@ public class Multiplicacion {
 	 * @param exp se comprobara si exponente supera el valor maximo permitido del
 	 *            dato primitivo
 	 */
-	private String comprobarExponente(double exp) {
-		return "Error";
+	private boolean comprobarExponente(double exp) {
+		if (exp > Float.MAX_VALUE) {
+			return false;
+		}
+		return true;
 	}
 }
