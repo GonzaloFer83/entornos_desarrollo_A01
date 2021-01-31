@@ -1,5 +1,6 @@
 package entornos_desarrollo_A01;
 
+import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
 
 /**
@@ -53,10 +54,10 @@ public class Suma {
 	 * @return devuelve el valor de la suma en un numero real.
 	 */
 	public  double sumaNumerosEnteros(int sumando1, int sumando2)
-			throws ExcepcionNumeroNegativo{
+			throws ExcepcionNumeroNegativo, ExcepcionErrorCero{
 		int a;
 		if (sumando1==0||sumando2==0) {
-			errorCero();
+			throw new ExcepcionErrorCero();
 		}
 		if (sumando1<0 || sumando2<0) {
 			throw new ExcepcionNumeroNegativo();
@@ -75,10 +76,9 @@ public class Suma {
 	 * @see errorCero()
 	 * @return devuelve la suma de los otros parametros.
 	 */
-	public double suma3NumeroReales(double sumando1, double sumando2, double sumando3) throws ExcepcionNumeroNegativo {
+	public double suma3NumeroReales(double sumando1, double sumando2, double sumando3) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
 		if (sumando1==0||sumando2==0) {
-			errorCero();
-		}
+			throw new ExcepcionErrorCero();		}
 		if (sumando1<0 || sumando2<0|| sumando3<0 ) {
 			throw new ExcepcionNumeroNegativo();
 		}
