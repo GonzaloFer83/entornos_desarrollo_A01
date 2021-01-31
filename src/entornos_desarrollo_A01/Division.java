@@ -1,6 +1,6 @@
 package entornos_desarrollo_A01;
 
-import exceptions.ExcepcionDivisionPorCero;
+import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
 
 /**
@@ -31,10 +31,10 @@ public class Division {
 	 * @throws ExcepcionNumeroNegativo
 	 */
 	public double divisionNumReales(double dividendo, double divisor)
-			throws ExcepcionDivisionPorCero, ExcepcionNumeroNegativo {
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
 
 		if (divisor == 0) {
-			throw new ExcepcionDivisionPorCero();
+			throw new ExcepcionErrorCero();
 		} else if (dividendo < 0 || divisor < 0) {
 			throw new ExcepcionNumeroNegativo();
 		}
@@ -54,9 +54,9 @@ public class Division {
 	 * @throws ExcepcionDivisionPorCero
 	 * @throws ExcepcionNumeroNegativo
 	 */
-	public double sumNumEnteros(int dividendo, int divisor) throws ExcepcionDivisionPorCero, ExcepcionNumeroNegativo {
+	public double sumNumEnteros(int dividendo, int divisor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
 		if (divisor == 0) {
-			throw new ExcepcionDivisionPorCero();
+			throw new ExcepcionErrorCero();
 		} else if (dividendo < 0 || divisor < 0) {
 			throw new ExcepcionNumeroNegativo();
 		}
@@ -89,9 +89,9 @@ public class Division {
 	 * @throws ExcepcionDivisionPorCero
 	 * @throws ExcepcionNumeroNegativo  {@link Multiplicacion #potencia()}
 	 */
-	public double raizDeNumero(int numeroRaiz) throws ExcepcionDivisionPorCero, ExcepcionNumeroNegativo {
+	public double raizDeNumero(int numeroRaiz) throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
 		if (numeroRaiz == 0) {
-			throw new ExcepcionDivisionPorCero();
+			throw new ExcepcionErrorCero();
 		} else if (numeroRaiz < 0) {
 			throw new ExcepcionNumeroNegativo();
 		}
