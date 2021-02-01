@@ -80,15 +80,10 @@ public class Primos {
 		 */
 		
 		public int factorial (int x) {
-<<<<<<< Updated upstream
+
 			 int acumulador= x;
 			for(int i =1; i<x;i++) {
 				acumulador=(int) multiplicacion1.multiNumEnteros(acumulador, i);
-=======
-			int acumulador = x;
-			for(int i =1; i<x;x++) {
-				acumulador = (int)multiplicacion1.multiNumEnteros(acumulador, i);
->>>>>>> Stashed changes
 			}
 			return acumulador;
 			}
