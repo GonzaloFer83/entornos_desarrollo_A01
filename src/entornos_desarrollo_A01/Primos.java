@@ -1,5 +1,7 @@
 package entornos_desarrollo_A01;
 import entornos_desarrollo_A01.Multiplicacion;
+import exceptions.ExcepcionNumeroNegativo;
+
 /**
  * esta clase sirve para realizar numeros primos
  * 

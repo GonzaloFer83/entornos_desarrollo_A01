@@ -29,10 +29,11 @@ public class Suma {
 	 * @see errorCero()
 	 * @return Devuelve una suma de dos numeros reales que guarda el valor
 	 *         acumulado.
+	 * @throws ExcepcionErrorCero 
 	 */
-	double suma2NumeroReales(double sumando1, double sumando2)throws ExcepcionNumeroNegativo {
+	double suma2NumeroReales(double sumando1, double sumando2)throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
 		if (sumando1==0||sumando2==0) {
-			errorCero();
+			throw new ExcepcionErrorCero();
 		}
 		if (sumando1<0 || sumando2<0) {
 			throw new ExcepcionNumeroNegativo();
