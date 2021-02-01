@@ -82,7 +82,7 @@ public class Primos {
 		public int factorial (int x) {
 
 			 int acumulador= x;
-			for(int i =1; i<x;i++) {
+			for(int i =1; i<x;x++) {
 				acumulador=(int) multiplicacion1.multiNumEnteros(acumulador, i);
 			}
 			return acumulador;
