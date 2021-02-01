@@ -101,30 +101,6 @@ public class Resta {
 	}
 	
 	
-	/**
-	 * Este metodo es privado, dado que solo se usa dentro de esta clase
-	 * Devuelve "Error" por pantalla cuando se introduce un numero negativo
-	 * dado el caso de que la calculadora no operase con numeros negativos
-	 * @param i recibe cualquier numero, se comprueba si es negativo
-	 * @return devuelve "Error" si el numero es negativo"
-	 * @deprecated Este metodo podre dejar de ser utilizado con excepciones
-	 */
-	private String errorNumerosNegativos (int i) {
-		return "Error";
-	}
-	
-	
-	
-	/**
-	 * Este metodo es privado, dado que solo se usa dentro de esta clase
-	 * Devuelve "Error" por pantalla cuando el numero introducido es igual a O
-	 * dado el caso de que la calculadora no operase con ceros
-	 * @param i recibe cualquier numero, se comprueba si es igual a 0
-	 * @return devuelve "Error"
-	 * @deprecated Este metodo podra dejar de ser utilizado con excepciones
-	 */
-	private String errorCero (int i) {
-		return "Error";
-	}
+
 	
 }
