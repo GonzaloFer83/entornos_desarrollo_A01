@@ -1,6 +1,7 @@
 package entornos_desarrollo_A01;
 
 import entornos_desarrollo_A01.Multiplicacion;
+import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
 
 
@@ -26,17 +27,19 @@ public class Primos {
 		 * @param boolean x
 		 * @return esPrimo el cual te dice si el numero es primo o no. 
 		 * @throws ExcepcionNumeroNegativo 
-		 * @throws 
+		 * @throws ExcepcionErrorCero 
 		 * @see errorNumerosNegativos()
 	     * @see errorCero()
 		 */
-	 public boolean esPrimo(int x) throws ExcepcionNumeroNegativo {
+	 public boolean esPrimo(int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
 				
 				
 		 if (x<0) {
-				throw new ExcepcionNumeroNegativo();
+			throw new ExcepcionNumeroNegativo();
 			}
-		 if (x=0) {
+		 if (x==0) {
+			 throw new ExcepcionErrorCero();
+		 }
 			
 		
 				
@@ -83,6 +86,8 @@ public class Primos {
 		 * 
 		 * @param x
 		 * @return acumulador devuelve un factorial de un numero entero.
+		 * @throws ExcepcionNumeroNegativo 
+		 * @throws ExcepcionErrorCero 
 		 * @see errorNumerosNegativos()
 	     * @see errorCero() 
 	     * @link     -- llamar a la clase Multiplicacion --
@@ -90,14 +95,16 @@ public class Primos {
 	     * llamando a estos métodos privados. 
 		 */
 		
-		public int factorial (int x) {
+		public int factorial (int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+			 if (x<0) {
+					throw new ExcepcionNumeroNegativo();
+					}
+				 if (x==0) {
+					 throw new ExcepcionErrorCero();
+				 }
 
 			 int acumulador= x;
-				if (sumando1<0 || sumando2<0) {
-					throw new ExcepcionNumeroNegativo();
-				}
-				a= sumando1+sumando2;
-				acumulador= convertirEnteros(a);
+				
 				
 			for(int i =1; i<x;x++) {	
 				acumulador=(int) multiplicacion1.multiNumEnteros(acumulador, i);
