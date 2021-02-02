@@ -7,7 +7,7 @@ public class Main_test {
 
 		Division div = new Division();
 		try {
-			System.out.println("Valor: " + div.divisionNumReales(10, 0));
+			System.out.println("Valor: " + div.divisionNumReales(10, 2));
 		} catch (ExcepcionParametroNoValido error) {
 			System.out.println(error.getMessage());
 		}

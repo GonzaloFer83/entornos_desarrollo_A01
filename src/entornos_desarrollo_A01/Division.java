@@ -2,6 +2,7 @@ package entornos_desarrollo_A01;
 
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
+import exceptions.ExceptionExpAlto;
 
 /**
  * Documentando Division con JavaDoc
@@ -88,8 +89,9 @@ public class Division {
 	 * @return devuelve el resultado de la raiz de un valor dado
 	 * @throws ExcepcionDivisionPorCero
 	 * @throws ExcepcionNumeroNegativo  {@link Multiplicacion #potencia()}
+	 * @throws ExceptionExpAlto 
 	 */
-	public double raizDeNumero(int numeroRaiz) throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+	public double raizDeNumero(int numeroRaiz) throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionExpAlto {
 		if (numeroRaiz == 0) {
 			throw new ExcepcionErrorCero();
 		} else if (numeroRaiz < 0) {
