@@ -5,7 +5,10 @@ import exceptions.ExcepcionParametroNoValido;
 public class Principal {
 
 	public static void main(String[] args) {
-
+		/*
+		 * Crearemos los objetos que nos hagan falta para realizar una prueba de alguno
+		 * de nuestros metodos de cada clase
+		 */
 		Division div = new Division();
 		try {
 			System.out.println("El valor de la Raiz Cuadrada de 81 es: " + div.raizDeNumero(81));
