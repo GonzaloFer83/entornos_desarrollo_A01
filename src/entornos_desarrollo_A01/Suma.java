@@ -93,11 +93,15 @@ public class Suma {
 	 * @param sumando valor que le damos
 	 * @return devuelve un valor, acumulador mas un parametro
 	 */
-	public double sumaAcumulada(double sumando)throws ExcepcionNumeroNegativo {
+	public double sumaAcumulada(double sumando)throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
 			if (sumando<0) {
 				throw new ExcepcionNumeroNegativo();
 			}
 		acumulador = acumulador +sumando;
+		
+		if (sumando<=0) {
+			throw new ExcepcionErrorCero();
+		}
 		return acumulador;
 	}
 
@@ -113,16 +117,5 @@ public class Suma {
 	}
 
 
-	/**
-	 * Este metodo es privado, dado que solo se usa dentro de esta clase Devuelve
-	 * "Error" por pantalla cuando el numero introducido es igual a O dado el caso
-	 * de que la calculadora no operase con ceros
-	 * 
-	 * @param i recibe cualquier numero, se comprueba si es igual a 0
-	 * @return devuelve "Error"
-	 */
-	private String errorCero() {
-		return "Error";
-	}
 
 }
