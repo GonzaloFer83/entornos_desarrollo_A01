@@ -1,6 +1,7 @@
 package entornos_desarrollo_A01;
+
 import entornos_desarrollo_A01.Multiplicacion;
-import exceptions.ExcepcionNumeroNegativo;
+
 
 /**
  * esta clase sirve para realizar numeros primos
@@ -27,6 +28,14 @@ public class Primos {
 	     * @see errorCero()
 		 */
 	 public boolean esPrimo(int x) {
+				
+				
+		 if (x<0) {
+				throw new ExcepcionNumeroNegativo();
+			}
+			
+		
+				
 			if(x==1 || x%2==0) {
 						return false;
 			}
@@ -69,7 +78,7 @@ public class Primos {
 		/**
 		 * 
 		 * @param x
-		 * @return t devuelve un factorial de un numero entero.
+		 * @return acumulador devuelve un factorial de un numero entero.
 		 * @see errorNumerosNegativos()
 	     * @see errorCero() 
 	     * @link     -- llamar a la clase Multiplicacion --
@@ -78,9 +87,19 @@ public class Primos {
 		 */
 		
 		public int factorial (int x) {
-			for(int i =1; i<x+1;i++) {
-				multiplicacion1.multiNumReales(x, -x);
+
+			 int acumulador= x;
+				if (sumando1<0 || sumando2<0) {
+					throw new ExcepcionNumeroNegativo();
+				}
+				a= sumando1+sumando2;
+				acumulador= convertirEnteros(a);
+				
+			for(int i =1; i<x;x++) {	
+				acumulador=(int) multiplicacion1.multiNumEnteros(acumulador, i);
 			}
+			return acumulador;
 			}
+		
 		}
 
