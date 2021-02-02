@@ -1,10 +1,14 @@
 package entornos_desarrollo_A01;
 
+import exceptions.ExcepcionErrorCero;
+import exceptions.ExcepcionNumeroNegativo;
+import exceptions.ExceptionExpAlto;
+
 /**
  * Documentando Multiplicacion con JavaDoc
  * 
  * @autor Adrian Fernandez Herrero
- * @version 1.1
+ * @version 1.2
  * @since 31/01/2020
  * 
  */
@@ -31,8 +35,15 @@ public class Multiplicacion {
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double multiNumReales(double multiplicando, double multiplicador) {
-		return acumulador *= (multiplicando * multiplicador);
+	public double multiNumReales(double multiplicando, double multiplicador) throws ExcepcionErrorCero,ExcepcionNumeroNegativo {
+		if (multiplicando == 0 ||  multiplicador == 0) {
+			throw new ExcepcionErrorCero();
+		} else if (multiplicando < 0 || multiplicador < 0 ) {
+			throw new ExcepcionNumeroNegativo();
+		}else {
+			return acumulador *= (multiplicando * multiplicador);
+		}
+
 	}
 
 	/**
@@ -44,8 +55,15 @@ public class Multiplicacion {
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double multiNumEnteros(int multiplicando, int multiplicador) {
-		return acumulador *= (multiplicando * multiplicador);
+	public double multiNumEnteros(int multiplicando, int multiplicador) throws ExcepcionErrorCero,ExcepcionNumeroNegativo {
+		if (multiplicando == 0 ||  multiplicador == 0) {
+			throw new ExcepcionErrorCero();
+		} else if (multiplicando < 0 || multiplicador < 0 ) {
+			throw new ExcepcionNumeroNegativo();
+		}else {
+			return acumulador *= (multiplicando * multiplicador);
+		}
+
 	}
 
 	/**
@@ -58,9 +76,15 @@ public class Multiplicacion {
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double multiReales(double multiplicando, double multiplicador1, double multiplicador2) {
-
-		return acumulador *= (multiplicando * multiplicador1 * multiplicador2);
+	public double multiNumReales(double multiplicando, double multiplicador1, double multiplicador2) throws ExcepcionErrorCero,ExcepcionNumeroNegativo {
+		if (multiplicando == 0 ||  multiplicador1 == 0 || multiplicador2 == 0) {
+			throw new ExcepcionErrorCero();
+		} else if (multiplicando < 0 || multiplicador1 < 0 ||multiplicador2 < 0 ) {
+			throw new ExcepcionNumeroNegativo();
+		}else {
+			return acumulador *= (multiplicando * multiplicador1 * multiplicador2);
+		}
+		
 	}
 
 	/**
@@ -74,11 +98,13 @@ public class Multiplicacion {
 	 * 
 	 * @see comprobarExponente()
 	 */
-	public double potencia(int base, double expontente) {
-		if (comprobarExponente(expontente) != true) {
-			return acumulador *= 1;
+	public double potencia(int base, double expontente){
+		
+		if (expontente > Float.MAX_EXPONENT) {
+			throw new ExceptionExpAlto(expontente);
+		} else {
+			return acumulador *= Math.pow(base, expontente);
 		}
-		return acumulador *= Math.pow(base, expontente);
 	}
 
 	/**
