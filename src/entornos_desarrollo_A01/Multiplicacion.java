@@ -98,7 +98,7 @@ public class Multiplicacion {
 	 * 
 	 * @see comprobarExponente()
 	 */
-	public double potencia(int base, double expontente){
+	public double potencia(int base, double expontente) throws ExceptionExpAlto{
 		
 		if (expontente > Float.MAX_EXPONENT) {
 			throw new ExceptionExpAlto(expontente);
@@ -117,10 +117,5 @@ public class Multiplicacion {
 	 * @param exp se comprobara si exponente supera el valor maximo permitido del
 	 *            dato primitivo
 	 */
-	private boolean comprobarExponente(double exp) {
-		if (exp > Float.MAX_VALUE) {
-			return false;
-		}
-		return true;
-	}
+
 }
