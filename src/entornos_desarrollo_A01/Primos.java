@@ -1,6 +1,7 @@
 package entornos_desarrollo_A01;
 
 import entornos_desarrollo_A01.Multiplicacion;
+import exceptions.ExcepcionNumeroNegativo;
 
 
 /**
@@ -24,15 +25,18 @@ public class Primos {
 		 * 
 		 * @param boolean x
 		 * @return esPrimo el cual te dice si el numero es primo o no. 
+		 * @throws ExcepcionNumeroNegativo 
+		 * @throws 
 		 * @see errorNumerosNegativos()
 	     * @see errorCero()
 		 */
-	 public boolean esPrimo(int x) {
+	 public boolean esPrimo(int x) throws ExcepcionNumeroNegativo {
 				
 				
 		 if (x<0) {
 				throw new ExcepcionNumeroNegativo();
 			}
+		 if (x=0) {
 			
 		
 				
