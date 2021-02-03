@@ -108,16 +108,20 @@ public class Resta {
 	
 	
 	/**
-	 * 
+	 * Este método acumula operaciones de resta sobre un valor
 	 * @param substraendo recibe numero real 
-	 * @return devolver el resultado de la resta de un valor un valor acumulado  y el parametro substraendo
+	 * @return Devuelve el resultado de un valor al que se le van restando acumulativamente los valores introducidos
 	 * 
-	 * @see errorNumerosNegativos()
-	 * @see errorCero()  
-	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos o igual a 0
-	 * llamando a estos metodos privados 
+	 * @see errorNumerosNegativos() 
+	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos
 	 */
-	public double restaValorAcumulado (double substraendo) {
+	public double restaValorAcumulado (double substraendo) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+		if (substraendo<0) {
+			throw new ExcepcionNumeroNegativo();
+		}
+	acumulador = acumulador - substraendo;
+	
+	
 		return acumulador;
 	}
 	

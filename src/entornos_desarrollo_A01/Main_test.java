@@ -18,5 +18,12 @@ public class Main_test {
 		 }catch (ExcepcionParametroNoValido error) {
 			 System.out.println(error.getMessage());
 		 }
+		 
+		 Resta res = new Resta();
+		 try {
+			 System.out.println("valor: " + res.resta3NumerosReales(12, 3, 4));
+		 }catch (ExcepcionParametroNoValido error) {
+			 System.out.println(error.getMessage());
+		 }
 	}
 }
