@@ -8,7 +8,7 @@ import exceptions.ExcepcionNumeroNegativo;
 /**
  * esta clase sirve para realizar numeros primos
  * 
- *@author Sergio Blázquez Fernandez
+ *@author Sergio Blázquez Fernández
  *@since 19/01/2021
  *@version 1.1
  */
@@ -18,9 +18,6 @@ public class Primos {
 	 * creamos las variables esPrimo, c, m, t.
 	 */
 	boolean esPrimo;
-	int c;
-	double m;
-	int t;
 	Multiplicacion multiplicacion1 = new Multiplicacion();
 		/**
 		 * 
@@ -36,51 +33,82 @@ public class Primos {
 				
 		 if (x<0) {
 			throw new ExcepcionNumeroNegativo();
-			}
+		 }
 		 if (x==0) {
 			 throw new ExcepcionErrorCero();
 		 }
 			
-		
+		boolean esPrimo=true;
 				
 			if(x==1 || x%2==0) {
-						return false;
+						esPrimo= false;
 			}
 			else {
-				for(int i=3; i<Math.sqrt(x);i++) {
+				for(int i=2; i<Math.sqrt(x);i++) {
 					if(x%i==0) {
-						return true;
+						esPrimo= false;
 				    }
 				}
 			}
 
-			return true;
+			return esPrimo;
      }
 			
 				
 		
 		/**
 		 * @param x 
-		 * @return c devuelve la cantidad de numeros primos que hay.
+		 * @return resultado. Devuelve el numero primo que esta en la posicion que le has indicado.
+		 * @throws ExcepcionNumeroNegativo 
+		 * @throws ExcepcionErrorCero 
 		 * @see errorNumerosNegativos()
 	     * @see errorCero()
 		 */
 			
 		
-		public int iesimo(int x) {
-			return c;
+		public int iesimo(int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+			if (x<0) {
+				throw new ExcepcionNumeroNegativo();
+			}
+			if (x==0) {
+				 throw new ExcepcionErrorCero();
+			}
+			
+			int contadorprimos=0;
+			int resultado=1;
+			
+			for(int i=1;i<100;i++) {
+				if(esPrimo(i)) {
+					contadorprimos++;
+					if(contadorprimos==x) {
+						resultado=i;
+						break;						
+					}
+				}
+			}
+			return resultado;
 		}
 		/**
 		 * 
-		 * @param x
-		 * @param y
-		 * @return c devuelve el porcentaje de las dos variables x,y.
+		 * @param double x
+		 * @param double y
+		 * @return resultado. Devuelve el porcentaje de la variable 1 por la variable 2 entre 100.
+		 * @link     -- llamar a la clase Multiplicacion --
+		 * @throws ExcepcionNumeroNegativo 
+		 * @throws ExcepcionErrorCero 
 		 * @see errorNumerosNegativos()
 	     * @see errorCero()
 		 */
 		
-		public double porcentaje (double x,double y) {
-			return m;
+		public double porcentaje (double x,double y) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+			if (x<0) {
+				throw new ExcepcionNumeroNegativo();
+			}
+			if (x==0) {
+				 throw new ExcepcionErrorCero();
+			}
+			double resultado = multiplicacion1.multiNumReales(x, y/100);
+			return resultado;
 		}
 		/**
 		 * 
@@ -98,15 +126,15 @@ public class Primos {
 		public int factorial (int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
 			 if (x<0) {
 					throw new ExcepcionNumeroNegativo();
-					}
-				 if (x==0) {
+			 }
+			 if (x==0) {
 					 throw new ExcepcionErrorCero();
-				 }
+			 }
 
 			 int acumulador= x;
 				
 				
-			for(int i =1; i<x;x++) {	
+			for(int i =1; i<x;i++) {	
 				acumulador=(int) multiplicacion1.multiNumEnteros(acumulador, i);
 			}
 			return acumulador;
