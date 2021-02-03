@@ -1,6 +1,11 @@
 package entornos_desarrollo_A01;
 
+import exceptions.ExcepcionErrorCero;
+import exceptions.ExcepcionNumeroNegativo;
+
 /**
+ * 
+ * Documentando la clase Resta con JavaDoc
  * 
  * Esta clase es para realizar diverso tipo de restas 
  * 
@@ -13,30 +18,38 @@ public class Resta {
 	
 	
 	/** 
-	 * Aqui acumulamos el valor de las operaciones
+	 * En esta variable acumulamos el valor de las operaciones
 	 */
 	private double acumulador;
 	
 	
 	
 	/**
-	 * 
+	 * El método restaNumerosReales realiza la resta de dos números reales 
 	 * @param minuendo recibe un numero real
 	 * @param substraendo recibe un numero real 
 	 * @return devuelve la resta de los parametros minuendo y sustraendo
 	 * @see errorNumerosNegativos()
 	 * @see errorCero() 
 	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos o igual a 0
-	 * llamando a estos metodos privados 
+	 * llamando a las siguientes clases:  
+	 * @throws ExcepcionErrorCero 
+	 * @throws ExcepcionNumeroNegativo 
 	 */
-	public double restaNumerosReales (double minuendo, double substraendo) {	
+	public double restaNumerosReales (double minuendo, double substraendo) throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+			if (minuendo == 0 || substraendo == 0) {
+				throw new ExcepcionErrorCero();
+			} else if (minuendo < 0 || substraendo < 0) {
+				throw new ExcepcionNumeroNegativo();
+			}
+		acumulador = minuendo - substraendo;	
 		return acumulador;
 	}
 	
 	
 	
 	/**
-	 * 
+	 * El método restaNumerosEnteros realiza la resta de dos números enteros
 	 * @param minuendo recibe un numero entero
 	 * @param substraendo recibe un numero entero
 	 * @return devuelve un numero real, resultado de la resta de los parametros minuendo y substraendo
@@ -47,16 +60,29 @@ public class Resta {
 	 * @see errorNumerosNegativos()
 	 * @see errorCero() 
 	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos o igual a 0
-	 * llamando a estos metodos privados 
+	 * llamando a las clases siguientes:
+	 * @throws ExcepcionNumeroNegativo
+	 * @throws ExcepcionErrorCero
+	 *  
 	 */
-	public double restaNumerosEnteros (int minuendo, int substraendo) { 
+	public double restaNumerosEnteros (int minuendo, int substraendo) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+		int a;
+		if (minuendo == 0||substraendo == 0) {
+			throw new ExcepcionErrorCero();
+		}
+		if (minuendo < 0 || substraendo  <0) {
+			throw new ExcepcionNumeroNegativo();
+		}
+		
+		a =  minuendo - substraendo;
+		acumulador = convertirEnteros(a);
 		return acumulador;
 	}
 	
 	
 	
 	/**
-	 * 
+	 * El método resta3NumerosReales realiza la operación de restarle a un número real el valor de otros dos números reales
 	 * @param minuendo recibe un numero real	
 	 * @param substraendo1 recibe un numero real
 	 * @param substraendo2 recibe un numero real
@@ -67,7 +93,14 @@ public class Resta {
 	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos o igual a 0
 	 * llamando a estos metodos privados 
 	 */
-	public double resta3NumerosReales (double minuendo, double substraendo1, double substraendo2) {
+	public double resta3NumerosReales (double minuendo, double substraendo1, double substraendo2) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+		if (minuendo == 0|| substraendo1 == 0 || substraendo2 == 0) {
+			throw new ExcepcionErrorCero();		}
+		if (minuendo<0 || substraendo1<0|| substraendo2<0 ) {
+			throw new ExcepcionNumeroNegativo();
+		}
+		
+		acumulador = minuendo - substraendo1 - substraendo2;
 		return acumulador;
 		
 	}
