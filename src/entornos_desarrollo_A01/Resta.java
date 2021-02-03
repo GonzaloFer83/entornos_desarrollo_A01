@@ -1,6 +1,11 @@
 package entornos_desarrollo_A01;
 
+import exceptions.ExcepcionErrorCero;
+import exceptions.ExcepcionNumeroNegativo;
+
 /**
+ * 
+ * Documentando la clase Resta con JavaDoc
  * 
  * Esta clase es para realizar diverso tipo de restas 
  * 
@@ -13,7 +18,7 @@ public class Resta {
 	
 	
 	/** 
-	 * Aqui acumulamos el valor de las operaciones
+	 * En esta variable acumulamos el valor de las operaciones
 	 */
 	private double acumulador;
 	
@@ -29,8 +34,18 @@ public class Resta {
 	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos o igual a 0
 	 * llamando a estos metodos privados 
 	 */
+<<<<<<< Updated upstream
 	public double restaNumerosReales (double minuendo, double substraendo) {	
 		acumulador = minuendo - substraendo;
+=======
+	public double restaNumerosReales (double minuendo, double substraendo) throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+			if (minuendo == 0 || substraendo == 0) {
+				throw new ExcepcionErrorCero();
+			} else if (minuendo < 0 || substraendo < 0) {
+				throw new ExcepcionNumeroNegativo();
+			}
+		acumulador = minuendo - substraendo;	
+>>>>>>> Stashed changes
 		return acumulador;
 	}
 	

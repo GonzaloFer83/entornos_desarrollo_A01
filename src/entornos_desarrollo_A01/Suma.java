@@ -65,7 +65,6 @@ public class Suma {
 
 	/**
 	 * Este metodo es privado dado que solo se usa dentro de esta clase
-	 * 
 	 * @param i recibe cualquier numero entero
 	 * @return convierte el numero entero recibido en un double o numero real
 	 */
