@@ -15,6 +15,12 @@ public class Principal {
 		} catch (ExcepcionParametroNoValido error) {
 			System.out.println(error.getMessage());
 		}
+		Suma sum = new Suma();
+		 try {
+			 System.out.println("valor: " + sum.sumaNumerosEnteros(5, 3));
+		 }catch (ExcepcionParametroNoValido error) {
+			 System.out.println(error.getMessage());
+		 }
 	}
 
 }
