@@ -97,11 +97,12 @@ public class Suma {
 			if (sumando<0) {
 				throw new ExcepcionNumeroNegativo();
 			}
-		acumulador = acumulador +sumando;
 		
-		if (sumando<=0) {
+		
+		if (sumando==0) {
 			throw new ExcepcionErrorCero();
 		}
+		acumulador = acumulador +sumando;
 		return acumulador;
 	}
 
