@@ -11,13 +11,23 @@ public class Principal {
 		 */
 		Division div = new Division();
 		try {
+			
+			
 			System.out.println("El valor de la Raiz Cuadrada de 81 es: " + div.raizDeNumero(81));
+			
+			
 		} catch (ExcepcionParametroNoValido error) {
 			System.out.println(error.getMessage());
 		}
 		Suma sum = new Suma();
 		 try {
 			 System.out.println("valor: " + sum.sumaNumerosEnteros(5, 3));
+		 }catch (ExcepcionParametroNoValido error) {
+			 System.out.println(error.getMessage());
+		 }
+		 Resta res = new Resta();
+		 try {
+			 System.out.println("valor: " + res.resta3NumerosReales(12, 3, 4));
 		 }catch (ExcepcionParametroNoValido error) {
 			 System.out.println(error.getMessage());
 		 }
