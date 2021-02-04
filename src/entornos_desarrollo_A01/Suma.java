@@ -99,7 +99,7 @@ public class Suma {
 			}
 		acumulador = acumulador +sumando;
 		
-		if (sumando<=0) {
+		if (sumando==0) {
 			throw new ExcepcionErrorCero();
 		}
 		return acumulador;
