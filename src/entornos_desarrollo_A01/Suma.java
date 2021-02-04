@@ -25,8 +25,8 @@ public class Suma {
 	 * 
 	 * @param sumando1 recibe un numero real
 	 * @param sumando2 recibe un numero real
-	 * @see ExcepcionNumerosNegativos()
-	 * @see errorCero()
+	 * @see ExcepcionNumerosNegativos() este metodo comprueba que no haya numero negativo.
+	 * @see ExcepcionErrorCero()  en este metodo comprueba que el numero no sea 0.
 	 * @return Devuelve una suma de dos numeros reales que guarda el valor
 	 *         acumulado.
 	 * @throws ExcepcionErrorCero 
@@ -47,9 +47,9 @@ public class Suma {
 	 * Realiza la suma de dos numeros enteros,y lo transforma a double llamando a un
 	 * metodo privado.
 	 * 
-	 * @see convertirEnteros()
-	 * @see ExcepcionNumerosNegativos()
-	 * @see errorCero()
+	 * @see convertirEnteros() este metodo convierte los numeros enteros en double.
+	 * @see ExcepcionNumerosNegativos() este metodo comprueba que no haya numero negativo.
+	 * @see ExcepcionErrorCero() en este metodo comprueba que el numero no sea 0.
 	 * @param sumando1 recibe un numero entero
 	 * @param sumando2 recibe un numero entero
 	 * @return devuelve el valor de la suma en un numero real.
@@ -73,8 +73,8 @@ public class Suma {
 	 * @param sumando1 recibe un numero real
 	 * @param sumando2 recibe un numero real
 	 * @param sumando3 recibe un numero real
-	 * @see ExcepcionNumerosNegativos()
-	 * @see errorCero()
+	 * @see ExcepcionNumerosNegativos()  este metodo comprueba que no haya numero negativo.
+	 * @see ExcepcionErrorCero()  en este metodo comprueba que el numero no sea 0.
 	 * @return devuelve la suma de los otros parametros.
 	 */
 	public double suma3NumeroReales(double sumando1, double sumando2, double sumando3) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
@@ -89,7 +89,8 @@ public class Suma {
 	}
 
 	/**
-	 * @see ExcepcionNumerosNegativos()
+	 * @see ExcepcionNumerosNegativos() este metodo comprueba que no haya numero negativo.
+	 * @see ExcepcionErrorCero () en este metodo comprueba que el numero no sea 0.
 	 * @param sumando valor que le damos
 	 * @return devuelve un valor, acumulador mas un parametro
 	 */
