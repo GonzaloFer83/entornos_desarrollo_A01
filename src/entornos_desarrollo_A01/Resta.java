@@ -113,16 +113,22 @@ public class Resta {
 	 * @return Devuelve el resultado de un valor al que se le van restando acumulativamente los valores introducidos
 	 * 
 	 * @see errorNumerosNegativos() 
-	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos
+	 * @see errorCero()
+	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos ni iguales a cero
 	 */
 	public double restaValorAcumulado (double substraendo) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
 		if (substraendo<0) {
 			throw new ExcepcionNumeroNegativo();
 		}
-	acumulador = acumulador - substraendo;
-	
-	
+		
+		if (substraendo==0) {
+			throw new ExcepcionErrorCero();
+		}
+		
+		acumulador = acumulador - substraendo;
 		return acumulador;
+		
+	
 	}
 	
 	

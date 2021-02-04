@@ -15,7 +15,7 @@ public class Main_test {
 		Suma sum = new Suma();
 		 try {
 			 System.out.println("valor: " + sum.sumaNumerosEnteros(5, 3));
-		 }catch (ExcepcionParametroNoValido error) {
+		 } catch (ExcepcionParametroNoValido error) {
 			 System.out.println(error.getMessage());
 		 }
 		 
@@ -25,5 +25,7 @@ public class Main_test {
 		 }catch (ExcepcionParametroNoValido error) {
 			 System.out.println(error.getMessage());
 		 }
+		 
 	}
+	
 }
