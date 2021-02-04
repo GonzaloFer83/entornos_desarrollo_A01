@@ -27,6 +27,11 @@ public class Principal {
 		 }catch (ExcepcionParametroNoValido error) {
 			 System.out.println(error.getMessage());
 		 }
+		 Multiplicacion multi = new Multiplicacion();
+		 try {
+			 System.out.println("valor: "+multi.multiNumEnteros(2, 6));
+		 }catch (ExcepcionParametroNoValido error) {
+			 System.out.println(error.getMessage());
+		 }
 	}
-
 }
