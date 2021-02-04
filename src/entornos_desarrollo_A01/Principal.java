@@ -33,5 +33,11 @@ public class Principal {
 		 }catch (ExcepcionParametroNoValido error) {
 			 System.out.println(error.getMessage());
 		 }
+		 Primos prim = new Primos();
+		 try {
+			 System.out.println("valor: " + prim.porcentaje(100, 20));
+		 }catch (ExcepcionParametroNoValido error) {
+			 System.out.println(error.getMessage());
+		 }
 	}
 }
