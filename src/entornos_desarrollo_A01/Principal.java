@@ -1,5 +1,7 @@
 package entornos_desarrollo_A01;
 
+import java.util.InputMismatchException;
+
 import exceptions.ExcepcionParametroNoValido;
 
 public class Principal {
@@ -14,7 +16,9 @@ public class Principal {
 			System.out.println("El valor de la Raiz Cuadrada de 81 es: " + div.raizDeNumero(81));	
 		} catch (ExcepcionParametroNoValido error) {
 			System.out.println(error.getMessage());
-		}
+		}catch (InputMismatchException ex) {
+            System.out.println("Debe ingresar obligatoriamente un número entero.");
+        }
 		Suma sum = new Suma();
 		 try {
 			 System.out.println("valor: " + sum.sumaNumerosEnteros(5, 3));
