@@ -3,6 +3,7 @@ package junitTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -33,7 +34,7 @@ class DivisionTest {
 	}
 
 	@Test
-	void laDivisionEntre12y6DebeSer2() throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+	void laDivisionEnteraEntre12y6DebeSer2() throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
 		int dividiendo = 12;
 		int divisor = 6;
 		int esperado = 2;
@@ -41,11 +42,31 @@ class DivisionTest {
 		assertEquals(esperado, obtenido, "La division entre 12 y 6 debe ser 2");
 	}
 	@Test
+	void elValorInversoDe12Es0_08() throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+		int numeroInverso = 12;
+		double esperado = 0.08;
+		double obtenido = div.inversoValor(numeroInverso);
+		assertEquals(esperado, obtenido, "El inverso de 12 ha de ser 0.08");
+	}
+	
+	@Test
 	void laRaizDe49DebeSer7() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionExpAlto {
 		int numeroRaiz = 49;
 		int esperado = 7;
 		double obtenido = div.raizDeNumero(numeroRaiz);
 		assertEquals(esperado, obtenido,"La raiz cuadrada de 49 debe ser 7");
+	}
+	@Test
+	void testQuePasaSiDivisorEsCero(){
+		int dividendo = 12;
+		int divisor = 0;
+		Assertions.assertThrows(ExcepcionErrorCero.class, ()-> div.sumNumEnteros(dividendo, divisor));	
+	}
+	@Test
+	void testQuePasaSiUnoDeLosParametrosEsNegativo(){
+		int dividendo = 12;
+		int divisor = -5;
+		Assertions.assertThrows(ExcepcionNumeroNegativo.class, ()-> div.sumNumEnteros(dividendo, divisor));	
 	}
 
 }
