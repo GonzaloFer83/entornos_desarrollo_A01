@@ -1,6 +1,6 @@
 package exceptions;
 
-public class ExceptionExpAlto extends ExcepcionParametroNoValido {
+public class ExceptionNumeroAlto extends ExcepcionParametroNoValido {
 	private static final long serialVersionUID = 1L;
 
 	/*
@@ -8,8 +8,8 @@ public class ExceptionExpAlto extends ExcepcionParametroNoValido {
 	 * para el exponente
 	 * 
 	 */
-	public ExceptionExpAlto(double newExpo) {
-		super(newExpo + " es mas alto que el MAX_EXPONENT permitido");
+	public ExceptionNumeroAlto(double doublevalor) {
+		super(doublevalor + " ese valor es demasiado alto");
 	}
 
 }
