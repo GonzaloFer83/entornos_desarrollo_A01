@@ -26,6 +26,7 @@ public class Primos {
 		 * @return esPrimo el cual te dice si el numero es primo o no. 
 		 * @throws ExcepcionNumeroNegativo 
 		 * @throws ExcepcionErrorCero 
+		 * @throws ExceptionNumeroAlto
 		 * @see errorNumerosNegativos()
 	     * @see errorCero()
 		 */
@@ -56,6 +57,7 @@ public class Primos {
 		 * @return resultado. Devuelve el numero primo que esta en la posicion que le has indicado.
 		 * @throws ExcepcionNumeroNegativo 
 		 * @throws ExcepcionErrorCero 
+		 * @throws ExceptionNumeroAlto
 		 * @see errorNumerosNegativos()
 	     * @see errorCero()
 		 */
@@ -86,6 +88,7 @@ public class Primos {
 		 * @link     -- llamar a la clase Multiplicacion --
 		 * @throws ExcepcionNumeroNegativo 
 		 * @throws ExcepcionErrorCero 
+		 * @throws ExcepcionNumeroAlto
 		 * @see errorNumerosNegativos()
 	     * @see errorCero()
 		 */
@@ -103,6 +106,7 @@ public class Primos {
 		 * @return acumulador devuelve un factorial de un numero entero.
 		 * @throws ExcepcionNumeroNegativo 
 		 * @throws ExcepcionErrorCero 
+		 * @throws ExceptionNumeroAlto
 		 * @see errorNumerosNegativos()
 	     * @see errorCero() 
 	     * @link     -- llamar a la clase Multiplicacion --
