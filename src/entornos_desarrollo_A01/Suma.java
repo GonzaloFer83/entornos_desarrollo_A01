@@ -95,10 +95,9 @@ public class Suma {
 	 * @return devuelve un valor, acumulador mas un parametro
 	 */
 	public double sumaAcumulada(double sumando)throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
-			if (sumando<0) {
+		if (sumando<0) {
 				throw new ExcepcionNumeroNegativo();
-			}
-		
+		}
 		
 		if (sumando==0) {
 			throw new ExcepcionErrorCero();
