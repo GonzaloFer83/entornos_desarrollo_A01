@@ -2,6 +2,7 @@ package entornos_desarrollo_A01;
 
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
+import exceptions.ExceptionNumeroAlto;
 
 /**
  * 
@@ -36,12 +37,11 @@ public class Resta {
 	 * @throws ExcepcionErrorCero 
 	 * @throws ExcepcionNumeroNegativo 
 	 */
-	public double restaNumerosReales (double minuendo, double substraendo) throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
-			if (minuendo == 0 || substraendo == 0) {
-				throw new ExcepcionErrorCero();
-			} else if (minuendo < 0 || substraendo < 0) {
-				throw new ExcepcionNumeroNegativo();
-			}
+	public double restaNumerosReales (double minuendo, double substraendo) throws ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroNegativo {
+		
+		minuendo = comprobarValores(minuendo);
+		substraendo = comprobarValores(substraendo);
+		
 		acumulador = minuendo - substraendo;	
 		return acumulador;
 	}
@@ -65,15 +65,11 @@ public class Resta {
 	 * @throws ExcepcionErrorCero
 	 *  
 	 */
-	public double restaNumerosEnteros (int minuendo, int substraendo) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	public double restaNumerosEnteros (int minuendo, int substraendo) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
 		int a;
-		if (minuendo == 0||substraendo == 0) {
-			throw new ExcepcionErrorCero();
-		}
-		if (minuendo < 0 || substraendo  <0) {
-			throw new ExcepcionNumeroNegativo();
-		}
-		
+		minuendo = comprobarValores(minuendo);
+		substraendo = comprobarValores(substraendo);
+				
 		a =  minuendo - substraendo;
 		acumulador = convertirEnteros(a);
 		return acumulador;
@@ -93,12 +89,12 @@ public class Resta {
 	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos o igual a 0
 	 * llamando a estos metodos privados 
 	 */
-	public double resta3NumerosReales (double minuendo, double substraendo1, double substraendo2) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
-		if (minuendo == 0|| substraendo1 == 0 || substraendo2 == 0) {
-			throw new ExcepcionErrorCero();		}
-		if (minuendo<0 || substraendo1<0|| substraendo2<0 ) {
-			throw new ExcepcionNumeroNegativo();
-		}
+	public double resta3NumerosReales (double minuendo, double substraendo1, double substraendo2) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+		
+		minuendo = comprobarValores(minuendo);
+		substraendo1 = comprobarValores(substraendo1);
+		substraendo2 = comprobarValores(substraendo2);
+
 		
 		acumulador = minuendo - substraendo1 - substraendo2;
 		return acumulador;
@@ -116,19 +112,13 @@ public class Resta {
 	 * @see errorCero()
 	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos ni iguales a cero
 	 */
-	public double restaValorAcumulado (double substraendo) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
-		if (substraendo<0) {
-			throw new ExcepcionNumeroNegativo();
-		}
+	public double restaValorAcumulado (double substraendo) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
 		
-		if (substraendo==0) {
-			throw new ExcepcionErrorCero();
-		}
-		
+		substraendo = comprobarValores(substraendo);
+			
 		acumulador = acumulador - substraendo;
 		return acumulador;
 		
-	
 	}
 	
 	
@@ -144,6 +134,28 @@ public class Resta {
 	}
 	
 	
+	private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto{
+		if (valor == 0) {
+			throw new ExcepcionErrorCero();
+		} else if (valor < 0 ) {
+			throw new ExcepcionNumeroNegativo();
+		}else if (valor >Double.MAX_VALUE) {
+			throw new ExceptionNumeroAlto();
+		}else if (Double.isNaN(valor)) {
+			throw new ArithmeticException();
+		}
+		return valor;
+	}
+	private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+		if (valor == 0) {
+			throw new ExcepcionErrorCero();
+		} else if (valor < 0 ) {
+			throw new ExcepcionNumeroNegativo();
+		}else if (valor >Integer.MAX_VALUE) {
+			throw new ExceptionNumeroAlto();
+		}
+		return valor;
+	}
 
 	
 }
