@@ -6,12 +6,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 
 import entornos_desarrollo_A01.Primos;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
 import exceptions.ExcepcionParametroNoValido;
-
+@Timeout (1)
 class PrimosTest {
 	private Primos prim;
 
@@ -45,6 +46,7 @@ class PrimosTest {
 
 		
 	}
+	
 	@Test
 	void testIesimo() throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
 		int primo = 7;
