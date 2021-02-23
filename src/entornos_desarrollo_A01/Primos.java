@@ -3,6 +3,7 @@ package entornos_desarrollo_A01;
 import entornos_desarrollo_A01.Multiplicacion;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
+import exceptions.ExceptionNumeroAlto;
 
 
 /**
@@ -28,15 +29,9 @@ public class Primos {
 		 * @see errorNumerosNegativos()
 	     * @see errorCero()
 		 */
-	 public boolean esPrimo(int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	 public boolean esPrimo(int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
 				
-				
-		 if (x<0) {
-			throw new ExcepcionNumeroNegativo();
-		 }
-		 if (x==0) {
-			 throw new ExcepcionErrorCero();
-		 }
+		 x = comprobarValores(x);
 			
 		boolean esPrimo=true;
 				
@@ -66,13 +61,8 @@ public class Primos {
 		 */
 			
 		
-		public int iesimo(int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
-			if (x<0) {
-				throw new ExcepcionNumeroNegativo();
-			}
-			if (x==0) {
-				 throw new ExcepcionErrorCero();
-			}
+		public int iesimo(int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
+			x = comprobarValores(x);
 			
 			int contadorprimos=0;
 			int resultado=1;
@@ -100,13 +90,10 @@ public class Primos {
 	     * @see errorCero()
 		 */
 		
-		public double porcentaje (double x,double y) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
-			if (x<0) {
-				throw new ExcepcionNumeroNegativo();
-			}
-			if (x==0) {
-				 throw new ExcepcionErrorCero();
-			}
+		public double porcentaje (double x,double y) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
+			x = comprobarValores(x);
+			y = comprobarValores(y);
+			
 			double resultado = multiplicacion1.multiNumReales(x, y/100);
 			return resultado;
 		}
@@ -123,13 +110,8 @@ public class Primos {
 	     * llamando a estos métodos privados. 
 		 */
 		
-		public int factorial (int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
-			 if (x<0) {
-					throw new ExcepcionNumeroNegativo();
-			 }
-			 if (x==0) {
-					 throw new ExcepcionErrorCero();
-			 }
+		public int factorial (int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
+			 x = comprobarValores(x);
 
 			 int acumulador= x;
 				
@@ -140,5 +122,30 @@ public class Primos {
 			return acumulador;
 			}
 		
+		private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto{
+			if (valor == 0) {
+				throw new ExcepcionErrorCero();
+			} else if (valor < 0 ) {
+				throw new ExcepcionNumeroNegativo();
+			}else if (valor >Double.MAX_VALUE) {
+				throw new ExceptionNumeroAlto();
+			}else if (Double.isNaN(valor)) {
+				throw new ArithmeticException();
+			}
+			return valor;
 		}
+		
+		private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+			if (valor == 0) {
+				throw new ExcepcionErrorCero();
+			} else if (valor < 0 ) {
+				throw new ExcepcionNumeroNegativo();
+			}else if (valor >Integer.MAX_VALUE) {
+				throw new ExceptionNumeroAlto();
+			}
+			return valor;
+		}
+
+		
+}
 
