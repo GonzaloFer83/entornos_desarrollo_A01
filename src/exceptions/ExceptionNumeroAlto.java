@@ -8,8 +8,8 @@ public class ExceptionNumeroAlto extends ExcepcionParametroNoValido {
 	 * para el exponente
 	 * 
 	 */
-	public ExceptionNumeroAlto(double doublevalor) {
-		super(doublevalor + " ese valor es demasiado alto");
+	public ExceptionNumeroAlto() {
+		super("Ese valor es demasiado alto");
 	}
 
 }
