@@ -119,6 +119,8 @@ public class Division {
 			throw new ExcepcionNumeroNegativo();
 		}else if (valor >Double.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
+		}else if (Double.isNaN(valor)) {
+			throw new ArithmeticException();
 		}
 		return valor;
 	}
