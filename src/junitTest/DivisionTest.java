@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import entornos_desarrollo_A01.Division;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
-import exceptions.ExceptionExpAlto;
+import exceptions.ExceptionNumeroAlto;
 
 class DivisionTest {
 	private Division div;
@@ -25,7 +25,7 @@ class DivisionTest {
 	}
 
 	@Test
-	void divisionRealEntre12_2_y_6_3DebeSer1_94() throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+	void divisionRealEntre12_2_y_6_3DebeSer1_94() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
 		double dividiendo = 12.2;
 		double divisor = 6.3;
 		double esperado = 1.94;
@@ -34,7 +34,7 @@ class DivisionTest {
 	}
 
 	@Test
-	void laDivisionEnteraEntre12y6DebeSer2() throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+	void laDivisionEnteraEntre12y6DebeSer2() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
 		int dividiendo = 12;
 		int divisor = 6;
 		int esperado = 2;
@@ -42,7 +42,7 @@ class DivisionTest {
 		assertEquals(esperado, obtenido, "La division entre 12 y 6 debe ser 2");
 	}
 	@Test
-	void elValorInversoDe12Es0_08() throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+	void elValorInversoDe12Es0_08() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
 		int numeroInverso = 12;
 		double esperado = 0.08;
 		double obtenido = div.inversoValor(numeroInverso);
@@ -50,7 +50,7 @@ class DivisionTest {
 	}
 	
 	@Test
-	void laRaizDe49DebeSer7() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionExpAlto {
+	void laRaizDe49DebeSer7() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
 		int numeroRaiz = 49;
 		int esperado = 7;
 		double obtenido = div.raizDeNumero(numeroRaiz);
