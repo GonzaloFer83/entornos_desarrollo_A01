@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import entornos_desarrollo_A01.Resta;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
+import exceptions.ExceptionNumeroAlto;
 
 class RestaTest {
 	private Resta rest;
@@ -23,7 +24,7 @@ class RestaTest {
 	}
 
 	@Test
-	void  testrestaNumerosReales() throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+	void  testrestaNumerosReales() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
 		//variables
 		double minuendo = 15.6;
 		double substraendo = 5.5;
@@ -37,7 +38,7 @@ class RestaTest {
 		assertEquals(esperado, resultado,"la resta de 15.6 menos 5.5 debe ser 10.1");		
 	}
 	@Test
-	void restaNumerosEnteros() throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	void restaNumerosEnteros() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
 		//variables
 		int minuendo = 23;
 		int substraendo = 11;
@@ -51,7 +52,7 @@ class RestaTest {
 		assertEquals(esperado, resultado,"la resta de 23 menos 11 debe ser 12");
 	}
 	@Test
-	void resta3NumerosReales() throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	void resta3NumerosReales() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
 		//variables
 	
 		double minuendo = 17.3;
@@ -67,14 +68,24 @@ class RestaTest {
 		assertEquals(esperado, resultado,"la resta entre 17.3 menos 5.7 menos 2.8 debe ser 8.8");
 	}
 	@Test
-	void restaValorAcumulado() throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	void restaValorAcumulado() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
 		//variables
 		
-		double substraendo = 3.7;
+		
+		double minuendo = 15.3;
+		double substraendo1 = 5.3;
+		double substraendo2 = 4.3;
+		double esperado = 11;
+		double resultado = rest.restaValorAcumulado(substraendo2);
 		
 		//ejecutar
+		rest.restaNumerosReales(minuendo, substraendo1);
+		rest.restaValorAcumulado(substraendo2);
+		
 		
 		//Assert
+		assertEquals(esperado, resultado,"la resta entre 15.3 menos 4.3 debe ser 11");
+		
 	}
 	
 }
