@@ -1,5 +1,8 @@
 package junitTest;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,6 +13,7 @@ import entornos_desarrollo_A01.Suma;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
 import exceptions.ExcepcionParametroNoValido;
+import exceptions.ExceptionNumeroAlto;
 
 public class SumaTest {
 
@@ -25,7 +29,7 @@ public class SumaTest {
 	}
 
 	@Test
-	void  testSuma2NumerosReales() throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+	void  testSuma2NumerosReales() throws ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroNegativo {
 		//variables
 		double sumando1 = 4.3;
 		double sumando2 = 12.3;
@@ -33,50 +37,64 @@ public class SumaTest {
 		double resultado = sum.suma2NumeroReales(sumando1, sumando2);
 		
 		//ejecutar
-		resultado = rest.restaNumerosReales(minuendo, substraendo) ;
+		resultado = sum.suma2NumerosReales(sumando1, sumando2);
 		
 		//Assert
-		assertEquals(esperado, resultado,"la resta de 15.6 menos 5.5 debe ser 10.1");		
+		assertEquals(esperado, resultado,"la suma de 4.3 mas 12.3 debe ser 16.6");		
 	}
 	@Test
-	void restaNumerosEnteros() throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	void testRestaNumerosEnteros() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
 		//variables
-		int minuendo = 23;
-		int substraendo = 11;
-		int esperado = 12;
-		double resultado = rest.restaNumerosEnteros(minuendo, substraendo);
+		int sumando1 = 4;
+		int sumando2 = 9;
+		int esperado = 13;
+		double resultado = sum.sumaNumerosEnteros(sumando1, sumando2);
 		
 		//ejecutar
-		rest.restaNumerosEnteros(minuendo, substraendo);
+		resultado = sum.sumaNumerosEnteros(sumando1, sumando2);
 		
 		//Assert
-		assertEquals(esperado, resultado,"la resta de 23 menos 11 debe ser 12");
+		assertEquals(esperado, resultado,"la suma de 4 mas 9 debe ser 13");
 	}
 	@Test
-	void resta3NumerosReales() throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	void TestSuma3NumerosReales() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
 		//variables
 	
-		double minuendo = 17.3;
-		double substraendo1 = 5.7;
-		double substraendo2 = 2.8;
-		double esperado = 8.8;
-		double resultado = rest.resta3NumerosReales(minuendo, substraendo1, substraendo2);
+		double sumando1 = 5.5;
+		double sumando2 = 7.2;
+		double sumando3 = 2.4;
+		double esperado = 15.1;
+		double resultado = sum.suma3NumeroReales(sumando1, sumando2, sumando3);
 		
 		//ejecutar
-		rest.resta3NumerosReales(minuendo, substraendo1, substraendo2);
+		resultado = sum.suma3NumeroReales(sumando1, sumando2, sumando3);
 		
 		//Assert
-		assertEquals(esperado, resultado,"la resta entre 17.3 menos 5.7 menos 2.8 debe ser 8.8");
+		assertEquals(esperado, resultado,"la suma de 5.5 mas 7.2 mas 2.4 debe ser 15.1");
 	}
+	
+	
 	@Test
-	void restaValorAcumulado() throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	void TestSumaValorAcumulado() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
 		//variables
 		
-		double substraendo = 3.7;
+		double sumando1 = 4.1;
+		double sumando2 = 2.2;
+		
+		double sumando3 = 5.5;
+		
+		sum.suma2NumeroReales(sumando1, sumando2);
+		
+		double resultado = sum.sumaAcumulada(sumando3);			
+		double esperado = 11.8;
 		
 		//ejecutar
+		resultado = sum.sumaAcumulada(sumando3);
+
 		
 		//Assert
+		assertEquals (esperado, resultado, "La suma de 6.3 y 5.5 debe ser 11.8");
+		
 	}
 
 }
