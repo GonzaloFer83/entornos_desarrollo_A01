@@ -34,11 +34,8 @@ public class Division {
 	public double divisionNumReales(double dividendo, double divisor)
 			throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
 
-		if (divisor == 0) {
-			throw new ExcepcionErrorCero();
-		} else if (dividendo < 0 || divisor < 0) {
-			throw new ExcepcionNumeroNegativo();
-		}
+		dividendo = comprobarValores(dividendo);
+		divisor = comprobarValores(divisor);
 		acumulador = dividendo / divisor;
 		// eliminacion de los periodos, dedondeo
 		acumulador = eliminacionPeriodos(acumulador);
@@ -118,6 +115,26 @@ public class Division {
 		acumulador = Math.round(acumulador);
 		acumulador = acumulador / Math.pow(10, 2);
 		return acumulador;
+	}
+	private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+		if (valor == 0) {
+			throw new ExcepcionErrorCero();
+		} else if (valor < 0 ) {
+			throw new ExcepcionNumeroNegativo();
+		}else if (valor >Double.MAX_VALUE) {
+			throw new ExcepcionNumeroAlto)
+		}
+		return valor;
+	}
+	private int comprobarValores(int valor) {
+		if (valor == 0) {
+			throw new ExcepcionErrorCero();
+		} else if (valor < 0 ) {
+			throw new ExcepcionNumeroNegativo();
+		}else if (valor >Integer.MAX_VALUE) {
+			throw new ExcepcionNumeroAlto)
+		}
+		return valor;
 	}
 
 }
