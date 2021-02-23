@@ -27,22 +27,20 @@ public class Multiplicacion {
 	}
 
 	/**
-	 *Metodo para realizar el producto con dos numeros reales
+	 * Metodo para realizar el producto con dos numeros reales
 	 * 
 	 * @return devuelve el resultado del producto con dos numeros reales
 	 * @param multiplicando numero real para realizar el producto
 	 * @param multiplicador numero real para realizar el producto
+	 * @throws ExceptionNumeroAlto
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double multiNumReales(double multiplicando, double multiplicador) throws ExcepcionErrorCero,ExcepcionNumeroNegativo {
-		if (multiplicando == 0 ||  multiplicador == 0) {
-			throw new ExcepcionErrorCero();
-		} else if (multiplicando < 0 || multiplicador < 0 ) {
-			throw new ExcepcionNumeroNegativo();
-		}else {
-			return acumulador *= (multiplicando * multiplicador);
-		}
+	public double multiNumReales(double multiplicando, double multiplicador)
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+		multiplicando = comprobarValores(multiplicando);
+		multiplicador = comprobarValores(multiplicador);
+		return acumulador *= (multiplicando * multiplicador);
 
 	}
 
@@ -52,17 +50,15 @@ public class Multiplicacion {
 	 * @return devuelve el resultado del producto con dos numeros enteros
 	 * @param multiplicando numero entero para realizar el producto
 	 * @param multiplicador numero entero para realizar el producto
+	 * @throws ExceptionNumeroAlto
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double multiNumEnteros(int multiplicando, int multiplicador) throws ExcepcionErrorCero,ExcepcionNumeroNegativo {
-		if (multiplicando == 0 ||  multiplicador == 0) {
-			throw new ExcepcionErrorCero();
-		} else if (multiplicando < 0 || multiplicador < 0 ) {
-			throw new ExcepcionNumeroNegativo();
-		}else {
-			return acumulador *= (multiplicando * multiplicador);
-		}
+	public double multiNumEnteros(int multiplicando, int multiplicador)
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+		multiplicando = comprobarValores(multiplicando);
+		multiplicador = comprobarValores(multiplicador);
+		return acumulador *= (multiplicando * multiplicador);
 
 	}
 
@@ -73,18 +69,17 @@ public class Multiplicacion {
 	 * @param multiplicando  numero entero para realizar el producto
 	 * @param multiplicador1 numero entero para realizar el producto
 	 * @param multiplicador2 numero entero para realizar el producto
+	 * @throws ExceptionNumeroAlto
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
-	public double multiNumReales(double multiplicando, double multiplicador1, double multiplicador2) throws ExcepcionErrorCero,ExcepcionNumeroNegativo {
-		if (multiplicando == 0 ||  multiplicador1 == 0 || multiplicador2 == 0) {
-			throw new ExcepcionErrorCero();
-		} else if (multiplicando < 0 || multiplicador1 < 0 ||multiplicador2 < 0 ) {
-			throw new ExcepcionNumeroNegativo();
-		}else {
-			return acumulador *= (multiplicando * multiplicador1 * multiplicador2);
-		}
-		
+	public double multiNumReales(double multiplicando, double multiplicador1, double multiplicador2)
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+		multiplicando = comprobarValores(multiplicando);
+		multiplicador1 = comprobarValores(multiplicador1);
+		multiplicador2 = comprobarValores(multiplicador2);
+		return acumulador *= (multiplicando * multiplicador1 * multiplicador2);
+
 	}
 
 	/**
@@ -93,18 +88,18 @@ public class Multiplicacion {
 	 * @return devuelve el resultado del producto con dos numeros enteros
 	 * @param base       sera el factor que se repite
 	 * @param expontente numero de veces que se repite el factor
+	 * @throws ExcepcionErrorCero
+	 * @throws ExcepcionNumeroNegativo
 	 * @see errorCero() si el exponente es 0 devolvera 1 , y si es otro valor
 	 * 
 	 * 
 	 * @see comprobarExponente()
 	 */
-	public double potencia(int base, double expontente) throws ExceptionNumeroAlto{
-		
-		if (expontente > Float.MAX_EXPONENT) {
-			throw new ExceptionNumeroAlto();
-		} else {
-			return acumulador *= Math.pow(base, expontente);
-		}
+	public double potencia(int base, double expontente)
+			throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+		base = comprobarValores(base);
+		expontente = comprobarValores(expontente);
+		return acumulador *= Math.pow(base, expontente);
 	}
 
 	/**
@@ -117,5 +112,29 @@ public class Multiplicacion {
 	 * @param exp se comprobara si exponente supera el valor maximo permitido del
 	 *            dato primitivo
 	 */
+	private double comprobarValores(double valor)
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+		if (valor == 0) {
+			throw new ExcepcionErrorCero();
+		} else if (valor < 0) {
+			throw new ExcepcionNumeroNegativo();
+		} else if (valor > Double.MAX_VALUE) {
+			throw new ExceptionNumeroAlto();
+		} else if (Double.isNaN(valor)) {
+			throw new ArithmeticException();
+		}
+		return valor;
+	}
+
+	private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+		if (valor == 0) {
+			throw new ExcepcionErrorCero();
+		} else if (valor < 0) {
+			throw new ExcepcionNumeroNegativo();
+		} else if (valor > Integer.MAX_VALUE) {
+			throw new ExceptionNumeroAlto();
+		}
+		return valor;
+	}
 
 }
