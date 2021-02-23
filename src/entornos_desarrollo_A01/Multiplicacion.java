@@ -2,7 +2,7 @@ package entornos_desarrollo_A01;
 
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
-import exceptions.ExceptionExpAlto;
+import exceptions.ExceptionNumeroAlto;
 
 /**
  * Documentando Multiplicacion con JavaDoc
@@ -98,10 +98,10 @@ public class Multiplicacion {
 	 * 
 	 * @see comprobarExponente()
 	 */
-	public double potencia(int base, double expontente) throws ExceptionExpAlto{
+	public double potencia(int base, double expontente) throws ExceptionNumeroAlto{
 		
 		if (expontente > Float.MAX_EXPONENT) {
-			throw new ExceptionExpAlto(expontente);
+			throw new ExceptionNumeroAlto();
 		} else {
 			return acumulador *= Math.pow(base, expontente);
 		}
