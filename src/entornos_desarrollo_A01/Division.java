@@ -2,7 +2,6 @@ package entornos_desarrollo_A01;
 
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
-import exceptions.ExceptionExpAlto;
 import exceptions.ExceptionNumeroAlto;
 
 /**
