@@ -68,5 +68,10 @@ class DivisionTest {
 		int divisor = -5;
 		Assertions.assertThrows(ExcepcionNumeroNegativo.class, ()-> div.sumNumEnteros(dividendo, divisor));	
 	}
+	@Test
+	void raizCuadradaNegativo(){
+		int numeroRaiz = -5;
+		Assertions.assertThrows(ExcepcionNumeroNegativo.class, ()-> div.raizDeNumero(numeroRaiz));	
+	}
 
 }
