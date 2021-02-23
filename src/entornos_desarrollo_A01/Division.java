@@ -3,6 +3,7 @@ package entornos_desarrollo_A01;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
 import exceptions.ExceptionExpAlto;
+import exceptions.ExceptionNumeroAlto;
 
 /**
  * Documentando Division con JavaDoc
@@ -30,9 +31,10 @@ public class Division {
 	 * @return devuelve el resultado de la division dos numeros reales
 	 * @throws ExcepcionDivisionPorCero
 	 * @throws ExcepcionNumeroNegativo
+	 * @throws ExceptionNumeroAlto 
 	 */
 	public double divisionNumReales(double dividendo, double divisor)
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
 
 		dividendo = comprobarValores(dividendo);
 		divisor = comprobarValores(divisor);
@@ -51,13 +53,11 @@ public class Division {
 	 * @return devuelve el resultado de la division de dos numeros enteros
 	 * @throws ExcepcionDivisionPorCero
 	 * @throws ExcepcionNumeroNegativo
+	 * @throws ExceptionNumeroAlto 
 	 */
-	public double sumNumEnteros(int dividendo, int divisor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
-		if (divisor == 0) {
-			throw new ExcepcionErrorCero();
-		} else if (dividendo < 0 || divisor < 0) {
-			throw new ExcepcionNumeroNegativo();
-		}
+	public double sumNumEnteros(int dividendo, int divisor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+		dividendo = comprobarValores(dividendo);
+		divisor = comprobarValores(divisor);		
 		acumulador = dividendo / divisor;
 
 		return acumulador;
@@ -69,11 +69,11 @@ public class Division {
 	 * @param numeroInversor numero entero al que averiguaremos su inverso
 	 * @return devuelve el resultado de dividir uno entre el valor dado
 	 * @throws ExcepcionNumeroNegativo
+	 * @throws ExcepcionErrorCero 
+	 * @throws ExceptionNumeroAlto 
 	 */
-	public double inversoValor(int numeroInversor) throws ExcepcionNumeroNegativo {
-		if (numeroInversor < 0) {
-			throw new ExcepcionNumeroNegativo();
-		}
+	public double inversoValor(int numeroInversor) throws ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionErrorCero {
+		numeroInversor = comprobarValores(numeroInversor);
 		acumulador = 1 / numeroInversor;
 
 		return acumulador;
@@ -88,12 +88,8 @@ public class Division {
 	 * @throws ExcepcionNumeroNegativo  {@link Multiplicacion #potencia()}
 	 * @throws ExceptionExpAlto 
 	 */
-	public double raizDeNumero(int numeroRaiz) throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionExpAlto {
-		if (numeroRaiz == 0) {
-			throw new ExcepcionErrorCero();
-		} else if (numeroRaiz < 0) {
-			throw new ExcepcionNumeroNegativo();
-		}
+	public double raizDeNumero(int numeroRaiz) throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+		numeroRaiz=comprobarValores(numeroRaiz);
 		Multiplicacion mul = new Multiplicacion();
 
 		acumulador = mul.potencia(numeroRaiz, 0.5);
@@ -116,23 +112,23 @@ public class Division {
 		acumulador = acumulador / Math.pow(10, 2);
 		return acumulador;
 	}
-	private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+	private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto{
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0 ) {
 			throw new ExcepcionNumeroNegativo();
 		}else if (valor >Double.MAX_VALUE) {
-			throw new ExcepcionNumeroAlto)
+			throw new ExceptionNumeroAlto();
 		}
 		return valor;
 	}
-	private int comprobarValores(int valor) {
+	private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0 ) {
 			throw new ExcepcionNumeroNegativo();
 		}else if (valor >Integer.MAX_VALUE) {
-			throw new ExcepcionNumeroAlto)
+			throw new ExceptionNumeroAlto();
 		}
 		return valor;
 	}
