@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import entornos_desarrollo_A01.Multiplicacion;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
-import exceptions.ExceptionExpAlto;
+import exceptions.ExceptionNumeroAlto;
 
 class MultiplicacionTest {
 
@@ -78,7 +78,7 @@ class MultiplicacionTest {
 	}
 
 	@Test
-	void testPotencia() throws ExceptionExpAlto {
+	void testPotencia() throws ExceptionNumeroAlto {
 		//preparar
 		int base = 5;
 		double expontente = 2;

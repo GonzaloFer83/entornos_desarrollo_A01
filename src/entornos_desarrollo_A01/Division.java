@@ -86,9 +86,11 @@ public class Division {
 	 * @return devuelve el resultado de la raiz de un valor dado
 	 * @throws ExcepcionDivisionPorCero
 	 * @throws ExcepcionNumeroNegativo  {@link Multiplicacion #potencia()}
+	 * @throws ExceptionNumeroAlto 
+	 * @throws  
 	 * @throws ExceptionExpAlto 
 	 */
-	public double raizDeNumero(int numeroRaiz) throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+	public double raizDeNumero(int numeroRaiz) throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
 		numeroRaiz=comprobarValores(numeroRaiz);
 		Multiplicacion mul = new Multiplicacion();
 
@@ -112,6 +114,16 @@ public class Division {
 		acumulador = acumulador / Math.pow(10, 2);
 		return acumulador;
 	}
+	
+	/**
+	 * Este ,etpdp es privado, lo utilizaremos para comprobar que cada valor es correcto y se puede 
+	 * trabajar con el
+	 * @param valor
+	 * @return
+	 * @throws ExcepcionErrorCero
+	 * @throws ExcepcionNumeroNegativo
+	 * @throws ExceptionNumeroAlto
+	 */
 	private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto{
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
@@ -124,6 +136,16 @@ public class Division {
 		}
 		return valor;
 	}
+	
+	/**
+	 * Este ,etpdp es privado, lo utilizaremos para comprobar que cada valor es correcto y se puede 
+	 * trabajar con el
+	 * @param valor
+	 * @return
+	 * @throws ExcepcionErrorCero
+	 * @throws ExcepcionNumeroNegativo
+	 * @throws ExceptionNumeroAlto
+	 */
 	private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();

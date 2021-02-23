@@ -2,6 +2,7 @@ package entornos_desarrollo_A01;
 
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
+import exceptions.ExceptionNumeroAlto;
 
 /**
  * Esta clase es para realizar sumas.
@@ -31,13 +32,9 @@ public class Suma {
 	 *         acumulado.
 	 * @throws ExcepcionErrorCero 
 	 */
-	double suma2NumeroReales(double sumando1, double sumando2)throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
-		if (sumando1==0||sumando2==0) {
-			throw new ExcepcionErrorCero();
-		}
-		if (sumando1<0 || sumando2<0) {
-			throw new ExcepcionNumeroNegativo();
-		}
+	public double suma2NumeroReales(double sumando1, double sumando2)throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto {
+		sumando1 = comprobarValores(sumando1);
+		sumando2 = comprobarValores(sumando2);
 		acumulador = sumando1 + sumando2;
 			return acumulador;	
 		
@@ -55,14 +52,10 @@ public class Suma {
 	 * @return devuelve el valor de la suma en un numero real.
 	 */
 	public  double sumaNumerosEnteros(int sumando1, int sumando2)
-			throws ExcepcionNumeroNegativo, ExcepcionErrorCero{
+			throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto{
 		int a;
-		if (sumando1==0||sumando2==0) {
-			throw new ExcepcionErrorCero();
-		}
-		if (sumando1<0 || sumando2<0) {
-			throw new ExcepcionNumeroNegativo();
-		}
+		sumando1 = comprobarValores(sumando1);
+		sumando2 = comprobarValores(sumando2);
 		a= sumando1+sumando2;
 		acumulador= convertirEnteros(a);
 			return acumulador;	
@@ -77,12 +70,10 @@ public class Suma {
 	 * @see ExcepcionErrorCero()  en este metodo comprueba que el numero no sea 0.
 	 * @return devuelve la suma de los otros parametros.
 	 */
-	public double suma3NumeroReales(double sumando1, double sumando2, double sumando3) throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
-		if (sumando1==0||sumando2==0) {
-			throw new ExcepcionErrorCero();		}
-		if (sumando1<0 || sumando2<0|| sumando3<0 ) {
-			throw new ExcepcionNumeroNegativo();
-		}
+	public double suma3NumeroReales(double sumando1, double sumando2, double sumando3) throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto {
+		sumando1 = comprobarValores(sumando1);
+		sumando2 = comprobarValores(sumando2);
+		sumando3 = comprobarValores(sumando3);
 		acumulador= sumando1+sumando2+sumando3;
 		
 			return acumulador;	
@@ -94,14 +85,8 @@ public class Suma {
 	 * @param sumando valor que le damos
 	 * @return devuelve un valor, acumulador mas un parametro
 	 */
-	public double sumaAcumulada(double sumando)throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
-		if (sumando<0) {
-				throw new ExcepcionNumeroNegativo();
-		}
-		
-		if (sumando==0) {
-			throw new ExcepcionErrorCero();
-		}
+	public double sumaAcumulada(double sumando)throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto {
+		sumando = comprobarValores(sumando);
 		acumulador = acumulador +sumando;
 		return acumulador;
 	}
@@ -116,7 +101,26 @@ public class Suma {
 	private double convertirEnteros(int  i) {
 		return (double) i;
 	}
-
+	private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto{
+		if (valor == 0) {
+			throw new ExcepcionErrorCero();
+		} else if (valor < 0 ) {
+			throw new ExcepcionNumeroNegativo();
+		}else if (valor >Double.MAX_VALUE) {
+			throw new ExceptionNumeroAlto();
+		}
+		return valor;
+	}
+	private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+		if (valor == 0) {
+			throw new ExcepcionErrorCero();
+		} else if (valor < 0 ) {
+			throw new ExcepcionNumeroNegativo();
+		}else if (valor >Integer.MAX_VALUE) {
+			throw new ExceptionNumeroAlto();
+		}
+		return valor;
+	}
 
 
 }
