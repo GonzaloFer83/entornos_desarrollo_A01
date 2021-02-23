@@ -35,14 +35,14 @@ public class Primos {
 		 x = comprobarValores(x);
 			
 		boolean esPrimo=true;
-				
-			if(x==1 || x%2==0) {
+			if(x==1 ) {
 						esPrimo= false;
 			}
 			else {
-				for(int i=2; i<Math.sqrt(x);i++) {
+				for(int i=2; i<x;i++) {
 					if(x%i==0) {
 						esPrimo= false;
+						break;
 				    }
 				}
 			}
@@ -67,18 +67,14 @@ public class Primos {
 			x = comprobarValores(x);
 			
 			int contadorprimos=0;
-			int resultado=1;
 			
-			for(int i=1;i<100;i++) {
+			for(int i=1;i<=x;i++) {
+
 				if(esPrimo(i)) {
 					contadorprimos++;
-					if(contadorprimos==x) {
-						resultado=i;
-						break;						
-					}
 				}
 			}
-			return resultado;
+			return contadorprimos;
 		}
 		/**
 		 * 
@@ -121,7 +117,7 @@ public class Primos {
 				
 				
 			for(int i =1; i<x;i++) {	
-				acumulador=(int) multiplicacion1.multiNumEnteros(acumulador, i);
+				acumulador=acumulador*i;
 			}
 			return acumulador;
 			}

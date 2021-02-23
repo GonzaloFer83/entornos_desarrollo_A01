@@ -12,6 +12,7 @@ import entornos_desarrollo_A01.Primos;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
 import exceptions.ExcepcionParametroNoValido;
+import exceptions.ExceptionNumeroAlto;
 @Timeout (1)
 class PrimosTest {
 	private Primos prim;
@@ -26,7 +27,7 @@ class PrimosTest {
 	}
 
 	@Test
-	void testEsPrimo() throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	void testEsPrimo() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
 		int primo = 7;
 		boolean esperado = true;
 		boolean resultado = prim.esPrimo(primo);
@@ -47,8 +48,9 @@ class PrimosTest {
 		
 	}
 	
+	
 	@Test
-	void testIesimo() throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	void testIesimo() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
 		int primo = 7;
 		int esperado = 4;
 		int resultado = prim.iesimo(primo);
@@ -56,7 +58,7 @@ class PrimosTest {
 	}
 
 	@Test
-	void testPorcentaje() throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	void testPorcentaje() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
 		double valor1 = 100;
 		double valor2 = 20;
 		double esperado = 20;
@@ -66,7 +68,7 @@ class PrimosTest {
 	}
 
 	@Test
-	void testFactorial() throws ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	void testFactorial() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
 		int factorial = 5;
 		int esperado = 120;
 		int resultado = prim.factorial(factorial);
