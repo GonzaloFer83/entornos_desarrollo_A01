@@ -3,6 +3,7 @@ package junitTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import entornos_desarrollo_A01.Multiplicacion;
@@ -26,12 +27,34 @@ class MultiplicacionTest {
 	 //Assert
 	assertEquals(esperado, resultado, "La multiplicacion entre 2.1 y 2.2 tiene que ser 4.62");
 	}
+	
+	@Test
+	void testNumeroRealConNumeroNegativo()  {
+		//preparar
+	double multiplicando = 4;
+	double multiplicador = -2;
 
+		//ejecutar
+	
+	 //Assert
+	Assertions.assertThrows(ExcepcionNumeroNegativo.class, () ->multi.multiNumReales(multiplicando, multiplicador));	}
+
+	@Test
+	void testNumeroConNumero0()  {
+		//preparar
+	double multiplicando = 4;
+	double multiplicador = 0;
+
+		//ejecutar
+	
+	 //Assert
+	Assertions.assertThrows(ExcepcionErrorCero.class, () -> multi.multiNumReales(multiplicando, multiplicador));	}
+	
 	@Test
 	void testMultiNumEnteros() throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
 		//preparar
 		int multiplicando = 2;
-		int multiplicador = 5;
+		int multiplicador =5;
 		int esperado = 10;
 		double resultado;
 			//ejecutar
@@ -66,5 +89,7 @@ class MultiplicacionTest {
 		//Assert
 		assertEquals(esperado, resultado, "La potencia de 5 elevado a 2 es 25");
 	}
+	
+	
 
 }
