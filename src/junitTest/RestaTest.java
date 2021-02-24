@@ -23,6 +23,7 @@ class RestaTest {
 	@AfterEach
 	public void tearDown() {
 	}	
+	
 	@Test
 	void testValorZero() {
 	Assertions.assertThrows(ExcepcionErrorCero.class, () ->rest.restaNumerosEnteros(5, 9));
@@ -48,7 +49,7 @@ class RestaTest {
 		assertEquals(esperado, resultado,"la resta de 15.6 menos 5.5 debe ser 10.1");		
 	}
 	@Test
-	void restaNumerosEnteros() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	void testrestaNumerosEnteros() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		//variables
 		int minuendo = 23;
 		int substraendo = 11;
@@ -62,7 +63,7 @@ class RestaTest {
 		assertEquals(esperado, resultado,"la resta de 23 menos 11 debe ser 12");
 	}
 	@Test
-	void resta3NumerosReales() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	void testresta3NumerosReales() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		//variables
 	
 		double minuendo = 17.3;
@@ -78,7 +79,7 @@ class RestaTest {
 		assertEquals(esperado, resultado,"la resta entre 17.3 menos 5.7 menos 2.8 debe ser 8.8");
 	}
 	@Test
-	void restaValorAcumulado() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	void testrestaValorAcumulado() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		//variables
 		
 		
