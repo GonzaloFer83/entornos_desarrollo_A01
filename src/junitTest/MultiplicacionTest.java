@@ -13,6 +13,7 @@ import entornos_desarrollo_A01.Multiplicacion;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
+import exceptions.ExcepcionParametroNoValido;
 import exceptions.ExceptionNumeroAlto;
 
 class MultiplicacionTest {
@@ -80,7 +81,7 @@ class MultiplicacionTest {
 	}
 
 	@Test
-	void testMultiNumRealesDoubleDouble() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	void testMultiNumRealesDoubleDouble() throws ExcepcionParametroNoValido {
 		// preparar
 		double multiplicando = 2.1;
 		double multiplicador = 2.3;
