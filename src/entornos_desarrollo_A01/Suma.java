@@ -106,7 +106,7 @@ public class Suma {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0 ) {
 			throw new ExcepcionNumeroNegativo();
-		}else if (valor >Double.MAX_VALUE) {
+		}else if (valor >=Double.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
 		}
 		return valor;
@@ -116,7 +116,7 @@ public class Suma {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0 ) {
 			throw new ExcepcionNumeroNegativo();
-		}else if (valor >Integer.MAX_VALUE) {
+		}else if (valor >=Integer.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
 		}
 		return valor;

@@ -26,7 +26,7 @@ public class Resta {
 	
 	
 	/**
-	 * El método restaNumerosReales realiza la resta de dos números reales 
+	 * El mï¿½todo restaNumerosReales realiza la resta de dos nï¿½meros reales 
 	 * @param minuendo recibe un numero real
 	 * @param substraendo recibe un numero real 
 	 * @return devuelve la resta de los parametros minuendo y sustraendo
@@ -49,7 +49,7 @@ public class Resta {
 	
 	
 	/**
-	 * El método restaNumerosEnteros realiza la resta de dos números enteros
+	 * El mï¿½todo restaNumerosEnteros realiza la resta de dos nï¿½meros enteros
 	 * @param minuendo recibe un numero entero
 	 * @param substraendo recibe un numero entero
 	 * @return devuelve un numero real, resultado de la resta de los parametros minuendo y substraendo
@@ -78,7 +78,7 @@ public class Resta {
 	
 	
 	/**
-	 * El método resta3NumerosReales realiza la operación de restarle a un número real el valor de otros dos números reales
+	 * El mï¿½todo resta3NumerosReales realiza la operaciï¿½n de restarle a un nï¿½mero real el valor de otros dos nï¿½meros reales
 	 * @param minuendo recibe un numero real	
 	 * @param substraendo1 recibe un numero real
 	 * @param substraendo2 recibe un numero real
@@ -104,7 +104,7 @@ public class Resta {
 	
 	
 	/**
-	 * Este método acumula operaciones de resta sobre un valor
+	 * Este mï¿½todo acumula operaciones de resta sobre un valor
 	 * @param substraendo recibe numero real 
 	 * @return Devuelve el resultado de un valor al que se le van restando acumulativamente los valores introducidos
 	 * 
@@ -139,7 +139,7 @@ public class Resta {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0 ) {
 			throw new ExcepcionNumeroNegativo();
-		}else if (valor >Double.MAX_VALUE) {
+		}else if (valor >=Double.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
 		}else if (Double.isNaN(valor)) {
 			throw new ArithmeticException();
@@ -151,7 +151,7 @@ public class Resta {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0 ) {
 			throw new ExcepcionNumeroNegativo();
-		}else if (valor >Integer.MAX_VALUE) {
+		}else if (valor >=Integer.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
 		}
 		return valor;

@@ -118,7 +118,7 @@ public class Multiplicacion {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0) {
 			throw new ExcepcionNumeroNegativo();
-		} else if (valor > Double.MAX_VALUE) {
+		} else if (valor >= Double.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
 		} else if (Double.isNaN(valor)) {
 			throw new ArithmeticException();
@@ -131,7 +131,7 @@ public class Multiplicacion {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0) {
 			throw new ExcepcionNumeroNegativo();
-		} else if (valor > Integer.MAX_VALUE) {
+		} else if (valor >=Integer.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
 		}
 		return valor;
