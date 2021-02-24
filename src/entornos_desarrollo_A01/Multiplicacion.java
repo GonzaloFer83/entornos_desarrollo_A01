@@ -34,11 +34,12 @@ public class Multiplicacion {
 	 * @param multiplicando numero real para realizar el producto
 	 * @param multiplicador numero real para realizar el producto
 	 * @throws ExceptionNumeroAlto
+	 * @throws ExcepcionNumeroMuyBajo 
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
 	public double multiNumReales(double multiplicando, double multiplicador)
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		multiplicando = comprobarValores(multiplicando);
 		multiplicador = comprobarValores(multiplicador);
 		return acumulador *= (multiplicando * multiplicador);
@@ -52,11 +53,12 @@ public class Multiplicacion {
 	 * @param multiplicando numero entero para realizar el producto
 	 * @param multiplicador numero entero para realizar el producto
 	 * @throws ExceptionNumeroAlto
+	 * @throws ExcepcionNumeroMuyBajo 
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
 	public double multiNumEnteros(int multiplicando, int multiplicador)
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		multiplicando = comprobarValores(multiplicando);
 		multiplicador = comprobarValores(multiplicador);
 		return acumulador *= (multiplicando * multiplicador);
@@ -71,11 +73,12 @@ public class Multiplicacion {
 	 * @param multiplicador1 numero entero para realizar el producto
 	 * @param multiplicador2 numero entero para realizar el producto
 	 * @throws ExceptionNumeroAlto
+	 * @throws ExcepcionNumeroMuyBajo 
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
 	public double multiNumReales(double multiplicando, double multiplicador1, double multiplicador2)
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		multiplicando = comprobarValores(multiplicando);
 		multiplicador1 = comprobarValores(multiplicador1);
 		multiplicador2 = comprobarValores(multiplicador2);
@@ -91,13 +94,14 @@ public class Multiplicacion {
 	 * @param expontente numero de veces que se repite el factor
 	 * @throws ExcepcionErrorCero
 	 * @throws ExcepcionNumeroNegativo
+	 * @throws ExcepcionNumeroMuyBajo 
 	 * @see errorCero() si el exponente es 0 devolvera 1 , y si es otro valor
 	 * 
 	 * 
 	 * @see comprobarExponente()
 	 */
 	public double potencia(int base, double expontente)
-			throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+			throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
 		base = comprobarValores(base);
 		expontente = comprobarValores(expontente);
 		return acumulador *= Math.pow(base, expontente);
