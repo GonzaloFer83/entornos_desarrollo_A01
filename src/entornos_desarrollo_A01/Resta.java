@@ -37,8 +37,9 @@ public class Resta {
 	 * llamando a las siguientes clases:  
 	 * @throws ExcepcionErrorCero 
 	 * @throws ExcepcionNumeroNegativo 
+	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	public double restaNumerosReales (double minuendo, double substraendo) throws ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroNegativo {
+	public double restaNumerosReales (double minuendo, double substraendo) throws ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroNegativo, ExcepcionNumeroMuyBajo {
 		
 		minuendo = comprobarValores(minuendo);
 		substraendo = comprobarValores(substraendo);
@@ -64,9 +65,10 @@ public class Resta {
 	 * llamando a las clases siguientes:
 	 * @throws ExcepcionNumeroNegativo
 	 * @throws ExcepcionErrorCero
+	 * @throws ExcepcionNumeroMuyBajo 
 	 *  
 	 */
-	public double restaNumerosEnteros (int minuendo, int substraendo) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	public double restaNumerosEnteros (int minuendo, int substraendo) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
 		int a;
 		minuendo = comprobarValores(minuendo);
 		substraendo = comprobarValores(substraendo);
@@ -84,13 +86,14 @@ public class Resta {
 	 * @param substraendo1 recibe un numero real
 	 * @param substraendo2 recibe un numero real
 	 * @return devuelve la resta del primer parametro minuendo, substraendo1 y substraendo2
+	 * @throws ExcepcionNumeroMuyBajo 
 	 * 
 	 * @see errorNumerosNegativos()
 	 * @see errorCero() 
 	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos o igual a 0
 	 * llamando a estos metodos privados 
 	 */
-	public double resta3NumerosReales (double minuendo, double substraendo1, double substraendo2) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	public double resta3NumerosReales (double minuendo, double substraendo1, double substraendo2) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
 		
 		minuendo = comprobarValores(minuendo);
 		substraendo1 = comprobarValores(substraendo1);
@@ -108,12 +111,13 @@ public class Resta {
 	 * Este m�todo acumula operaciones de resta sobre un valor
 	 * @param substraendo recibe numero real 
 	 * @return Devuelve el resultado de un valor al que se le van restando acumulativamente los valores introducidos
+	 * @throws ExcepcionNumeroMuyBajo 
 	 * 
 	 * @see errorNumerosNegativos() 
 	 * @see errorCero()
 	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos ni iguales a cero
 	 */
-	public double restaValorAcumulado (double substraendo) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	public double restaValorAcumulado (double substraendo) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
 		
 		substraendo = comprobarValores(substraendo);
 			
