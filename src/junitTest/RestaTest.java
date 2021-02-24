@@ -11,7 +11,6 @@ import entornos_desarrollo_A01.Resta;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
-import exceptions.ExcepcionParametroNoValido;
 import exceptions.ExceptionNumeroAlto;
 
 class RestaTest {
@@ -36,7 +35,7 @@ class RestaTest {
 	}
 
 	@Test
-	void  testrestaNumerosReales() throws ExcepcionParametroNoValido {
+	void  testrestaNumerosReales() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		//variables
 		double minuendo = 15.6;
 		double substraendo = 5.5;
@@ -51,10 +50,14 @@ class RestaTest {
 	}
 	@Test
 <<<<<<< HEAD
+<<<<<<< HEAD
 	void testrestaNumerosEnteros() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 =======
 	void restaNumerosEnteros() throws ExcepcionParametroNoValido {
 >>>>>>> aae32871f3ab971a641f0b432748c4e66cd5a2a0
+=======
+	void restaNumerosEnteros() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+>>>>>>> parent of 4f54102 (excep)
 		//variables
 		int minuendo = 23;
 		int substraendo = 11;
@@ -69,10 +72,14 @@ class RestaTest {
 	}
 	@Test
 <<<<<<< HEAD
+<<<<<<< HEAD
 	void testresta3NumerosReales() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 =======
 	void resta3NumerosReales() throws ExcepcionParametroNoValido {
 >>>>>>> aae32871f3ab971a641f0b432748c4e66cd5a2a0
+=======
+	void resta3NumerosReales() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+>>>>>>> parent of 4f54102 (excep)
 		//variables
 	
 		double minuendo = 17.3;
@@ -89,10 +96,14 @@ class RestaTest {
 	}
 	@Test
 <<<<<<< HEAD
+<<<<<<< HEAD
 	void testrestaValorAcumulado() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 =======
 	void restaValorAcumulado() throws ExcepcionParametroNoValido {
 >>>>>>> aae32871f3ab971a641f0b432748c4e66cd5a2a0
+=======
+	void restaValorAcumulado() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+>>>>>>> parent of 4f54102 (excep)
 		//variables
 		
 		

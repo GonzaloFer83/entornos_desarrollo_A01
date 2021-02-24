@@ -11,7 +11,6 @@ import entornos_desarrollo_A01.Division;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
-import exceptions.ExcepcionParametroNoValido;
 import exceptions.ExceptionNumeroAlto;
 
 class DivisionTest {
@@ -28,7 +27,7 @@ class DivisionTest {
 
 	@Test
 	void divisionRealEntre12_2_y_6_3DebeSer1_94()
-			throws ExcepcionParametroNoValido {
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		double dividiendo = 12.2;
 		double divisor = 6.3;
 		double esperado = 1.94;
@@ -38,7 +37,7 @@ class DivisionTest {
 
 	@Test
 	void laDivisionEnteraEntre12y6DebeSer2()
-			throws ExcepcionParametroNoValido {
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		int dividiendo = 12;
 		int divisor = 6;
 		int esperado = 2;
@@ -48,7 +47,7 @@ class DivisionTest {
 
 	@Test
 	void elValorInversoDe12Es0_08()
-			throws ExcepcionParametroNoValido {
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		int numeroInverso = 12;
 		double esperado = 0.08;
 		double obtenido = div.inversoValor(numeroInverso);
@@ -57,7 +56,7 @@ class DivisionTest {
 
 	@Test
 	void laRaizDe49DebeSer7()
-			throws ExcepcionParametroNoValido {
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		int numeroRaiz = 49;
 		int esperado = 7;
 		double obtenido = div.raizDeNumero(numeroRaiz);
@@ -79,14 +78,14 @@ class DivisionTest {
 	}
 	@Test
 	void divisorMasAltoQueElTipoDatoPrimitivoPermitido()
-			throws ExcepcionParametroNoValido {
+			throws ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroNegativo {
 		int dividiendo = 12;
 		Assertions.assertThrows(ExceptionNumeroAlto.class,
 				() -> div.divisionNumReales(dividiendo, Double.POSITIVE_INFINITY));
 	}
 	@Test
 	void divisorMasBajoQueElTipoDeDatoPrimitivo()
-			throws ExcepcionParametroNoValido {
+			throws ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroNegativo {
 		int dividiendo = 12;
 		Assertions.assertThrows(ExcepcionNumeroMuyBajo.class,
 				() -> div.divisionNumReales(dividiendo, Double.MIN_VALUE));
