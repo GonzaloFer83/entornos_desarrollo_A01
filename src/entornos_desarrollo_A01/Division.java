@@ -32,9 +32,10 @@ public class Division {
 	 * @throws ExcepcionDivisionPorCero
 	 * @throws ExcepcionNumeroNegativo
 	 * @throws ExceptionNumeroAlto 
+	 * @throws ExcepcionNumeroMuyBajo 
 	 */
 	public double divisionNumReales(double dividendo, double divisor)
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 
 		dividendo = comprobarValores(dividendo);
 		divisor = comprobarValores(divisor);
@@ -54,8 +55,9 @@ public class Division {
 	 * @throws ExcepcionDivisionPorCero
 	 * @throws ExcepcionNumeroNegativo
 	 * @throws ExceptionNumeroAlto 
+	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	public double sumNumEnteros(int dividendo, int divisor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+	public double sumNumEnteros(int dividendo, int divisor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		dividendo = comprobarValores(dividendo);
 		divisor = comprobarValores(divisor);		
 		acumulador = dividendo / divisor;
@@ -71,8 +73,9 @@ public class Division {
 	 * @throws ExcepcionNumeroNegativo
 	 * @throws ExcepcionErrorCero 
 	 * @throws ExceptionNumeroAlto 
+	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	public double inversoValor(int numeroInversor) throws ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionErrorCero {
+	public double inversoValor(int numeroInversor) throws ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
 		numeroInversor = comprobarValores(numeroInversor);
 		acumulador = 1 / numeroInversor;
 
@@ -87,10 +90,11 @@ public class Division {
 	 * @throws ExcepcionDivisionPorCero
 	 * @throws ExcepcionNumeroNegativo  {@link Multiplicacion #potencia()}
 	 * @throws ExceptionNumeroAlto 
+	 * @throws ExcepcionNumeroMuyBajo 
 	 * @throws  
 	 * @throws ExceptionExpAlto 
 	 */
-	public double raizDeNumero(int numeroRaiz) throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+	public double raizDeNumero(int numeroRaiz) throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		numeroRaiz=comprobarValores(numeroRaiz);
 		Multiplicacion mul = new Multiplicacion();
 
@@ -134,7 +138,7 @@ public class Division {
 			throw new ExceptionNumeroAlto();
 		}else if (Double.isNaN(valor)) {
 			throw new ArithmeticException();
-		}else if (valor >=Double.MIN_VALUE) {
+		}else if (valor <=Double.MIN_VALUE) {
 			throw new ExcepcionNumeroMuyBajo();
 			}
 		return valor;
@@ -157,7 +161,7 @@ public class Division {
 			throw new ExcepcionNumeroNegativo();
 		}else if (valor >=Integer.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
-		}else if (valor >=Integer.MIN_VALUE) {
+		}else if (valor <=Integer.MIN_VALUE) {
 			throw new ExcepcionNumeroMuyBajo();
 			}
 		return valor;
