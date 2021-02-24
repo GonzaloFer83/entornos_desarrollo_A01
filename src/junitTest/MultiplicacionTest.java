@@ -3,9 +3,12 @@ package junitTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Assert;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import entornos_desarrollo_A01.Division;
 import entornos_desarrollo_A01.Multiplicacion;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroNegativo;
@@ -13,10 +16,18 @@ import exceptions.ExceptionNumeroAlto;
 
 class MultiplicacionTest {
 
-	Multiplicacion multi = new Multiplicacion();
+	private  Multiplicacion multi;
+	
+	@BeforeEach
+	public void setUp() {
+		multi = new Multiplicacion();
+	}
 
+	@AfterEach
+	public void tearDown() {
+	}
 	@Test
-	void testMultiNumRealesDoubleDouble() throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+	void testMultiNumRealesDoubleDouble() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
 		//preparar
 	double multiplicando = 2.1;
 	double multiplicador = 2.3;
@@ -51,7 +62,18 @@ class MultiplicacionTest {
 	Assertions.assertThrows(ExcepcionErrorCero.class, () -> multi.multiNumReales(multiplicando, multiplicador));	}
 	
 	@Test
-	void testMultiNumEnteros() throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+	void testNumeroAlto()  {
+		//preparar
+	double multiplicando = Double.MAX_VALUE;
+	double multiplicador = 5;
+
+		//ejecutar
+	
+	 //Assert
+	Assertions.assertThrows(ExceptionNumeroAlto.class, () -> multi.multiNumReales(multiplicando, multiplicador));	}
+	
+	@Test
+	void testMultiNumEnteros() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
 		//preparar
 		int multiplicando = 2;
 		int multiplicador =5;
@@ -64,7 +86,7 @@ class MultiplicacionTest {
 		}
 
 	@Test
-	void testMultiNumRealesDoubleDoubleDouble() throws ExcepcionErrorCero, ExcepcionNumeroNegativo {
+	void testMultiNumRealesDoubleDoubleDouble() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
 		//preparar
 		double multiplicando = 2;
 		double multiplicador1 = 5;
@@ -78,7 +100,7 @@ class MultiplicacionTest {
 	}
 
 	@Test
-	void testPotencia() throws ExceptionNumeroAlto {
+	void testPotencia() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
 		//preparar
 		int base = 5;
 		double expontente = 2;
