@@ -66,7 +66,7 @@ class PrimosTest {
 	}
 
 	@Test
-	void testPorcentaje() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	void testPorcentaje() throws ExcepcionParametroNoValido {
 		double valor1 = 100;
 		double valor2 = 20;
 		double esperado = 20;

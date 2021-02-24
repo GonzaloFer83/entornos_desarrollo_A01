@@ -1,5 +1,7 @@
 package entornos_desarrollo_A01;
 
+import java.text.DecimalFormat;
+
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
@@ -76,9 +78,10 @@ public class Division {
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
 	public double inversoValor(int numeroInversor) throws ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
-		numeroInversor = comprobarValores(numeroInversor);
-		acumulador = 1 / numeroInversor;
 
+		numeroInversor = comprobarValores(numeroInversor);
+		acumulador = (double)1/numeroInversor;
+		acumulador = eliminacionPeriodos(acumulador);
 		return acumulador;
 	}
 
