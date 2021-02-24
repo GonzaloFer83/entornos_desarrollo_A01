@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Timeout;
 
 import entornos_desarrollo_A01.Primos;
 import exceptions.ExcepcionErrorCero;
+import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
 import exceptions.ExcepcionParametroNoValido;
 import exceptions.ExceptionNumeroAlto;
@@ -27,7 +28,7 @@ class PrimosTest {
 	}
 
 	@Test
-	void testEsPrimo() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
+	void testEsPrimo() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		int primo = 7;
 		boolean esperado = true;
 		boolean resultado = prim.esPrimo(primo);
@@ -57,7 +58,7 @@ class PrimosTest {
 	}
 	
 	@Test
-	void testIesimo() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
+	void testIesimo() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		int primo = 7;
 		int esperado = 4;
 		int resultado = prim.iesimo(primo);
@@ -65,7 +66,7 @@ class PrimosTest {
 	}
 
 	@Test
-	void testPorcentaje() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
+	void testPorcentaje() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		double valor1 = 100;
 		double valor2 = 20;
 		double esperado = 20;
@@ -75,7 +76,7 @@ class PrimosTest {
 	}
 
 	@Test
-	void testFactorial() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
+	void testFactorial() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		int factorial = 5;
 		int esperado = 120;
 		int resultado = prim.factorial(factorial);
