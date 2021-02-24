@@ -1,6 +1,7 @@
 package entornos_desarrollo_A01;
 
 import exceptions.ExcepcionErrorCero;
+import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
 import exceptions.ExceptionNumeroAlto;
 
@@ -101,26 +102,32 @@ public class Suma {
 	private double convertirEnteros(int  i) {
 		return (double) i;
 	}
-	private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto{
+	private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto,ExcepcionNumeroMuyBajo{
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0 ) {
 			throw new ExcepcionNumeroNegativo();
 		}else if (valor >=Double.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
-		}
+		}else if (valor >=Double.MIN_VALUE) {
+			throw new ExcepcionNumeroMuyBajo();
+			}else if (Double.isNaN(valor)) {
+				throw new ArithmeticException();
+			}
 		return valor;
 	}
-	private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero,ExcepcionNumeroMuyBajo {
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0 ) {
 			throw new ExcepcionNumeroNegativo();
 		}else if (valor >=Integer.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
-		}
+		}else if (valor >=Integer.MIN_VALUE) {
+			throw new ExcepcionNumeroMuyBajo();
+			}
 		return valor;
+	}
 	}
 
 
-}
