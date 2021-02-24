@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Timeout;
 
 import entornos_desarrollo_A01.Suma;
 import exceptions.ExcepcionErrorCero;
+import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
 import exceptions.ExcepcionParametroNoValido;
 import exceptions.ExceptionNumeroAlto;
@@ -29,7 +30,7 @@ public class SumaTest {
 	}
 
 	@Test
-	void  testSuma2NumerosReales() throws ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroNegativo {
+	void  testSuma2NumerosReales() throws ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroNegativo, ExcepcionNumeroMuyBajo {
 		//variables
 		double sumando1 = 4.3;
 		double sumando2 = 12.3;
@@ -43,7 +44,7 @@ public class SumaTest {
 		assertEquals(esperado, resultado,"la suma de 4.3 mas 12.3 debe ser 16.6");		
 	}
 	@Test
-	void testRestaNumerosEnteros() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	void testRestaNumerosEnteros() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
 		//variables
 		int sumando1 = 4;
 		int sumando2 = 9;
@@ -57,7 +58,7 @@ public class SumaTest {
 		assertEquals(esperado, resultado,"la suma de 4 mas 9 debe ser 13");
 	}
 	@Test
-	void TestSuma3NumerosReales() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	void TestSuma3NumerosReales() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
 		//variables
 	
 		double sumando1 = 5.5;
@@ -75,7 +76,7 @@ public class SumaTest {
 	
 	
 	@Test
-	void TestSumaValorAcumulado() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	void TestSumaValorAcumulado() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
 		//variables
 		
 		double sumando1 = 4.1;
