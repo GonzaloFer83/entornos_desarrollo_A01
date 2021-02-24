@@ -28,18 +28,7 @@ class MultiplicacionTest {
 	public void tearDown() {
 	}
 
-	@Test
-	void testMultiNumRealesDoubleDouble() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
-		// preparar
-		double multiplicando = 2.1;
-		double multiplicador = 2.3;
-		double esperado = 4.83;
-		double resultado;
-		// ejecutar
-		resultado = multi.multiNumReales(multiplicando, multiplicador);
-		// Assert
-		assertEquals(esperado, resultado, "La multiplicacion entre 2.1 y 2.2 tiene que ser 4.62");
-	}
+
 
 	@Test
 	void testNumeroRealConNumeroNegativo() {
@@ -90,7 +79,18 @@ class MultiplicacionTest {
 		Assertions.assertThrows(ExcepcionNumeroMuyBajo.class, () -> multi.multiNumReales(multiplicando, multiplicador));
 	}
 
-	
+	@Test
+	void testMultiNumRealesDoubleDouble() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+		// preparar
+		double multiplicando = 2.1;
+		double multiplicador = 2.3;
+		double esperado = 4.83;
+		double resultado;
+		// ejecutar
+		resultado = multi.multiNumReales(multiplicando, multiplicador);
+		// Assert
+		assertEquals(esperado, resultado, "La multiplicacion entre 2.1 y 2.2 tiene que ser 4.62");
+	}
 	
 	@Test
 	void testMultiNumEnteros() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
