@@ -48,7 +48,6 @@ class PrimosTest {
 		
 	}
 	
-	
 	@Test
 	void testIesimo() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
 		int primo = 7;
