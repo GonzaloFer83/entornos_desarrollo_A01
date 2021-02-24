@@ -76,14 +76,6 @@ class DivisionTest {
 		int divisor = -5;
 		Assertions.assertThrows(ExcepcionNumeroNegativo.class, () -> div.sumNumEnteros(dividendo, divisor));
 	}
-
-	// Casos raros
-	@Test
-	void raizCuadradaNegativo() {
-		int numeroRaiz = -5;
-		Assertions.assertThrows(ExcepcionNumeroNegativo.class, () -> div.raizDeNumero(numeroRaiz));
-	}
-
 	@Test
 	void divisorMasAltoQueElTipoDatoPrimitivoPermitido()
 			throws ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroNegativo {
