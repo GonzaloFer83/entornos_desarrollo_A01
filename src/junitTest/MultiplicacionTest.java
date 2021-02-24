@@ -94,7 +94,7 @@ class MultiplicacionTest {
 	}
 	
 	@Test
-	void testMultiNumEnteros() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	void testMultiNumEnteros() throws ExcepcionParametroNoValido {
 		// preparar
 		int multiplicando = 2;
 		int multiplicador = 5;
@@ -108,7 +108,7 @@ class MultiplicacionTest {
 
 	@Test
 	void testMultiNumRealesDoubleDoubleDouble()
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+			throws ExcepcionParametroNoValido {
 		// preparar
 		double multiplicando = 2;
 		double multiplicador1 = 5;
@@ -122,7 +122,7 @@ class MultiplicacionTest {
 	}
 
 	@Test
-	void testPotencia() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+	void testPotencia() throws ExcepcionParametroNoValido{
 		// preparar
 		int base = 5;
 		double expontente = 2;

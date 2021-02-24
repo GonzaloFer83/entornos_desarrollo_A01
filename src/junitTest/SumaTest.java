@@ -80,7 +80,7 @@ public class SumaTest {
 	
 	
 	@Test
-	void  testSuma2NumerosReales() throws ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroNegativo, ExcepcionNumeroMuyBajo {
+	void  testSuma2NumerosReales() throws ExcepcionParametroNoValido {
 		//variables
 		double sumando1 = 4.3;
 		double sumando2 = 12.3;
@@ -96,7 +96,7 @@ public class SumaTest {
 	
 	
 	@Test
-	void testRestaNumerosEnteros() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+	void testRestaNumerosEnteros() throws ExcepcionParametroNoValido {
 		//variables
 		int sumando1 = 4;
 		int sumando2 = 9;
@@ -112,7 +112,7 @@ public class SumaTest {
 	
 	
 	@Test
-	void TestSuma3NumerosReales() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+	void TestSuma3NumerosReales() throws ExcepcionParametroNoValido {
 		//variables
 	
 		double sumando1 = 5.5;
@@ -130,7 +130,7 @@ public class SumaTest {
 	
 	
 	@Test
-	void TestSumaValorAcumulado() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+	void TestSumaValorAcumulado() throws ExcepcionParametroNoValido {
 		//variables
 		
 		double sumando1 = 4.1;
