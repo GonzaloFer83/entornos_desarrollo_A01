@@ -26,12 +26,17 @@ class RestaTest {
 	}	
 	@Test
 	void testValorZero() {
-	Assertions.assertThrows(ExcepcionErrorCero.class, () ->rest.restaNumerosEnteros(5, 9));
+	Assertions.assertThrows(ExcepcionErrorCero.class, () ->rest.restaNumerosEnteros(0, 9));
 			
 	}
 	@Test
 	void testValornegativo() {
-	Assertions.assertThrows(ExcepcionNumeroNegativo.class, () ->rest.restaNumerosEnteros(5, 9));
+	Assertions.assertThrows(ExcepcionNumeroNegativo.class, () ->rest.restaNumerosEnteros(-5, 9));
+	}
+	
+	@Test
+	void testValorAlto() {
+	Assertions.assertThrows(ExcepcionNumeroNegativo.class, () ->rest.restaNumerosReales(Double.MAX_VALUE, 9));
 	}
 
 	@Test
