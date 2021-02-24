@@ -91,12 +91,12 @@ class DivisionTest {
 		Assertions.assertThrows(ExceptionNumeroAlto.class,
 				() -> div.divisionNumReales(dividiendo, Double.POSITIVE_INFINITY));
 	}
-
+	@Test
 	void divisorMasBajoQueElTipoDeDatoPrimitivo()
 			throws ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroNegativo {
 		int dividiendo = 12;
-		Assertions.assertThrows(ExceptionNumeroAlto.class,
-				() -> div.divisionNumReales(dividiendo, Double.POSITIVE_INFINITY));
+		Assertions.assertThrows(ExcepcionNumeroMuyBajo.class,
+				() -> div.divisionNumReales(dividiendo, Double.MIN_VALUE));
 	}
 
 }
