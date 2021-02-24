@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import entornos_desarrollo_A01.Division;
 import entornos_desarrollo_A01.Multiplicacion;
 import exceptions.ExcepcionErrorCero;
+import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
 import exceptions.ExceptionNumeroAlto;
 
@@ -28,7 +29,7 @@ class MultiplicacionTest {
 	}
 
 	@Test
-	void testMultiNumRealesDoubleDouble() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+	void testMultiNumRealesDoubleDouble() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		// preparar
 		double multiplicando = 2.1;
 		double multiplicador = 2.3;
@@ -78,7 +79,21 @@ class MultiplicacionTest {
 	}
 
 	@Test
-	void testMultiNumEnteros() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+	void testNumeroMuyBajo() {
+		// preparar
+		double multiplicando = Double.MIN_VALUE;
+		double multiplicador = 5;
+
+		// ejecutar
+
+		// Assert
+		Assertions.assertThrows(ExcepcionNumeroMuyBajo.class, () -> multi.multiNumReales(multiplicando, multiplicador));
+	}
+
+	
+	
+	@Test
+	void testMultiNumEnteros() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		// preparar
 		int multiplicando = 2;
 		int multiplicador = 5;
@@ -92,7 +107,7 @@ class MultiplicacionTest {
 
 	@Test
 	void testMultiNumRealesDoubleDoubleDouble()
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		// preparar
 		double multiplicando = 2;
 		double multiplicador1 = 5;
@@ -106,7 +121,7 @@ class MultiplicacionTest {
 	}
 
 	@Test
-	void testPotencia() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	void testPotencia() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
 		// preparar
 		int base = 5;
 		double expontente = 2;
