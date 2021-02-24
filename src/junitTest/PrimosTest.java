@@ -47,6 +47,14 @@ class PrimosTest {
 
 		
 	}
+	@Test
+	void testValorAlto() {
+		double valor1 = Double.MAX_VALUE;
+		double valor2 = 2;
+		Assertions.assertThrows(ExcepcionNumeroNegativo.class, () ->prim.porcentaje(valor1, valor2));
+
+		
+	}
 	
 	@Test
 	void testIesimo() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
