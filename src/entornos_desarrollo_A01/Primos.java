@@ -28,10 +28,11 @@ public class Primos {
 		 * @throws ExcepcionNumeroNegativo 
 		 * @throws ExcepcionErrorCero 
 		 * @throws ExceptionNumeroAlto
+		 * @throws ExcepcionNumeroMuyBajo 
 		 * @see errorNumerosNegativos()
 	     * @see errorCero()
 		 */
-	 public boolean esPrimo(int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
+	 public boolean esPrimo(int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 				
 		 x = comprobarValores(x);
 			
@@ -59,12 +60,13 @@ public class Primos {
 		 * @throws ExcepcionNumeroNegativo 
 		 * @throws ExcepcionErrorCero 
 		 * @throws ExceptionNumeroAlto
+		 * @throws ExcepcionNumeroMuyBajo 
 		 * @see errorNumerosNegativos()
 	     * @see errorCero()
 		 */
 			
 		
-		public int iesimo(int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
+		public int iesimo(int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 			x = comprobarValores(x);
 			
 			int contadorprimos=0;
@@ -85,12 +87,13 @@ public class Primos {
 		 * @link     -- llamar a la clase Multiplicacion --
 		 * @throws ExcepcionNumeroNegativo 
 		 * @throws ExcepcionErrorCero 
+		 * @throws ExcepcionNumeroMuyBajo 
 		 * @throws ExcepcionNumeroAlto
 		 * @see errorNumerosNegativos()
 	     * @see errorCero()
 		 */
 		
-		public double porcentaje (double x,double y) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
+		public double porcentaje (double x,double y) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 			x = comprobarValores(x);
 			y = comprobarValores(y);
 			
@@ -104,6 +107,7 @@ public class Primos {
 		 * @throws ExcepcionNumeroNegativo 
 		 * @throws ExcepcionErrorCero 
 		 * @throws ExceptionNumeroAlto
+		 * @throws ExcepcionNumeroMuyBajo 
 		 * @see errorNumerosNegativos()
 	     * @see errorCero() 
 	     * @link     -- llamar a la clase Multiplicacion --
@@ -111,7 +115,7 @@ public class Primos {
 	     * llamando a estos métodos privados. 
 		 */
 		
-		public int factorial (int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
+		public int factorial (int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 			 x = comprobarValores(x);
 
 			 int acumulador= x;
@@ -132,7 +136,7 @@ public class Primos {
 				throw new ExceptionNumeroAlto();
 			}else if (Double.isNaN(valor)) {
 				throw new ArithmeticException();
-			}else if (valor >=Double.MIN_VALUE) {
+			}else if (valor <=Double.MIN_VALUE) {
 				throw new ExcepcionNumeroMuyBajo();
 				}
 			return valor;
@@ -145,7 +149,7 @@ public class Primos {
 				throw new ExcepcionNumeroNegativo();
 			}else if (valor >Integer.MAX_VALUE) {
 				throw new ExceptionNumeroAlto();
-			}else if (valor >=Integer.MIN_VALUE) {
+			}else if (valor <=Integer.MIN_VALUE) {
 				throw new ExcepcionNumeroMuyBajo();
 				}
 			return valor;
