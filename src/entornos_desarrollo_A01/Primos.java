@@ -2,6 +2,7 @@ package entornos_desarrollo_A01;
 
 import entornos_desarrollo_A01.Multiplicacion;
 import exceptions.ExcepcionErrorCero;
+import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
 import exceptions.ExceptionNumeroAlto;
 
@@ -122,7 +123,7 @@ public class Primos {
 			return acumulador;
 			}
 		
-		private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto{
+		private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto, ExcepcionNumeroMuyBajo{
 			if (valor == 0) {
 				throw new ExcepcionErrorCero();
 			} else if (valor < 0 ) {
@@ -131,18 +132,22 @@ public class Primos {
 				throw new ExceptionNumeroAlto();
 			}else if (Double.isNaN(valor)) {
 				throw new ArithmeticException();
-			}
+			}else if (valor >=Double.MIN_VALUE) {
+				throw new ExcepcionNumeroMuyBajo();
+				}
 			return valor;
 		}
 		
-		private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+		private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
 			if (valor == 0) {
 				throw new ExcepcionErrorCero();
 			} else if (valor < 0 ) {
 				throw new ExcepcionNumeroNegativo();
 			}else if (valor >Integer.MAX_VALUE) {
 				throw new ExceptionNumeroAlto();
-			}
+			}else if (valor >=Integer.MIN_VALUE) {
+				throw new ExcepcionNumeroMuyBajo();
+				}
 			return valor;
 		}
 
