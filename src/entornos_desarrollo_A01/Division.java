@@ -123,7 +123,7 @@ public class Division {
 	}
 	
 	/**
-	 * Este ,etpdp es privado, lo utilizaremos para comprobar que cada valor es correcto y se puede 
+	 * Este metodo es privado, lo utilizaremos para comprobar que cada valor es correcto y se puede 
 	 * trabajar con el
 	 * @param valor
 	 * @return
