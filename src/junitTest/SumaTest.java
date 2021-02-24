@@ -34,7 +34,7 @@ public class SumaTest {
 		double sumando1 = 4.3;
 		double sumando2 = 12.3;
 		double esperado = 16.6;
-		double resultado = sum.suma2NumeroReales(sumando1, sumando2);
+		double resultado = sum.suma2NumerosReales(sumando1, sumando2);
 		
 		//ejecutar
 		resultado = sum.suma2NumerosReales(sumando1, sumando2);
@@ -83,7 +83,7 @@ public class SumaTest {
 		
 		double sumando3 = 5.5;
 		
-		sum.suma2NumeroReales(sumando1, sumando2);
+		sum.suma2NumerosReales(sumando1, sumando2);
 		
 		double resultado = sum.sumaAcumulada(sumando3);			
 		double esperado = 11.8;
