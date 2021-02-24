@@ -76,12 +76,11 @@ class RestaTest {
 		double minuendo = 15.3;
 		double substraendo1 = 5.3;
 		double substraendo2 = 4.3;
-		double esperado = 11;
-		double resultado = rest.restaValorAcumulado(substraendo2);
-		
+		double esperado = 5.7;
+		double resultado;
 		//ejecutar
 		rest.restaNumerosReales(minuendo, substraendo1);
-		rest.restaValorAcumulado(substraendo2);
+		resultado = rest.restaValorAcumulado(substraendo2);
 		
 		
 		//Assert
