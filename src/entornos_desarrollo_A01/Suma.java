@@ -32,7 +32,7 @@ public class Suma {
 	 *         acumulado.
 	 * @throws ExcepcionErrorCero 
 	 */
-	public double suma2NumeroReales(double sumando1, double sumando2)throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto {
+	public double suma2NumerosReales(double sumando1, double sumando2)throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto {
 		sumando1 = comprobarValores(sumando1);
 		sumando2 = comprobarValores(sumando2);
 		acumulador = sumando1 + sumando2;
