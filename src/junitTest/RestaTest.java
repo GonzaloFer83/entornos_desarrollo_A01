@@ -3,6 +3,7 @@ package junitTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,7 +22,17 @@ class RestaTest {
 	}
 	@AfterEach
 	public void tearDown() {
-		
+	}	
+	@Test
+	void testValorZero() {
+	int resta = 0;
+	Assertions.assertThrows(ExcepcionErrorCero.class, () ->rest.restaNumerosEnteros(5, 9));
+			
+	}
+	@Test
+	void testValornegativo() {
+	int resta = -8;
+	Assertions.assertThrows(ExcepcionNumeroNegativo.class, () ->rest.restaNumerosEnteros(5, 9));
 	}
 
 	@Test
@@ -87,5 +98,6 @@ class RestaTest {
 		assertEquals(esperado, resultado,"la resta entre 15.3 menos 4.3 debe ser 5.7");
 		
 	}
+	
 	
 }
