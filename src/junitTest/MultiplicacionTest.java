@@ -79,6 +79,20 @@ class MultiplicacionTest {
 	}
 
 	@Test
+	void testNumeroMuyBajo() {
+		// preparar
+		double multiplicando = Double.MIN_VALUE;
+		double multiplicador = 5;
+
+		// ejecutar
+
+		// Assert
+		Assertions.assertThrows(ExcepcionNumeroMuyBajo.class, () -> multi.multiNumReales(multiplicando, multiplicador));
+	}
+
+	
+	
+	@Test
 	void testMultiNumEnteros() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		// preparar
 		int multiplicando = 2;
