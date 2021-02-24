@@ -148,7 +148,7 @@ public class Resta {
 			throw new ExceptionNumeroAlto();
 		}else if (Double.isNaN(valor)) {
 			throw new ArithmeticException();
-		}else if (valor >=Double.MIN_VALUE) {
+		}else if (valor <=Double.MIN_VALUE) {
 			throw new ExcepcionNumeroMuyBajo();
 			}
 		return valor;
@@ -160,7 +160,7 @@ public class Resta {
 			throw new ExcepcionNumeroNegativo();
 		}else if (valor >=Integer.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
-		}else if (valor >=Integer.MIN_VALUE) {
+		}else if (valor <=Integer.MIN_VALUE) {
 			throw new ExcepcionNumeroMuyBajo();
 			}
 		return valor;
