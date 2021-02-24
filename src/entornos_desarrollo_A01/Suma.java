@@ -32,8 +32,9 @@ public class Suma {
 	 * @return Devuelve una suma de dos numeros reales que guarda el valor
 	 *         acumulado.
 	 * @throws ExcepcionErrorCero 
+	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	public double suma2NumerosReales(double sumando1, double sumando2)throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto {
+	public double suma2NumerosReales(double sumando1, double sumando2)throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		sumando1 = comprobarValores(sumando1);
 		sumando2 = comprobarValores(sumando2);
 		acumulador = sumando1 + sumando2;
@@ -51,9 +52,10 @@ public class Suma {
 	 * @param sumando1 recibe un numero entero
 	 * @param sumando2 recibe un numero entero
 	 * @return devuelve el valor de la suma en un numero real.
+	 * @throws ExcepcionNumeroMuyBajo 
 	 */
 	public  double sumaNumerosEnteros(int sumando1, int sumando2)
-			throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto{
+			throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto, ExcepcionNumeroMuyBajo{
 		int a;
 		sumando1 = comprobarValores(sumando1);
 		sumando2 = comprobarValores(sumando2);
@@ -70,8 +72,9 @@ public class Suma {
 	 * @see ExcepcionNumerosNegativos()  este metodo comprueba que no haya numero negativo.
 	 * @see ExcepcionErrorCero()  en este metodo comprueba que el numero no sea 0.
 	 * @return devuelve la suma de los otros parametros.
+	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	public double suma3NumeroReales(double sumando1, double sumando2, double sumando3) throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto {
+	public double suma3NumeroReales(double sumando1, double sumando2, double sumando3) throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		sumando1 = comprobarValores(sumando1);
 		sumando2 = comprobarValores(sumando2);
 		sumando3 = comprobarValores(sumando3);
@@ -85,8 +88,9 @@ public class Suma {
 	 * @see ExcepcionErrorCero () en este metodo comprueba que el numero no sea 0.
 	 * @param sumando valor que le damos
 	 * @return devuelve un valor, acumulador mas un parametro
+	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	public double sumaAcumulada(double sumando)throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto {
+	public double sumaAcumulada(double sumando)throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		sumando = comprobarValores(sumando);
 		acumulador = acumulador +sumando;
 		return acumulador;
@@ -109,7 +113,7 @@ public class Suma {
 			throw new ExcepcionNumeroNegativo();
 		}else if (valor >=Double.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
-		}else if (valor >=Double.MIN_VALUE) {
+		}else if (valor <=Double.MIN_VALUE) {
 			throw new ExcepcionNumeroMuyBajo();
 			}else if (Double.isNaN(valor)) {
 				throw new ArithmeticException();
@@ -123,7 +127,7 @@ public class Suma {
 			throw new ExcepcionNumeroNegativo();
 		}else if (valor >=Integer.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
-		}else if (valor >=Integer.MIN_VALUE) {
+		}else if (valor <=Integer.MIN_VALUE) {
 			throw new ExcepcionNumeroMuyBajo();
 			}
 		return valor;
