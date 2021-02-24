@@ -1,6 +1,7 @@
 package entornos_desarrollo_A01;
 
 import exceptions.ExcepcionErrorCero;
+import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
 import exceptions.ExceptionNumeroAlto;
 
@@ -122,8 +123,9 @@ public class Division {
 	 * @throws ExcepcionErrorCero
 	 * @throws ExcepcionNumeroNegativo
 	 * @throws ExceptionNumeroAlto
+	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto{
+	private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto, ExcepcionNumeroMuyBajo{
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0 ) {
@@ -132,7 +134,9 @@ public class Division {
 			throw new ExceptionNumeroAlto();
 		}else if (Double.isNaN(valor)) {
 			throw new ArithmeticException();
-		}
+		}else if (valor >=Double.MIN_VALUE) {
+			throw new ExcepcionNumeroMuyBajo();
+			}
 		return valor;
 	}
 	
@@ -144,15 +148,18 @@ public class Division {
 	 * @throws ExcepcionErrorCero
 	 * @throws ExcepcionNumeroNegativo
 	 * @throws ExceptionNumeroAlto
+	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+	private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0 ) {
 			throw new ExcepcionNumeroNegativo();
 		}else if (valor >=Integer.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
-		}
+		}else if (valor >=Integer.MIN_VALUE) {
+			throw new ExcepcionNumeroMuyBajo();
+			}
 		return valor;
 	}
 
