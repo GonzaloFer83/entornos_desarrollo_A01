@@ -28,7 +28,7 @@ class PrimosTest {
 	}
 
 	@Test
-	void testEsPrimo() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	void testEsPrimo() throws ExcepcionParametroNoValido {
 		int primo = 7;
 		boolean esperado = true;
 		boolean resultado = prim.esPrimo(primo);
@@ -58,7 +58,7 @@ class PrimosTest {
 	}
 	
 	@Test
-	void testIesimo() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	void testIesimo() throws ExcepcionParametroNoValido {
 		int primo = 7;
 		int esperado = 4;
 		int resultado = prim.iesimo(primo);
@@ -76,7 +76,7 @@ class PrimosTest {
 	}
 
 	@Test
-	void testFactorial() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	void testFactorial() throws ExcepcionParametroNoValido {
 		int factorial = 5;
 		int esperado = 120;
 		int resultado = prim.factorial(factorial);
