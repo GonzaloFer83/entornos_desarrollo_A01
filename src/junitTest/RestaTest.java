@@ -84,7 +84,7 @@ class RestaTest {
 		
 		
 		//Assert
-		assertEquals(esperado, resultado,"la resta entre 15.3 menos 4.3 debe ser 11");
+		assertEquals(esperado, resultado,"la resta entre 15.3 menos 4.3 debe ser 5.7");
 		
 	}
 	
