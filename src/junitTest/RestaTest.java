@@ -14,6 +14,7 @@ import exceptions.ExcepcionNumeroNegativo;
 import exceptions.ExcepcionParametroNoValido;
 import exceptions.ExceptionNumeroAlto;
 
+
 class RestaTest {
 	private Resta rest;
 
@@ -36,7 +37,12 @@ class RestaTest {
 	
 	@Test
 	void testValorAlto() {
-	Assertions.assertThrows(ExcepcionNumeroNegativo.class, () ->rest.restaNumerosReales(Double.MAX_VALUE, 9));
+	Assertions.assertThrows(ExceptionNumeroAlto.class, () ->rest.restaNumerosReales(Double.MAX_VALUE, 9));
+	}
+	
+	@Test
+	void testNumeroMuyBajo() {
+	Assertions.assertThrows(ExcepcionNumeroMuyBajo.class, () -> rest.restaNumerosReales(Double.MIN_VALUE, 9));
 	}
 
 	@Test
