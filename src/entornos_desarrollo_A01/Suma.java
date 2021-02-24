@@ -106,6 +106,16 @@ public class Suma {
 	private double convertirEnteros(int  i) {
 		return (double) i;
 	}
+	/**
+	 * Este metodo es privado, lo utilizaremos para comprobar que cada valor es correcto y se puede 
+	 * trabajar con el
+	 * @param valor
+	 * @return
+	 * @throws ExcepcionErrorCero
+	 * @throws ExcepcionNumeroNegativo
+	 * @throws ExceptionNumeroAlto
+	 * @throws ExcepcionNumeroMuyBajo 
+	 */
 	private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto,ExcepcionNumeroMuyBajo{
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
@@ -120,6 +130,16 @@ public class Suma {
 			}
 		return valor;
 	}
+	/**
+	 * Este metodo es privado, lo utilizaremos para comprobar que cada valor es correcto y se puede 
+	 * trabajar con el
+	 * @param valor
+	 * @return
+	 * @throws ExcepcionErrorCero
+	 * @throws ExcepcionNumeroNegativo
+	 * @throws ExceptionNumeroAlto
+	 * @throws ExcepcionNumeroMuyBajo 
+	 */
 	private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero,ExcepcionNumeroMuyBajo {
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
