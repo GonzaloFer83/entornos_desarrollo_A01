@@ -3,7 +3,6 @@ package junitTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -57,22 +56,4 @@ class DivisionTest {
 		double obtenido = div.raizDeNumero(numeroRaiz);
 		assertEquals(esperado, obtenido,"La raiz cuadrada de 49 debe ser 7");
 	}
-	@Test
-	void testQuePasaSiDivisorEsCero(){
-		int dividendo = 12;
-		int divisor = 0;
-		Assertions.assertThrows(ExcepcionErrorCero.class, ()-> div.sumNumEnteros(dividendo, divisor));	
-	}
-	@Test
-	void testQuePasaSiUnoDeLosParametrosEsNegativo(){
-		int dividendo = 12;
-		int divisor = -5;
-		Assertions.assertThrows(ExcepcionNumeroNegativo.class, ()-> div.sumNumEnteros(dividendo, divisor));	
-	}
-	@Test
-	void raizCuadradaNegativo(){
-		int numeroRaiz = -5;
-		Assertions.assertThrows(ExcepcionNumeroNegativo.class, ()-> div.raizDeNumero(numeroRaiz));	
-	}
-
 }
