@@ -4,6 +4,7 @@ import entornos_desarrollo_A01.Multiplicacion;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
+import exceptions.ExcepcionParametroNoValido;
 import exceptions.ExceptionNumeroAlto;
 
 
@@ -84,16 +85,14 @@ public class Primos {
 		 * @param double x
 		 * @param double y
 		 * @return resultado. Devuelve el porcentaje de la variable 1 por la variable 2 entre 100.
+		 * @throws ExcepcionParametroNoValido 
 		 * @link     -- llamar a la clase Multiplicacion --
-		 * @throws ExcepcionNumeroNegativo 
-		 * @throws ExcepcionErrorCero 
-		 * @throws ExcepcionNumeroMuyBajo 
 		 * @throws ExcepcionNumeroAlto
 		 * @see errorNumerosNegativos()
 	     * @see errorCero()
 		 */
 		
-		public double porcentaje (double x,double y) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+		public double porcentaje (double x,double y) throws ExcepcionParametroNoValido {
 			x = comprobarValores(x);
 			y = comprobarValores(y);
 			
