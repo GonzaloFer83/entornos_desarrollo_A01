@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import entornos_desarrollo_A01.Resta;
 import exceptions.ExcepcionErrorCero;
+import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
 import exceptions.ExceptionNumeroAlto;
 
@@ -24,7 +25,7 @@ class RestaTest {
 	}
 
 	@Test
-	void  testrestaNumerosReales() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+	void  testrestaNumerosReales() throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		//variables
 		double minuendo = 15.6;
 		double substraendo = 5.5;
@@ -38,7 +39,7 @@ class RestaTest {
 		assertEquals(esperado, resultado,"la resta de 15.6 menos 5.5 debe ser 10.1");		
 	}
 	@Test
-	void restaNumerosEnteros() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
+	void restaNumerosEnteros() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		//variables
 		int minuendo = 23;
 		int substraendo = 11;
@@ -52,7 +53,7 @@ class RestaTest {
 		assertEquals(esperado, resultado,"la resta de 23 menos 11 debe ser 12");
 	}
 	@Test
-	void resta3NumerosReales() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
+	void resta3NumerosReales() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		//variables
 	
 		double minuendo = 17.3;
@@ -68,7 +69,7 @@ class RestaTest {
 		assertEquals(esperado, resultado,"la resta entre 17.3 menos 5.7 menos 2.8 debe ser 8.8");
 	}
 	@Test
-	void restaValorAcumulado() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto {
+	void restaValorAcumulado() throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		//variables
 		
 		
