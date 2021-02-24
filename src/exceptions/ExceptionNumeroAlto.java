@@ -5,7 +5,7 @@ public class ExceptionNumeroAlto extends ExcepcionParametroNoValido {
 
 	/*
 	 * Se implementa un error especifico para que no acepte el valores muy elevados
-	 * para el exponente
+	 * para las operaciones
 	 * 
 	 */
 	public ExceptionNumeroAlto() {
