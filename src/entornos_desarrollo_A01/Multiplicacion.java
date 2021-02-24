@@ -39,20 +39,11 @@ public class Multiplicacion {
 	 * @see errorCero();
 	 */
 	public double multiNumReales(double multiplicando, double multiplicador)
-			throws ExcepcionParametroNoValido {
-		//guardamos el resultado en una variable
-		double value = multiplicando * multiplicador;
-		if (!Double.isNaN(value)) {
-			//Aqui ya sabemos que no es NaN el resultado
-			//Posteriormente comprobamos si alguno de los parametros genera alguna excepcion
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 			multiplicando = comprobarValores(multiplicando);
 			multiplicador = comprobarValores(multiplicador);
-		} else {
-			//Aqui ya sabemos que el resultado es NaN
-			throw new ExcepcionParametroNoValido("Error este resultado es imposible de calcular");
-		}
-		
-		return acumulador *= value;
+
+		return acumulador *= (multiplicando * multiplicador);
 	}
 
 	/**
