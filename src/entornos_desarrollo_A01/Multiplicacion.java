@@ -3,6 +3,7 @@ package entornos_desarrollo_A01;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
+import exceptions.ExcepcionParametroNoValido;
 import exceptions.ExceptionNumeroAlto;
 
 /**
@@ -33,16 +34,25 @@ public class Multiplicacion {
 	 * @return devuelve el resultado del producto con dos numeros reales
 	 * @param multiplicando numero real para realizar el producto
 	 * @param multiplicador numero real para realizar el producto
-	 * @throws ExceptionNumeroAlto
+	 * @throws ExcepcionParametroNoValido 
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
 	public double multiNumReales(double multiplicando, double multiplicador)
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
-		multiplicando = comprobarValores(multiplicando);
-		multiplicador = comprobarValores(multiplicador);
-		return acumulador *= (multiplicando * multiplicador);
-
+			throws ExcepcionParametroNoValido {
+		//guardamos el resultado en una variable
+		double value = multiplicando * multiplicador;
+		if (!Double.isNaN(value)) {
+			//Aqui ya sabemos que no es NaN el resultado
+			//Posteriormente comprobamos si alguno de los parametros genera alguna excepcion
+			multiplicando = comprobarValores(multiplicando);
+			multiplicador = comprobarValores(multiplicador);
+		} else {
+			//Aqui ya sabemos que el resultado es NaN
+			throw new ExcepcionParametroNoValido("Error este resultado es imposible de calcular");
+		}
+		
+		return acumulador *= value;
 	}
 
 	/**
@@ -52,11 +62,12 @@ public class Multiplicacion {
 	 * @param multiplicando numero entero para realizar el producto
 	 * @param multiplicador numero entero para realizar el producto
 	 * @throws ExceptionNumeroAlto
+	 * @throws ExcepcionNumeroMuyBajo 
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
 	public double multiNumEnteros(int multiplicando, int multiplicador)
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		multiplicando = comprobarValores(multiplicando);
 		multiplicador = comprobarValores(multiplicador);
 		return acumulador *= (multiplicando * multiplicador);
@@ -71,11 +82,12 @@ public class Multiplicacion {
 	 * @param multiplicador1 numero entero para realizar el producto
 	 * @param multiplicador2 numero entero para realizar el producto
 	 * @throws ExceptionNumeroAlto
+	 * @throws ExcepcionNumeroMuyBajo 
 	 * @see errorNumerosNegativos();
 	 * @see errorCero();
 	 */
 	public double multiNumReales(double multiplicando, double multiplicador1, double multiplicador2)
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto {
+			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
 		multiplicando = comprobarValores(multiplicando);
 		multiplicador1 = comprobarValores(multiplicador1);
 		multiplicador2 = comprobarValores(multiplicador2);
@@ -91,13 +103,14 @@ public class Multiplicacion {
 	 * @param expontente numero de veces que se repite el factor
 	 * @throws ExcepcionErrorCero
 	 * @throws ExcepcionNumeroNegativo
+	 * @throws ExcepcionNumeroMuyBajo 
 	 * @see errorCero() si el exponente es 0 devolvera 1 , y si es otro valor
 	 * 
 	 * 
 	 * @see comprobarExponente()
 	 */
 	public double potencia(int base, double expontente)
-			throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero {
+			throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
 		base = comprobarValores(base);
 		expontente = comprobarValores(expontente);
 		return acumulador *= Math.pow(base, expontente);
@@ -122,9 +135,7 @@ public class Multiplicacion {
 			throw new ExcepcionNumeroNegativo();
 		} else if (valor >= Double.MAX_VALUE) {
 			throw new ExceptionNumeroAlto();
-		} else if (Double.isNaN(valor)) {
-			throw new ArithmeticException();
-		}else if (valor >=Double.MIN_VALUE) {
+		} else if (valor >=Double.MIN_VALUE) {
 			throw new ExcepcionNumeroMuyBajo();
 			}
 		return valor;
@@ -142,5 +153,6 @@ public class Multiplicacion {
 			}
 		return valor;
 	}
+	
 
 }
