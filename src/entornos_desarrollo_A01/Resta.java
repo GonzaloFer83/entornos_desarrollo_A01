@@ -3,6 +3,7 @@ package entornos_desarrollo_A01;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
+import exceptions.ExcepcionParametroNoValido;
 import exceptions.ExceptionNumeroAlto;
 
 /**
@@ -39,7 +40,7 @@ public class Resta {
 	 * @throws ExcepcionNumeroNegativo 
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	public double restaNumerosReales (double minuendo, double substraendo) throws ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroNegativo, ExcepcionNumeroMuyBajo {
+	public double restaNumerosReales (double minuendo, double substraendo) throws ExcepcionParametroNoValido {
 		
 		minuendo = comprobarValores(minuendo);
 		substraendo = comprobarValores(substraendo);
@@ -68,7 +69,7 @@ public class Resta {
 	 * @throws ExcepcionNumeroMuyBajo 
 	 *  
 	 */
-	public double restaNumerosEnteros (int minuendo, int substraendo) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+	public double restaNumerosEnteros (int minuendo, int substraendo) throws ExcepcionParametroNoValido {
 		int a;
 		minuendo = comprobarValores(minuendo);
 		substraendo = comprobarValores(substraendo);
@@ -93,7 +94,7 @@ public class Resta {
 	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos o igual a 0
 	 * llamando a estos metodos privados 
 	 */
-	public double resta3NumerosReales (double minuendo, double substraendo1, double substraendo2) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+	public double resta3NumerosReales (double minuendo, double substraendo1, double substraendo2) throws ExcepcionParametroNoValido {
 		
 		minuendo = comprobarValores(minuendo);
 		substraendo1 = comprobarValores(substraendo1);
@@ -117,7 +118,7 @@ public class Resta {
 	 * @see errorCero()
 	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos ni iguales a cero
 	 */
-	public double restaValorAcumulado (double substraendo) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+	public double restaValorAcumulado (double substraendo) throws ExcepcionParametroNoValido{
 		
 		substraendo = comprobarValores(substraendo);
 			

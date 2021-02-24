@@ -39,7 +39,7 @@ public class Multiplicacion {
 	 * @see errorCero();
 	 */
 	public double multiNumReales(double multiplicando, double multiplicador)
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+			throws ExcepcionParametroNoValido {
 			multiplicando = comprobarValores(multiplicando);
 			multiplicador = comprobarValores(multiplicador);
 
@@ -58,7 +58,7 @@ public class Multiplicacion {
 	 * @see errorCero();
 	 */
 	public double multiNumEnteros(int multiplicando, int multiplicador)
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+			throws ExcepcionParametroNoValido  {
 		multiplicando = comprobarValores(multiplicando);
 		multiplicador = comprobarValores(multiplicador);
 		return acumulador *= (multiplicando * multiplicador);
@@ -78,7 +78,7 @@ public class Multiplicacion {
 	 * @see errorCero();
 	 */
 	public double multiNumReales(double multiplicando, double multiplicador1, double multiplicador2)
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+			throws ExcepcionParametroNoValido  {
 		multiplicando = comprobarValores(multiplicando);
 		multiplicador1 = comprobarValores(multiplicador1);
 		multiplicador2 = comprobarValores(multiplicador2);
@@ -101,7 +101,7 @@ public class Multiplicacion {
 	 * @see comprobarExponente()
 	 */
 	public double potencia(int base, double expontente)
-			throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+			throws ExcepcionParametroNoValido  {
 		base = comprobarValores(base);
 		expontente = comprobarValores(expontente);
 		return acumulador *= Math.pow(base, expontente);
@@ -119,7 +119,7 @@ public class Multiplicacion {
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
 	private double comprobarValores(double valor)
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+			throws ExcepcionParametroNoValido  {
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0) {
@@ -132,7 +132,7 @@ public class Multiplicacion {
 		return valor;
 	}
 
-	private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+	private int comprobarValores(int valor) throws ExcepcionParametroNoValido {
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0) {

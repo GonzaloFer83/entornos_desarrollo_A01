@@ -33,7 +33,7 @@ public class Primos {
 		 * @see errorNumerosNegativos()
 	     * @see errorCero()
 		 */
-	 public boolean esPrimo(int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	 public boolean esPrimo(int x) throws ExcepcionParametroNoValido  {
 				
 		 x = comprobarValores(x);
 			
@@ -67,7 +67,7 @@ public class Primos {
 		 */
 			
 		
-		public int iesimo(int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+		public int iesimo(int x) throws ExcepcionParametroNoValido  {
 			x = comprobarValores(x);
 			
 			int contadorprimos=0;
@@ -114,7 +114,7 @@ public class Primos {
 	     * llamando a estos métodos privados. 
 		 */
 		
-		public int factorial (int x) throws ExcepcionNumeroNegativo, ExcepcionErrorCero, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+		public int factorial (int x) throws ExcepcionParametroNoValido  {
 			 x = comprobarValores(x);
 
 			 int acumulador= x;
@@ -126,7 +126,7 @@ public class Primos {
 			return acumulador;
 			}
 		
-		private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto, ExcepcionNumeroMuyBajo{
+		private double comprobarValores(double valor) throws ExcepcionParametroNoValido {
 			if (valor == 0) {
 				throw new ExcepcionErrorCero();
 			} else if (valor < 0 ) {
@@ -141,7 +141,7 @@ public class Primos {
 			return valor;
 		}
 		
-		private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+		private int comprobarValores(int valor) throws ExcepcionParametroNoValido  {
 			if (valor == 0) {
 				throw new ExcepcionErrorCero();
 			} else if (valor < 0 ) {

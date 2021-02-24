@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
+import exceptions.ExcepcionParametroNoValido;
 import exceptions.ExceptionNumeroAlto;
 
 /**
@@ -37,7 +38,7 @@ public class Division {
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
 	public double divisionNumReales(double dividendo, double divisor)
-			throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+			throws ExcepcionParametroNoValido  {
 
 		dividendo = comprobarValores(dividendo);
 		divisor = comprobarValores(divisor);
@@ -59,7 +60,7 @@ public class Division {
 	 * @throws ExceptionNumeroAlto 
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	public double sumNumEnteros(int dividendo, int divisor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	public double sumNumEnteros(int dividendo, int divisor) throws ExcepcionParametroNoValido  {
 		dividendo = comprobarValores(dividendo);
 		divisor = comprobarValores(divisor);		
 		acumulador = dividendo / divisor;
@@ -77,7 +78,7 @@ public class Division {
 	 * @throws ExceptionNumeroAlto 
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	public double inversoValor(int numeroInversor) throws ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+	public double inversoValor(int numeroInversor) throws ExcepcionParametroNoValido  {
 
 		numeroInversor = comprobarValores(numeroInversor);
 		acumulador = (double)1/numeroInversor;
@@ -97,7 +98,7 @@ public class Division {
 	 * @throws  
 	 * @throws ExceptionExpAlto 
 	 */
-	public double raizDeNumero(int numeroRaiz) throws ExcepcionErrorCero, ExcepcionNumeroNegativo, ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	public double raizDeNumero(int numeroRaiz) throws ExcepcionParametroNoValido  {
 		numeroRaiz=comprobarValores(numeroRaiz);
 		Multiplicacion mul = new Multiplicacion();
 
@@ -132,7 +133,7 @@ public class Division {
 	 * @throws ExceptionNumeroAlto
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto, ExcepcionNumeroMuyBajo{
+	private double comprobarValores(double valor) throws ExcepcionParametroNoValido {
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0 ) {
@@ -157,7 +158,7 @@ public class Division {
 	 * @throws ExceptionNumeroAlto
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+	private int comprobarValores(int valor) throws ExcepcionParametroNoValido  {
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0 ) {

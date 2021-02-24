@@ -28,9 +28,59 @@ public class SumaTest {
 	public void tearDown() {
 		
 	}
+	
+	@Test
+	void testNumeroRealConNumeroNegativo() {
+		// preparar
+		double sumando1 = 6;
+		double sumando2 = -4;
+
+		// ejecutar
+
+		// Assert
+		Assertions.assertThrows(ExcepcionNumeroNegativo.class,
+				() -> sum.suma2NumerosReales(sumando1, sumando2));
+	}
 
 	@Test
-	void  testSuma2NumerosReales() throws ExceptionNumeroAlto, ExcepcionErrorCero, ExcepcionNumeroNegativo, ExcepcionNumeroMuyBajo {
+	void testNumeroConNumero0() {
+		// preparar
+		double sumando1 = 12;
+		double sumando2 = 0;
+
+		// ejecutar
+
+		// Assert
+		Assertions.assertThrows(ExcepcionErrorCero.class, () -> sum.suma2NumerosReales(sumando1, sumando2));
+	}
+
+	@Test
+	void testNumeroAlto() {
+		// preparar
+		double sumando1 = Double.MAX_VALUE;
+		double sumando2 = 5;
+
+		// ejecutar
+
+		// Assert
+		Assertions.assertThrows(ExceptionNumeroAlto.class, () -> sum.suma2NumerosReales(sumando1, sumando2));
+	}
+
+	@Test
+	void testNumeroMuyBajo() {
+		// preparar
+		double sumando1 = Double.MIN_VALUE;
+		double sumando2 = 5;
+
+		// ejecutar
+
+		// Assert
+		Assertions.assertThrows(ExcepcionNumeroMuyBajo.class, () -> sum.suma2NumerosReales(sumando1, sumando2));
+	}
+	
+	
+	@Test
+	void  testSuma2NumerosReales() throws ExcepcionParametroNoValido {
 		//variables
 		double sumando1 = 4.3;
 		double sumando2 = 12.3;
@@ -43,8 +93,10 @@ public class SumaTest {
 		//Assert
 		assertEquals(esperado, resultado,"la suma de 4.3 mas 12.3 debe ser 16.6");		
 	}
+	
+	
 	@Test
-	void testRestaNumerosEnteros() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+	void testRestaNumerosEnteros() throws ExcepcionParametroNoValido {
 		//variables
 		int sumando1 = 4;
 		int sumando2 = 9;
@@ -57,8 +109,10 @@ public class SumaTest {
 		//Assert
 		assertEquals(esperado, resultado,"la suma de 4 mas 9 debe ser 13");
 	}
+	
+	
 	@Test
-	void TestSuma3NumerosReales() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+	void TestSuma3NumerosReales() throws ExcepcionParametroNoValido {
 		//variables
 	
 		double sumando1 = 5.5;
@@ -76,7 +130,7 @@ public class SumaTest {
 	
 	
 	@Test
-	void TestSumaValorAcumulado() throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero, ExcepcionNumeroMuyBajo {
+	void TestSumaValorAcumulado() throws ExcepcionParametroNoValido {
 		//variables
 		
 		double sumando1 = 4.1;
