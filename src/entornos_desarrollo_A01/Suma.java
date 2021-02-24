@@ -3,6 +3,7 @@ package entornos_desarrollo_A01;
 import exceptions.ExcepcionErrorCero;
 import exceptions.ExcepcionNumeroMuyBajo;
 import exceptions.ExcepcionNumeroNegativo;
+import exceptions.ExcepcionParametroNoValido;
 import exceptions.ExceptionNumeroAlto;
 
 /**
@@ -34,7 +35,7 @@ public class Suma {
 	 * @throws ExcepcionErrorCero 
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	public double suma2NumerosReales(double sumando1, double sumando2)throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	public double suma2NumerosReales(double sumando1, double sumando2)throws ExcepcionParametroNoValido {
 		sumando1 = comprobarValores(sumando1);
 		sumando2 = comprobarValores(sumando2);
 		acumulador = sumando1 + sumando2;
@@ -55,7 +56,7 @@ public class Suma {
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
 	public  double sumaNumerosEnteros(int sumando1, int sumando2)
-			throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto, ExcepcionNumeroMuyBajo{
+			throws ExcepcionParametroNoValido{
 		int a;
 		sumando1 = comprobarValores(sumando1);
 		sumando2 = comprobarValores(sumando2);
@@ -74,7 +75,7 @@ public class Suma {
 	 * @return devuelve la suma de los otros parametros.
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	public double suma3NumeroReales(double sumando1, double sumando2, double sumando3) throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	public double suma3NumeroReales(double sumando1, double sumando2, double sumando3) throws ExcepcionParametroNoValido {
 		sumando1 = comprobarValores(sumando1);
 		sumando2 = comprobarValores(sumando2);
 		sumando3 = comprobarValores(sumando3);
@@ -90,7 +91,7 @@ public class Suma {
 	 * @return devuelve un valor, acumulador mas un parametro
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	public double sumaAcumulada(double sumando)throws ExcepcionNumeroNegativo, ExcepcionErrorCero,ExceptionNumeroAlto, ExcepcionNumeroMuyBajo {
+	public double sumaAcumulada(double sumando)throws ExcepcionParametroNoValido {
 		sumando = comprobarValores(sumando);
 		acumulador = acumulador +sumando;
 		return acumulador;
@@ -116,7 +117,7 @@ public class Suma {
 	 * @throws ExceptionNumeroAlto
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	private double comprobarValores(double valor) throws ExcepcionErrorCero, ExcepcionNumeroNegativo,ExceptionNumeroAlto,ExcepcionNumeroMuyBajo{
+	private double comprobarValores(double valor) throws ExcepcionParametroNoValido{
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0 ) {
@@ -140,7 +141,7 @@ public class Suma {
 	 * @throws ExceptionNumeroAlto
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	private int comprobarValores(int valor) throws ExceptionNumeroAlto, ExcepcionNumeroNegativo, ExcepcionErrorCero,ExcepcionNumeroMuyBajo {
+	private int comprobarValores(int valor) throws ExcepcionParametroNoValido {
 		if (valor == 0) {
 			throw new ExcepcionErrorCero();
 		} else if (valor < 0 ) {
