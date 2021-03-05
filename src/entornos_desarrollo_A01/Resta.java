@@ -30,7 +30,7 @@ public class Resta {
 	/**
 	 * El m�todo restaNumerosReales realiza la resta de dos n�meros reales 
 	 * @param minuendo recibe un numero real
-	 * @param substraendo recibe un numero real 
+	 * @param sustraendo recibe un numero real 
 	 * @return devuelve la resta de los parametros minuendo y sustraendo
 	 * @see errorNumerosNegativos()
 	 * @see errorCero() 
@@ -40,12 +40,12 @@ public class Resta {
 	 * @throws ExcepcionNumeroNegativo 
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	public double restaNumerosReales (double minuendo, double substraendo) throws ExcepcionParametroNoValido {
+	public double restaNumerosReales (double minuendo, double sustraendo) throws ExcepcionParametroNoValido {
 		
 		minuendo = comprobarValores(minuendo);
-		substraendo = comprobarValores(substraendo);
+		sustraendo = comprobarValores(sustraendo);
 		
-		acumulador = minuendo - substraendo;	
+		acumulador = minuendo - sustraendo;	
 		return acumulador;
 	}
 	
@@ -54,8 +54,8 @@ public class Resta {
 	/**
 	 * El m�todo restaNumerosEnteros realiza la resta de dos n�meros enteros
 	 * @param minuendo recibe un numero entero
-	 * @param substraendo recibe un numero entero
-	 * @return devuelve un numero real, resultado de la resta de los parametros minuendo y substraendo
+	 * @param sustraendo recibe un numero entero
+	 * @return devuelve un numero real, resultado de la resta de los parametros minuendo y sustraendo
 	 * 
 	 * @see convertirEnteros()
 	 * Dentro de este metodo, se llama a este metodo para convertir los numeros enteros en reales
@@ -69,12 +69,12 @@ public class Resta {
 	 * @throws ExcepcionNumeroMuyBajo 
 	 *  
 	 */
-	public double restaNumerosEnteros (int minuendo, int substraendo) throws ExcepcionParametroNoValido {
+	public double restaNumerosEnteros (int minuendo, int sustraendo) throws ExcepcionParametroNoValido {
 		int a;
 		minuendo = comprobarValores(minuendo);
-		substraendo = comprobarValores(substraendo);
+		sustraendo = comprobarValores(sustraendo);
 				
-		a =  minuendo - substraendo;
+		a =  minuendo - sustraendo;
 		acumulador = convertirEnteros(a);
 		return acumulador;
 	}
@@ -84,9 +84,9 @@ public class Resta {
 	/**
 	 * El m�todo resta3NumerosReales realiza la operaci�n de restarle a un n�mero real el valor de otros dos n�meros reales
 	 * @param minuendo recibe un numero real	
-	 * @param substraendo1 recibe un numero real
-	 * @param substraendo2 recibe un numero real
-	 * @return devuelve la resta del primer parametro minuendo, substraendo1 y substraendo2
+	 * @param sustraendo1 recibe un numero real
+	 * @param sustraendo2 recibe un numero real
+	 * @return devuelve la resta del primer parametro minuendo, sustraendo1 y sustraendo2
 	 * @throws ExcepcionNumeroMuyBajo 
 	 * 
 	 * @see errorNumerosNegativos()
@@ -94,14 +94,14 @@ public class Resta {
 	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos o igual a 0
 	 * llamando a estos metodos privados 
 	 */
-	public double resta3NumerosReales (double minuendo, double substraendo1, double substraendo2) throws ExcepcionParametroNoValido {
+	public double resta3NumerosReales (double minuendo, double sustraendo1, double sustraendo2) throws ExcepcionParametroNoValido {
 		
 		minuendo = comprobarValores(minuendo);
-		substraendo1 = comprobarValores(substraendo1);
-		substraendo2 = comprobarValores(substraendo2);
+		sustraendo1 = comprobarValores(sustraendo1);
+		sustraendo2 = comprobarValores(sustraendo2);
 
 		
-		acumulador = minuendo - substraendo1 - substraendo2;
+		acumulador = minuendo - sustraendo1 - sustraendo2;
 		return acumulador;
 		
 	}
@@ -110,7 +110,7 @@ public class Resta {
 	
 	/**
 	 * Este m�todo acumula operaciones de resta sobre un valor
-	 * @param substraendo recibe numero real 
+	 * @param sustraendo recibe numero real 
 	 * @return Devuelve el resultado de un valor al que se le van restando acumulativamente los valores introducidos
 	 * @throws ExcepcionNumeroMuyBajo 
 	 * 
@@ -118,11 +118,11 @@ public class Resta {
 	 * @see errorCero()
 	 * Dentro de este metodo, comprobaremos que los parametros introducidos no son negativos ni iguales a cero
 	 */
-	public double restaValorAcumulado (double substraendo) throws ExcepcionParametroNoValido{
+	public double restaValorAcumulado (double sustraendo) throws ExcepcionParametroNoValido{
 		
-		substraendo = comprobarValores(substraendo);
+		sustraendo = comprobarValores(sustraendo);
 			
-		acumulador = acumulador - substraendo;
+		acumulador = acumulador - sustraendo;
 		return acumulador;
 		
 	}
