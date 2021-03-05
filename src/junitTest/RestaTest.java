@@ -49,12 +49,12 @@ class RestaTest {
 	void  testrestaNumerosReales() throws ExcepcionParametroNoValido {
 		//variables
 		double minuendo = 15.6;
-		double substraendo = 5.5;
+		double sustraendo = 5.5;
 		double esperado = 10.1;
-		double resultado = rest.restaNumerosReales(minuendo, substraendo);
+		double resultado = rest.restaNumerosReales(minuendo, sustraendo);
 		
 		//ejecutar
-		resultado = rest.restaNumerosReales(minuendo, substraendo) ;
+		resultado = rest.restaNumerosReales(minuendo, sustraendo) ;
 		
 		//Assert
 		assertEquals(esperado, resultado,"la resta de 15.6 menos 5.5 debe ser 10.1");		
@@ -63,12 +63,12 @@ class RestaTest {
 	void restaNumerosEnteros() throws ExcepcionParametroNoValido {
 		//variables
 		int minuendo = 23;
-		int substraendo = 11;
+		int sustraendo = 11;
 		int esperado = 12;
-		double resultado = rest.restaNumerosEnteros(minuendo, substraendo);
+		double resultado = rest.restaNumerosEnteros(minuendo, sustraendo);
 		
 		//ejecutar
-		rest.restaNumerosEnteros(minuendo, substraendo);
+		rest.restaNumerosEnteros(minuendo, sustraendo);
 		
 		//Assert
 		assertEquals(esperado, resultado,"la resta de 23 menos 11 debe ser 12");
@@ -78,13 +78,13 @@ class RestaTest {
 		//variables
 	
 		double minuendo = 17.3;
-		double substraendo1 = 5.7;
-		double substraendo2 = 2.8;
+		double sustraendo1 = 5.7;
+		double sustraendo2 = 2.8;
 		double esperado = 8.8;
-		double resultado = rest.resta3NumerosReales(minuendo, substraendo1, substraendo2);
+		double resultado = rest.resta3NumerosReales(minuendo, sustraendo1, sustraendo2);
 		
 		//ejecutar
-		rest.resta3NumerosReales(minuendo, substraendo1, substraendo2);
+		rest.resta3NumerosReales(minuendo, sustraendo1, sustraendo2);
 		
 		//Assert
 		assertEquals(esperado, resultado,"la resta entre 17.3 menos 5.7 menos 2.8 debe ser 8.8");
@@ -95,13 +95,13 @@ class RestaTest {
 		
 		
 		double minuendo = 15.3;
-		double substraendo1 = 5.3;
-		double substraendo2 = 4.3;
+		double sustraendo1 = 5.3;
+		double sustraendo2 = 4.3;
 		double esperado = 5.7;
 		double resultado;
 		//ejecutar
-		rest.restaNumerosReales(minuendo, substraendo1);
-		resultado = rest.restaValorAcumulado(substraendo2);
+		rest.restaNumerosReales(minuendo, sustraendo1);
+		resultado = rest.restaValorAcumulado(sustraendo2);
 		
 		
 		//Assert
