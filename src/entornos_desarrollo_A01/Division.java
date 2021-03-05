@@ -60,7 +60,7 @@ public class Division {
 	 * @throws ExceptionNumeroAlto 
 	 * @throws ExcepcionNumeroMuyBajo 
 	 */
-	public double sumNumEnteros(int dividendo, int divisor) throws ExcepcionParametroNoValido  {
+	public double divisionNumEnteros(int dividendo, int divisor) throws ExcepcionParametroNoValido  {
 		dividendo = comprobarValores(dividendo);
 		divisor = comprobarValores(divisor);		
 		acumulador = dividendo / divisor;

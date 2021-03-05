@@ -42,7 +42,7 @@ class DivisionTest {
 		int dividiendo = 12;
 		int divisor = 6;
 		int esperado = 2;
-		double obtenido = div.sumNumEnteros(dividiendo, divisor);
+		double obtenido = div.divisionNumEnteros(dividiendo, divisor);
 		assertEquals(esperado, obtenido, "La division entre 12 y 6 debe ser 2");
 	}
 
@@ -68,14 +68,14 @@ class DivisionTest {
 	void testQuePasaSiDivisorEsCero() {
 		int dividendo = 12;
 		int divisor = 0;
-		Assertions.assertThrows(ExcepcionErrorCero.class, () -> div.sumNumEnteros(dividendo, divisor));
+		Assertions.assertThrows(ExcepcionErrorCero.class, () -> div.divisionNumEnteros(dividendo, divisor));
 	}
 
 	@Test
 	void testQuePasaSiUnoDeLosParametrosEsNegativo() {
 		int dividendo = 12;
 		int divisor = -5;
-		Assertions.assertThrows(ExcepcionNumeroNegativo.class, () -> div.sumNumEnteros(dividendo, divisor));
+		Assertions.assertThrows(ExcepcionNumeroNegativo.class, () -> div.divisionNumEnteros(dividendo, divisor));
 	}
 	@Test
 	void divisorMasAltoQueElTipoDatoPrimitivoPermitido()
